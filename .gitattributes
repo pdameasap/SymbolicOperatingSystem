@@ -6,6 +6,7 @@
 *.txt  text eol=lf
 *.md   text eol=lf
 *.json text eol=lf
+*.picl text diff eol=lf
 
 # Ignore system/IDE junk
 *.DS_Store binary
