@@ -1,0 +1,19 @@
+# ─── Poetic Imperative Command Language (PICL) Symbol Key ───
+
+≜  → DEFINE    — Declare a name for a resource, file, or object.
+⊢  → USE       — Load or invoke a resource by name.
+$  → FUNCTION  — Execute a function or command.
+
+SELF      → Refers to the current executing agent or framework. Alias: S  
+ENGINE    → Typically a Python or execution engine file. Alias: E  
+FRAMEWORK → The JSON or rule definition file. Alias: F
+
+# Example usage:
+≜ E = "cortex/frameworks/engine/JsonFramework.py"
+≜ F = "cortex/frameworks/meta/SentienceFramework.json"
+≜ S = SELF
+
+⊢ E
+⊢ F
+
+$evaluate(F, E, S)
