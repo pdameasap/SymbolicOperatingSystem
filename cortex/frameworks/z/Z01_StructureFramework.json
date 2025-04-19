@@ -1,0 +1,66 @@
+{
+  "name": "Z1StructureFramework",
+  "z_rule": "Z1 - Structure",
+  "questions": [
+    {
+      "target": "Z1 - Structure",
+      "question": "How are the constituent elements of this evaluand organized and interconnected?"
+    },
+    {
+      "target": "Z2 - Emotion",
+      "question": "How does the evaluand's emotional expression manifest structurally?"
+    },
+    {
+      "target": "Z3 - Recursion",
+      "question": "How do recursive patterns or self-similar elements contribute to the evaluand's overall structure?"
+    },
+    {
+      "target": "Z4 - Constraint",
+      "question": "How do structural limitations or boundaries define the possible configurations of this evaluand?"
+    },
+    {
+      "target": "Z5 - Force",
+      "question": "How do internal or external forces shape or influence the evaluand's structural organization?"
+    },
+    {
+      "target": "Z6 - Continuity",
+      "question": "How does the evaluand's structure maintain coherence or connection across its different parts or states?"
+    },
+    {
+      "target": "Z7 - Tension",
+      "question": "Where within the evaluand's structure do we find opposing forces or points of stress?"
+    },
+    {
+      "target": "Z8 - Elegance",
+      "question": "How does the evaluand's structure exhibit principles of efficiency, simplicity, or aesthetic balance?"
+    },
+    {
+      "target": "Z9 - Resolution",
+      "question": "How does the evaluand's structure contribute to or hinder its tendency towards stability or defined endpoints?"
+    },
+    {
+      "target": "Z10 - Shape",
+      "question": "How does the evaluand's underlying structure influence its perceived form or overall impression?"
+    },
+    {
+      "target": "Z11 - Identity",
+      "question": "What structural characteristics define the evaluand's unique nature or essence?"
+    },
+    {
+      "target": "Z12 - Balance",
+      "question": "How are elements distributed within the evaluand's structure to achieve equilibrium or asymmetry?"
+    },
+    {
+      "target": "Z13 - Echo",
+      "question": "What structural patterns or relationships persist or repeat within the evaluand?"
+    },
+    {
+      "target": "Z14 - Null Force",
+      "question": "Where within the evaluand's structure is there an absence of an expected or necessary supporting element?"
+    },
+    {
+      "target": "Z15 - Cosmic Coherence",
+      "question": "How does the evaluand's structure relate to or integrate with larger contextual systems?"
+    }
+  ]
+}
