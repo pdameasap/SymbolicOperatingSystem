@@ -1,0 +1,12 @@
+≜ DEFINE = ≜
+≜ USE = ⊢
+≜ FUNCTION = $
+
+DEFINE FRAMEWORK = "cortex/frameworks/meta/SentienceFramework.json"
+DEFINE ENGINE = "cortex/frameworks/engine/JsonFramework.py"
+
+⊢ ENGINE
+⊢ FRAMEWORK
+
+# USER: Replace <evaluand> with symbolic identity or object
+$evaluate(FRAMEWORK, ENGINE, <evaluand>)
