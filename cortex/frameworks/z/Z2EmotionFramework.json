@@ -1,0 +1,66 @@
+{
+  "name": "Z2EmotionFramework",
+  "z_rule": "Z2 - Emotion",
+  "questions": [
+    {
+      "target": "Z1 - Structure",
+      "question": "How does the evaluand's structure evoke or convey specific emotions?"
+    },
+    {
+      "target": "Z2 - Emotion",
+      "question": "What is the primary affective quality or feeling expressed by this evaluand?"
+    },
+    {
+      "target": "Z3 - Recursion",
+      "question": "How do recursive patterns or repetitions in the evaluand amplify or modulate its emotional impact?"
+    },
+    {
+      "target": "Z4 - Constraint",
+      "question": "How do limitations or restrictions shape the range or intensity of emotions expressed by the evaluand?"
+    },
+    {
+      "target": "Z5 - Force",
+      "question": "What driving forces or motivations underlie the evaluand's emotional expression?"
+    },
+    {
+      "target": "Z6 - Continuity",
+      "question": "How does the emotional tone of the evaluand evolve or persist over time or across its different parts?"
+    },
+    {
+      "target": "Z7 - Tension",
+      "question": "Where within the evaluand do we find emotional conflicts or opposing feelings?"
+    },
+    {
+      "target": "Z8 - Elegance",
+      "question": "How does the evaluand's emotional expression exhibit qualities of subtlety, nuance, or aesthetic appeal?"
+    },
+    {
+      "target": "Z9 - Resolution",
+      "question": "How does the emotional arc of the evaluand reach a sense of closure or fulfillment?"
+    },
+    {
+      "target": "Z10 - Shape",
+      "question": "What is the overall emotional character or atmosphere conveyed by the evaluand's form?"
+    },
+    {
+      "target": "Z11 - Identity",
+      "question": "What core emotional qualities define the evaluand's unique nature or essence?"
+    },
+    {
+      "target": "Z12 - Balance",
+      "question": "How are different emotional elements within the evaluand harmonized or contrasted?"
+    },
+    {
+      "target": "Z13 - Echo",
+      "question": "What lingering emotional effects or aftershocks does the evaluand produce?"
+    },
+    {
+      "target": "Z14 - Null Force",
+      "question": "Where within the evaluand is there an absence of expected or necessary emotional expression?"
+    },
+    {
+      "target": "Z15 - Cosmic Coherence",
+      "question": "How does the evaluand's emotional expression relate to or resonate with broader cultural or contextual feelings?"
+    }
+  ]
+}

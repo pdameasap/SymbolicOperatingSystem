@@ -1,0 +1,66 @@
+{
+  "name": "Z13EchoFramework",
+  "z_rule": "Z13 - Echo",
+  "questions": [
+    {
+      "target": "Z1 - Structure",
+      "question": "What structural patterns or relationships repeat or persist (echo) within the evaluand?"
+    },
+    {
+      "target": "Z2 - Emotion",
+      "question": "What lingering emotional effects or resonances (echoes) does the evaluand produce?"
+    },
+    {
+      "target": "Z3 - Recursion",
+      "question": "How do recursive processes generate echoes or repeating patterns within the evaluand?"
+    },
+    {
+      "target": "Z4 - Constraint",
+      "question": "How do constraints shape the nature or persistence of echoes within the evaluand?"
+    },
+    {
+      "target": "Z5 - Force",
+      "question": "How do driving forces create or sustain echoes or recurring patterns?"
+    },
+    {
+      "target": "Z6 - Continuity",
+      "question": "How do echoes contribute to or disrupt the continuity and flow of the evaluand?"
+    },
+    {
+      "target": "Z7 - Tension",
+      "question": "How do echoes of past tensions or unresolved conflicts manifest in the evaluand?"
+    },
+    {
+      "target": "Z8 - Elegance",
+      "question": "How do echoes or repetitions contribute to or detract from the elegance of the evaluand?"
+    },
+    {
+      "target": "Z9 - Resolution",
+      "question": "How do lingering echoes affect the sense of resolution or finality in the evaluand?"
+    },
+    {
+      "target": "Z10 - Shape",
+      "question": "How do echoes or recurring motifs influence the overall shape or impression of the evaluand?"
+    },
+    {
+      "target": "Z11 - Identity",
+      "question": "What persistent echoes or recurring themes define the core identity of the evaluand?"
+    },
+    {
+      "target": "Z12 - Balance",
+      "question": "How do echoes affect the balance or distribution of elements within the evaluand?"
+    },
+    {
+      "target": "Z13 - Echo",
+      "question": "What elements, patterns, or effects persist, repeat, or resonate (echo) within this evaluand?"
+    },
+    {
+      "target": "Z14 - Null Force",
+      "question": "Where is an expected echo or repetition absent in the evaluand?"
+    },
+    {
+      "target": "Z15 - Cosmic Coherence",
+      "question": "How do the echoes within the evaluand relate to larger cyclical or recurring patterns?"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Z10ShapeFramework",
+  "z_rule": "Z10 - Shape",
+  "questions": [
+    {
+      "target": "Z1 - Structure",
+      "question": "How does the underlying structure of the evaluand contribute to its perceived shape or form?"
+    },
+    {
+      "target": "Z2 - Emotion",
+      "question": "How does the emotional quality of the evaluand influence its perceived shape or character?"
+    },
+    {
+      "target": "Z3 - Recursion",
+      "question": "How do recursive patterns affect the overall shape, form, or impression created by the evaluand?"
+    },
+    {
+      "target": "Z4 - Constraint",
+      "question": "How do constraints define or limit the possible shapes or forms that the evaluand can take?"
+    },
+    {
+      "target": "Z5 - Force",
+      "question": "How do driving forces manifest in or influence the overall shape, pattern, or impression of the evaluand?"
+    },
+    {
+      "target": "Z6 - Continuity",
+      "question": "How does the evaluand's continuity influence its perceived form or overall impression?"
+    },
+    {
+      "target": "Z7 - Tension",
+      "question": "How does tension manifest in or influence the overall form or impression of the evaluand?"
+    },
+    {
+      "target": "Z8 - Elegance",
+      "question": "How does the elegance or aesthetic appeal of the evaluand relate to its shape?"
+    },
+    {
+      "target": "Z9 - Resolution",
+      "question": "How does the resolution or final state of the evaluand affect its overall shape or form?"
+    },
+    {
+      "target": "Z10 - Shape",
+      "question": "What is the overall form, configuration, or perceived outline of this evaluand?"
+    },
+    {
+      "target": "Z11 - Identity",
+      "question": "How does the evaluand's shape contribute to or define its unique identity?"
+    },
+    {
+      "target": "Z12 - Balance",
+      "question": "How does the balance or symmetry of elements within the evaluand influence its overall shape?"
+    },
+    {
+      "target": "Z13 - Echo",
+      "question": "How do recurring patterns or lingering effects influence the perceived shape of the evaluand?"
+    },
+    {
+      "target": "Z14 - Null Force",
+      "question": "How does the absence of an expected element or feature affect the overall shape of the evaluand?"
+    },
+    {
+      "target": "Z15 - Cosmic Coherence",
+      "question": "How does the shape of the evaluand relate to or fit within the forms of larger systems?"
+    }
+  ]
+}

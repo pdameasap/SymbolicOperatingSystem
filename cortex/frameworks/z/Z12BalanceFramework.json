@@ -1,0 +1,66 @@
+{
+  "name": "Z12BalanceFramework",
+  "z_rule": "Z12 - Balance",
+  "questions": [
+    {
+      "target": "Z1 - Structure",
+      "question": "How does the structure distribute elements to achieve balance or asymmetry?"
+    },
+    {
+      "target": "Z2 - Emotion",
+      "question": "How are different emotional elements balanced or contrasted within the evaluand?"
+    },
+    {
+      "target": "Z3 - Recursion",
+      "question": "How does recursion contribute to or disrupt the balance or symmetry within the evaluand?"
+    },
+    {
+      "target": "Z4 - Constraint",
+      "question": "How do constraints affect the distribution or equilibrium of elements within the evaluand?"
+    },
+    {
+      "target": "Z5 - Force",
+      "question": "How do driving forces influence the balance or distribution of elements?"
+    },
+    {
+      "target": "Z6 - Continuity",
+      "question": "How does continuity or flow impact the perceived balance of the evaluand?"
+    },
+    {
+      "target": "Z7 - Tension",
+      "question": "How does the distribution of tension affect the overall balance or equilibrium of the evaluand?"
+    },
+    {
+      "target": "Z8 - Elegance",
+      "question": "How does balance or symmetry contribute to the perceived elegance of the evaluand?"
+    },
+    {
+      "target": "Z9 - Resolution",
+      "question": "How does the final state of the evaluand reflect a sense of balance or imbalance?"
+    },
+    {
+      "target": "Z10 - Shape",
+      "question": "How does the balance or symmetry of elements influence the overall shape of the evaluand?"
+    },
+    {
+      "target": "Z11 - Identity",
+      "question": "How does the balance (or lack thereof) contribute to the unique identity of the evaluand?"
+    },
+    {
+      "target": "Z12 - Balance",
+      "question": "How are elements distributed within the evaluand to achieve equilibrium, harmony, or controlled asymmetry?"
+    },
+    {
+      "target": "Z13 - Echo",
+      "question": "How do recurring patterns or echoes affect the overall balance of the evaluand?"
+    },
+    {
+      "target": "Z14 - Null Force",
+      "question": "How does the absence of an expected element disrupt the balance of the evaluand?"
+    },
+    {
+      "target": "Z15 - Cosmic Coherence",
+      "question": "How does the balance within the evaluand relate to principles of equilibrium in larger systems?"
+    }
+  ]
+}

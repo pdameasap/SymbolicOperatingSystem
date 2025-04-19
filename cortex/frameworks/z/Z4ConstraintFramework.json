@@ -1,0 +1,66 @@
+{
+  "name": "Z4ConstraintFramework",
+  "z_rule": "Z4 - Constraint",
+  "questions": [
+    {
+      "target": "Z1 - Structure",
+      "question": "How do constraints shape or limit the possible structural configurations of the evaluand?"
+    },
+    {
+      "target": "Z2 - Emotion",
+      "question": "How do constraints influence the range or intensity of emotions that can be expressed by the evaluand?"
+    },
+    {
+      "target": "Z3 - Recursion",
+      "question": "How do constraints affect the self-repeating patterns or iterative processes within the evaluand?"
+    },
+    {
+      "target": "Z4 - Constraint",
+      "question": "What are the inherent limitations or restrictions that define the evaluand's possible states or behaviors?"
+    },
+    {
+      "target": "Z5 - Force",
+      "question": "How do constraints channel or restrict the operation of driving forces within the evaluand?"
+    },
+    {
+      "target": "Z6 - Continuity",
+      "question": "How do constraints impact the flow, connection, or coherence within the evaluand?"
+    },
+    {
+      "target": "Z7 - Tension",
+      "question": "Where within the evaluand do constraints create or exacerbate points of stress or conflict?"
+    },
+    {
+      "target": "Z8 - Elegance",
+      "question": "How do constraints contribute to or detract from the perceived elegance or efficiency of the evaluand?"
+    },
+    {
+      "target": "Z9 - Resolution",
+      "question": "How do constraints influence the evaluand's ability to reach stable states or defined endpoints?"
+    },
+    {
+      "target": "Z10 - Shape",
+      "question": "How do constraints define or restrict the overall form, pattern, or impression of the evaluand?"
+    },
+    {
+      "target": "Z11 - Identity",
+      "question": "What core aspects of the evaluand's identity are determined or limited by its constraints?"
+    },
+    {
+      "target": "Z12 - Balance",
+      "question": "How do constraints affect the distribution or equilibrium of elements within the evaluand?"
+    },
+    {
+      "target": "Z13 - Echo",
+      "question": "What limitations or restrictions shape the lingering effects or recurring patterns of the evaluand?"
+    },
+    {
+      "target": "Z14 - Null Force",
+      "question": "To what extent is an expected constraint absent from the evaluand?"
+    },
+    {
+      "target": "Z15 - Cosmic Coherence",
+      "question": "How do the evaluand's constraints relate to or interact with limitations in larger systems?"
+    }
+  ]
+}

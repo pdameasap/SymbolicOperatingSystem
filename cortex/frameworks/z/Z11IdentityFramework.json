@@ -1,0 +1,66 @@
+{
+  "name": "Z11IdentityFramework",
+  "z_rule": "Z11 - Identity",
+  "questions": [
+    {
+      "target": "Z1 - Structure",
+      "question": "How does the structure define or reveal the core identity of the evaluand?"
+    },
+    {
+      "target": "Z2 - Emotion",
+      "question": "What core emotional qualities define the unique identity or essence of the evaluand?"
+    },
+    {
+      "target": "Z3 - Recursion",
+      "question": "How do recursive patterns reinforce or reveal the essential identity of the evaluand?"
+    },
+    {
+      "target": "Z4 - Constraint",
+      "question": "How do constraints shape or limit the defining characteristics of the evaluand's identity?"
+    },
+    {
+      "target": "Z5 - Force",
+      "question": "What driving forces are central to defining the identity or nature of the evaluand?"
+    },
+    {
+      "target": "Z6 - Continuity",
+      "question": "How does the continuity or persistence over time contribute to the evaluand's identity?"
+    },
+    {
+      "target": "Z7 - Tension",
+      "question": "How do internal tensions or conflicts shape the core identity of the evaluand?"
+    },
+    {
+      "target": "Z8 - Elegance",
+      "question": "How does elegance or lack thereof contribute to the evaluand's unique identity?"
+    },
+    {
+      "target": "Z9 - Resolution",
+      "question": "How does the final state or resolution (or lack thereof) define the evaluand's identity?"
+    },
+    {
+      "target": "Z10 - Shape",
+      "question": "How does the overall shape or form reflect the core identity of the evaluand?"
+    },
+    {
+      "target": "Z11 - Identity",
+      "question": "What are the fundamental, defining characteristics that constitute the unique nature or essence of this evaluand?"
+    },
+    {
+      "target": "Z12 - Balance",
+      "question": "How does the balance or distribution of elements contribute to the evaluand's specific identity?"
+    },
+    {
+      "target": "Z13 - Echo",
+      "question": "What recurring themes or persistent traits define the evaluand's identity?"
+    },
+    {
+      "target": "Z14 - Null Force",
+      "question": "How does the absence of an expected feature or quality shape the evaluand's identity?"
+    },
+    {
+      "target": "Z15 - Cosmic Coherence",
+      "question": "How does the evaluand's identity relate to or differentiate it from identities within larger contexts?"
+    }
+  ]
+}

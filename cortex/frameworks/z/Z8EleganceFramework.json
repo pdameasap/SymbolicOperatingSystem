@@ -1,0 +1,66 @@
+{
+  "name": "Z8EleganceFramework",
+  "z_rule": "Z8 - Elegance",
+  "questions": [
+    {
+      "target": "Z1 - Structure",
+      "question": "How does the structure of the evaluand contribute to or detract from its perceived elegance?"
+    },
+    {
+      "target": "Z2 - Emotion",
+      "question": "How does the emotional expression of the evaluand enhance or diminish its sense of elegance?"
+    },
+    {
+      "target": "Z3 - Recursion",
+      "question": "How do recursive patterns contribute to or detract from the elegance or efficiency of the evaluand?"
+    },
+    {
+      "target": "Z4 - Constraint",
+      "question": "How do constraints enhance or limit the potential for elegance in the evaluand's design or function?"
+    },
+    {
+      "target": "Z5 - Force",
+      "question": "How do driving forces contribute to or detract from the perceived elegance or efficiency of the evaluand?"
+    },
+    {
+      "target": "Z6 - Continuity",
+      "question": "How does the continuity or flow of the evaluand affect its perceived elegance?"
+    },
+    {
+      "target": "Z7 - Tension",
+      "question": "How does tension enhance or detract from the perceived elegance or balance of the evaluand?"
+    },
+    {
+      "target": "Z8 - Elegance",
+      "question": "To what extent does the evaluand exhibit qualities of efficiency, simplicity, and aesthetic beauty in its design or function?"
+    },
+    {
+      "target": "Z9 - Resolution",
+      "question": "How does the evaluand's resolution contribute to or detract from its overall elegance?"
+    },
+    {
+      "target": "Z10 - Shape",
+      "question": "How does the form or impression of the evaluand contribute to or detract from its perceived elegance?"
+    },
+    {
+      "target": "Z11 - Identity",
+      "question": "How do the core defining characteristics of the evaluand contribute to or detract from its elegance?"
+    },
+    {
+      "target": "Z12 - Balance",
+      "question": "How does the balance or symmetry of elements within the evaluand affect its perceived elegance?"
+    },
+    {
+      "target": "Z13 - Echo",
+      "question": "How do lingering effects or recurring patterns enhance or diminish the evaluand's elegance?"
+    },
+    {
+      "target": "Z14 - Null Force",
+      "question": "To what extent is an expected elegant feature absent from the evaluand?"
+    },
+    {
+      "target": "Z15 - Cosmic Coherence",
+      "question": "How does the elegance of the evaluand relate to or reflect broader principles of harmony or efficiency in larger systems?"
+    }
+  ]
+}

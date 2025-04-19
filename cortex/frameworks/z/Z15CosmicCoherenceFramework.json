@@ -1,0 +1,66 @@
+{
+  "name": "Z15Cosmic CoherenceFramework",
+  "z_rule": "Z15 - Cosmic Coherence",
+  "questions": [
+    {
+      "target": "Z1 - Structure",
+      "question": "How does the evaluand's structure relate to or integrate with the structures of larger systems?"
+    },
+    {
+      "target": "Z2 - Emotion",
+      "question": "How do the emotions expressed by the evaluand resonate with or reflect broader cultural or universal feelings?"
+    },
+    {
+      "target": "Z3 - Recursion",
+      "question": "How do the recursive patterns within the evaluand mirror or connect to self-similar patterns in the wider world?"
+    },
+    {
+      "target": "Z4 - Constraint",
+      "question": "How do the evaluand's constraints relate to or interact with limitations present in larger contexts?"
+    },
+    {
+      "target": "Z5 - Force",
+      "question": "How do the driving forces within the evaluand connect to or reflect larger systemic forces?"
+    },
+    {
+      "target": "Z6 - Continuity",
+      "question": "How does the evaluand's continuity or flow relate to broader temporal or spatial patterns?"
+    },
+    {
+      "target": "Z7 - Tension",
+      "question": "How do the tensions within the evaluand reflect or interact with larger systemic conflicts or dynamics?"
+    },
+    {
+      "target": "Z8 - Elegance",
+      "question": "How does the elegance of the evaluand relate to broader principles of harmony, efficiency, or beauty in the universe?"
+    },
+    {
+      "target": "Z9 - Resolution",
+      "question": "How does the evaluand's state of resolution connect to larger cycles of completion or equilibrium?"
+    },
+    {
+      "target": "Z10 - Shape",
+      "question": "How does the shape or form of the evaluand relate to or fit within the shapes and forms of larger systems?"
+    },
+    {
+      "target": "Z11 - Identity",
+      "question": "How does the evaluand's unique identity contribute to or reflect the diversity and complexity of the larger world?"
+    },
+    {
+      "target": "Z12 - Balance",
+      "question": "How does the balance within the evaluand relate to principles of equilibrium or harmony in larger systems?"
+    },
+    {
+      "target": "Z13 - Echo",
+      "question": "How do the echoes within the evaluand resonate with or reflect larger recurring patterns or cycles?"
+    },
+    {
+      "target": "Z14 - Null Force",
+      "question": "How does the absence of an element in the evaluand (null force) relate to gaps or missing pieces in larger systems?"
+    },
+    {
+      "target": "Z15 - Cosmic Coherence",
+      "question": "How does this evaluand fit into, reflect, or interact with the larger context, system, or universe of which it is a part?"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Z14Null ForceFramework",
+  "z_rule": "Z14 - Null Force",
+  "questions": [
+    {
+      "target": "Z1 - Structure",
+      "question": "Where is an expected or necessary structural element absent (null force) in the evaluand?"
+    },
+    {
+      "target": "Z2 - Emotion",
+      "question": "Where is an expected emotional quality or response notably absent (null force) in the evaluand?"
+    },
+    {
+      "target": "Z3 - Recursion",
+      "question": "Where is an expected pattern of recursion or self-similarity absent (null force)?"
+    },
+    {
+      "target": "Z4 - Constraint",
+      "question": "Where is an expected constraint or limitation absent (null force), allowing unexpected freedom or chaos?"
+    },
+    {
+      "target": "Z5 - Force",
+      "question": "Where is an expected driving force or motivation absent (null force), leading to inaction or deviation?"
+    },
+    {
+      "target": "Z6 - Continuity",
+      "question": "Where does the absence of an expected link or transition create a discontinuity (null force)?"
+    },
+    {
+      "target": "Z7 - Tension",
+      "question": "Where is an expected point of tension or conflict absent (null force), potentially leading to stagnation?"
+    },
+    {
+      "target": "Z8 - Elegance",
+      "question": "Where does the absence of an expected element detract from the elegance or completeness (null force)?"
+    },
+    {
+      "target": "Z9 - Resolution",
+      "question": "Where does the absence of a necessary element prevent or undermine resolution (null force)?"
+    },
+    {
+      "target": "Z10 - Shape",
+      "question": "How does the absence of an expected element affect the overall shape or form (null force)?"
+    },
+    {
+      "target": "Z11 - Identity",
+      "question": "How does the absence of an expected characteristic define or alter the evaluand's identity (null force)?"
+    },
+    {
+      "target": "Z12 - Balance",
+      "question": "How does the absence of an element disrupt the expected balance or symmetry (null force)?"
+    },
+    {
+      "target": "Z13 - Echo",
+      "question": "Where is an expected repetition or resonance absent, creating a null force?"
+    },
+    {
+      "target": "Z14 - Null Force",
+      "question": "What expected element, force, or quality is conspicuously missing or absent within this evaluand?"
+    },
+    {
+      "target": "Z15 - Cosmic Coherence",
+      "question": "How does the absence of an element within the evaluand relate to gaps or missing pieces in larger systems?"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Z6ContinuityFramework",
+  "z_rule": "Z6 - Continuity",
+  "questions": [
+    {
+      "target": "Z1 - Structure",
+      "question": "How does the structure of the evaluand contribute to or detract from its overall continuity?"
+    },
+    {
+      "target": "Z2 - Emotion",
+      "question": "How does the flow or progression of emotion contribute to the evaluand's sense of continuity?"
+    },
+    {
+      "target": "Z3 - Recursion",
+      "question": "How do recursive patterns either enhance or disrupt the sense of connection and flow within the evaluand?"
+    },
+    {
+      "target": "Z4 - Constraint",
+      "question": "How do constraints either define or interrupt the continuity of the evaluand's form or function?"
+    },
+    {
+      "target": "Z5 - Force",
+      "question": "How do driving forces maintain or disrupt the evaluand's trajectory and coherence?"
+    },
+    {
+      "target": "Z6 - Continuity",
+      "question": "To what extent does the evaluand exhibit a smooth, unbroken progression or connectedness across its elements?"
+    },
+    {
+      "target": "Z7 - Tension",
+      "question": "Where do points of tension disrupt or alter the continuous flow within the evaluand?"
+    },
+    {
+      "target": "Z8 - Elegance",
+      "question": "How does the evaluand's continuity contribute to or detract from its perceived elegance or efficiency?"
+    },
+    {
+      "target": "Z9 - Resolution",
+      "question": "How does the evaluand's continuity lead to or hinder its sense of completion or finality?"
+    },
+    {
+      "target": "Z10 - Shape",
+      "question": "How does the evaluand's continuity influence its perceived form or overall impression?"
+    },
+    {
+      "target": "Z11 - Identity",
+      "question": "How does the evaluand's continuity contribute to or define its unique essence?"
+    },
+    {
+      "target": "Z12 - Balance",
+      "question": "How does the distribution of elements in the evaluand affect its sense of flow and connectedness?"
+    },
+    {
+      "target": "Z13 - Echo",
+      "question": "How do lingering effects or repetitions either support or disrupt the evaluand's continuity?"
+    },
+    {
+      "target": "Z14 - Null Force",
+      "question": "Where does the absence of an expected connection or flow create a break in the evaluand's continuity?"
+    },
+    {
+      "target": "Z15 - Cosmic Coherence",
+      "question": "How does the evaluand's continuity relate to or align with broader patterns of connection in larger systems?"
+    }
+  ]
+}
