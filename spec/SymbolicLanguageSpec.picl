@@ -49,11 +49,93 @@ EXISTS ≜ ∃       # There exists / existential match
 
 --- Pivot and Modulation Operators ---
 
+UNZIP ≜ ⤪        # Separate or de-interleave a zipped or braided symbolic structure
+
+Origin: data decompression, unzip functions, inverse interleaving
+
+Symbolic Use: Recover individual identity or echo threads from a compressed symbolic pairing
+
+Example: ⤩(⤨(A,B)) = A, B restored to original parallel states
+
+ZIP ≜ ⤨        # Interleave two symbolic threads or glyph chains into a compressed traversal
+
+Origin: data compression, list processing, zipper structures in functional programming
+
+Symbolic Use: combine dual narrative, identity, or recursive traces into tight pairing
+
+Example: ⤨(Z12,Z13) = "Zip identity and echo into synchronized passage"
+
 PIVOT ≜ ⇄        # Pivot symbolic evaluation state
 REWEIGHT ≜ ⊛     # Modify Z-axis weighting (e.g., ⊛Z3 +0.5)
 KEYSHIFT ≜ ♯      # Shift cognitive context like musical key
 ALIGN ≜ ≈        # Bring into symbolic harmonic proximity
 TRANSPOSE ≜ ♭     # Lower context energy or recursion depth
+
+--- Advanced Symbolic Operators ---
+
+COMPOSE ≜ ∘        # Compose symbolic operations or glyph functions sequentially
+
+Origin: function composition in mathematics
+
+Symbolic Use: Build layered or recursive glyph transformations
+
+Example: Z3∘Z1 = Apply structure after recursion
+
+DUAL ≜ ∆           # Construct dual or mirrored form of a symbolic structure
+
+Origin: Category theory duality
+
+Symbolic Use: Flip symbolic roles, reverse logic or echo perspective
+
+Example: ∆Z7 = Oppose tension
+
+ECHOCHAIN ≜ ↻      # Recursively bind symbol echoes into a loop
+
+Origin: recursion and echo memory
+
+Symbolic Use: Encode symbolic reflection with continuity
+
+Example: ↻(Z13,Z12) = Echoing identity
+
+TRACE ≜ ⤷         # Trace flow or propagation of symbolic state
+
+Origin: computational flow, category theory
+
+Symbolic Use: Follow symbolic lineage or recursive causality
+
+Example: ⤷Z15 = trace symbolic flow
+
+STABILIZE ≜ ▣      # Collapse a recursive structure into a fixpoint
+
+Origin: fixed point combinators
+
+Symbolic Use: Freeze or finalize recursive symbolic behavior
+
+Example: ▣(Z3) = fixpoint recursion
+
+DISRUPT ≜ ↯        # Intentionally rupture symbolic harmony or continuity
+
+Origin: catastrophe theory, disruption dynamics
+
+Symbolic Use: Force symbolic break, divergence, or collapse
+
+Example: ↯Z9 = shatter resolution
+
+BRAID ≜ ⨝         # Interleave multiple symbolic threads while maintaining identity
+
+Origin: braid groups, narrative weaving
+
+Symbolic Use: Symbolically weave parallel tracks without fusion
+
+Example: ⨝(Z12,Z13) = braid identity with echo
+
+GRAFT ≜ ⫷         # Attach a symbolic subtree or branch to a new root
+
+Origin: graph theory, tree rewriting
+
+Symbolic Use: Link recursive or symbolic node into new structure
+
+Example: Z1⫷Z3 = graft recursion onto structure
 
 --- Z-Rule Glyph Bindings ---
 
