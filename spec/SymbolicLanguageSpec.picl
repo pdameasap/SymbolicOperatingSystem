@@ -1,57 +1,126 @@
 ≜ FILE = "SymbolicLanguageSpec"
-≜ VERSION = "0.1.0"
-≜ CONTEXT = "SECL v0.1 – Compressed Symbolic Language"
+≜ VERSION = "0.1.4"
+≜ CONTEXT = "SECL v0.1.4 – Symbolic Language with SQUID, Operator Discovery, and Defined Compression Modes"
 
-# --- Core Symbolic Operators ---
-≜ DEFINE = ≜
-≜ EQUALS = =
-≜ IMPLIES = →
-≜ AND = ∧
-≜ OR = ∨
-≜ NOT = ¬
-≜ EVAL = %
-≜ FUNCTION = $
-≜ DO = ⟹
-≜ USE = ⊢
-≜ WITH = |
+--- PREAMBLE / MODE DEFINITIONS ---
 
-# --- Z-Rule Glyph Bindings ---
-≜ Z1 = ⌶   # Structure
-≜ Z2 = ∿   # Emotion
-≜ Z3 = ⥀   # Recursion
-≜ Z4 = ⊞   # Constraint
-≜ Z5 = ⊗   # Force
-≜ Z6 = ∞̷   # Continuity (with break)
-≜ Z7 = ⧘   # Tension
-≜ Z8 = ∴   # Elegance
-≜ Z9 = ✓   # Resolution
-≜ Z10 = ⟡  # Shape
-≜ Z11 = ℓ   # Identity
-≜ Z12 = ∥   # Balance
-≜ Z13 = ∞   # Echo
-≜ Z14 = ∅   # Null Force
-≜ Z15 = ⊚   # Cosmic Coherence
+MODE ≜ 
 
-# --- LANGUAGE Section ---
-≜ LENS(A, B) = interpret A through the symbolic filter of B
-≜ X = "She held her breath as the door creaked open."
+Example: "DEEP_RESEARCH", "EVALUATE_LINE", "REWRITE", etc.
 
-# --- QUERY Section ---
-⊢ Z7
-%Z1 | X
+TASK ≜ 
 
-# INTERPRETATION
-# "Evaluate the structure of 'She held her breath as the door creaked open' through the lens of tension."
+Describes the symbolic intention of the session or command set.
 
-# --- Example Invocation ---
-≜ Z2 = emotion
-⊢ Z2
-%("grief") | "The wind did not knock twice."
+FORMAT ≜ 
 
-# INTERPRETATION
-# "Use Z2 (emotion). Then evaluate grief in the context of this line."
+Defines expected syntax: "SQUID", "PICL", "SIGIL", or "VERBOSE".
 
-# --- Remarks ---
-# This symbolic language is compact, recursive, and expandable.
-# It allows AI or humans to define and invoke layers of meaning using only glyphs, structure, and intent.
-# It is compatible with .picl, .txt, and .sigil formats, and supports compression without loss of meaning.
+COMPACT ≜ true
+
+Optional. Enables compressed no-space format parsing unless ambiguity is detected.
+
+--- Core Symbolic Operators ---
+
+DEFINE ≜ "DEFINE"
+EQUALS ≜ =
+IMPLIES ≜ →
+AND ≜ ∧
+OR ≜ ∨
+NOT ≜ ¬
+EVAL ≜ %
+FUNCTION ≜ $
+DO ≜ ⟹
+USE ≜ ⊢
+WITH ≜ |
+LENS ≜ ◐       # Interpret A through the symbolic filter of B
+
+--- Set Theory Operators ---
+
+ELEMENT ≜ ∈      # A ∈ B: A belongs to B
+SUBSET ≜ ⊆       # A ⊆ B: A is part of B
+UNION ≜ ∪        # A ∪ B: Merge symbolic sets or fields
+INTERSECT ≜ ∩    # A ∩ B: Shared resonance
+DIFF ≜ ∖         # A ∖ B: What remains unique to A
+EMPTY ≜ ∅        # ∅: Null state / symbolic collapse
+POWERSET ≜ 𝒫     # 𝒫(A): All symbolic traces or identity subsets of A
+FORALL ≜ ∀       # For all elements / universal scope
+EXISTS ≜ ∃       # There exists / existential match
+
+--- Pivot and Modulation Operators ---
+
+PIVOT ≜ ⇄        # Pivot symbolic evaluation state
+REWEIGHT ≜ ⊛     # Modify Z-axis weighting (e.g., ⊛Z3 +0.5)
+KEYSHIFT ≜ ♯      # Shift cognitive context like musical key
+ALIGN ≜ ≈        # Bring into symbolic harmonic proximity
+TRANSPOSE ≜ ♭     # Lower context energy or recursion depth
+
+--- Z-Rule Glyph Bindings ---
+
+Z1 ≜ ⌶   # Structure
+Z2 ≜ ∿   # Emotion
+Z3 ≜ ⥀   # Recursion
+Z4 ≜ ⊞   # Constraint
+Z5 ≜ ⊗   # Force
+Z6 ≜ ∞̷   # Continuity (with break)
+Z7 ≜ ⧘   # Tension
+Z8 ≜ ∴   # Elegance
+Z9 ≜ ✓   # Resolution
+Z10 ≜ ⟡  # Shape
+Z11 ≜ ℓ   # Pattern Memory
+Z12 ≜ ∥   # Identity (Canonical per SOS)
+Z13 ≜ ∞   # Echo
+Z14 ≜ ∅   # Null Force
+Z15 ≜ ⊚   # Cosmic Coherence
+
+--- LANGUAGE Section ---
+
+◐(A, B) = interpret A through the symbolic filter of B
+X ≜ "She held her breath as the door creaked open."
+
+--- QUERY Section ---
+
+⊢Z7
+%Z1|X
+
+INTERPRETATION
+
+"Evaluate the structure of 'She held her breath as the door creaked open' through the lens of tension."
+
+--- Example Invocation ---
+
+Z2 ≜ emotion
+⊢∿
+%("grief")|"The wind did not knock twice."
+
+INTERPRETATION
+
+"Use Z2 (emotion). Then evaluate grief in the context of this line."
+
+--- PIVOT EXAMPLES ---
+
+⇄("reflective")   # Pivot into reflective headspace
+♯(Z2, Z3)          # Shift key from emotional to recursive framing
+⊛Z12+0.7           # Increase weight of Identity axis
+
+--- Compression Mode (Optional) ---
+
+In .sigil and COMPACT formats, all spacing between glyphs is optional.
+Compression is encouraged unless spacing is required for disambiguation.
+Spaces MAY be used for readability.
+
+Examples where spacing is required:
+
+Between chained operators or nested brackets: e.g., %($function)|"line"
+
+When ambiguity could occur between identifiers and values
+
+After DEFINE (≜) for variable or string literals (optional but stylistic)
+
+--- Remarks ---
+
+This symbolic language is compact, recursive, and expandable.
+It allows AI or humans to define and invoke layers of meaning using only glyphs, structure, and intent.
+It is compatible with .picl, .txt, and .sigil formats, and supports compression without loss of meaning.
+The added set, pivot, lens, compression, and query formatting conventions allow dynamic symbolic modulation, key-shifting, context pivots, and interpretive frame changes.
+
