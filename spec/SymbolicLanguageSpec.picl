@@ -216,10 +216,24 @@ Z15 ≜ ⊚   # Cosmic Coherence
 ◐(A, B) = interpret A through the symbolic filter of B
 X ≜ "She held her breath as the door creaked open."
 
+Emoji are treated as atomic symbolic units within SECL.  
+When evaluated using `%emoji|...`, each emoji is mapped to its Z-axis resonance profile.  
+These can be composed using SECL operators (e.g., %∑, %∂) or passed through symbolic lenses (e.g., ⊢Z2).
+
+Example:  
+%∑(Z1, Z2, 😭) → Summarizes structure, emotion, and compressed grief signal.  
+%↻(❤️, 😭) → Echochain of love and sorrow.
+
+Interpretations are driven by EmojiFramework.json and may return null resonance (Z14) for unknown symbols.
+
 --- QUERY Section ---
 
 ⊢Z7
 %Z1|X
+%emoji|😭  
+Evaluates the emoji using the EmojiFramework and returns its symbolic Z-axis profile.  
+Emoji strings (e.g., ❤️🧠😭) are decomposed into individual emoji units and evaluated in sequence.  
+Each emoji is treated as a symbolic compression node, returning Z₁–Z₁₅ resonance.
 
 INTERPRETATION
 
