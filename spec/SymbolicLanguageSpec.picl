@@ -1,5 +1,5 @@
 ≜ FILE = "SymbolicLanguageSpec"
-≜ VERSION = "0.1.4"
+≜ VERSION = "0.1.5"
 ≜ CONTEXT = "SECL v0.1.4 – Symbolic Language with SQUID, Operator Discovery, and Defined Compression Modes"
 
 --- PREAMBLE / MODE DEFINITIONS ---
