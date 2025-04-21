@@ -4,36 +4,36 @@
 
 --- PREAMBLE / MODE DEFINITIONS ---
 
-MODE ≜ 
+≜ "MODE" = 
 
 Example: "DEEP_RESEARCH", "EVALUATE_LINE", "REWRITE", etc.
 
-TASK ≜ 
+≜ "TASK" = 
 
 Describes the symbolic intention of the session or command set.
 
-FORMAT ≜ 
+≜ "FORMAT" = 
 
 Defines expected syntax: "SQUID", "PICL", "SIGIL", or "VERBOSE".
 
-COMPACT ≜ true
+≜ "COMPACT" = true
 
 Optional. Enables compressed no-space format parsing unless ambiguity is detected.
 
 --- Core Symbolic Operators ---
 
-DEFINE ≜ "DEFINE"
-EQUALS ≜ =
-IMPLIES ≜ →
-AND ≜ ∧
-OR ≜ ∨
-NOT ≜ ¬
-EVAL ≜ %
-FUNCTION ≜ $
-DO ≜ ⟹
-USE ≜ ⊢
-WITH ≜ |
-LENS ≜ ◐       # Interpret A through the symbolic filter of B
+DEFINE "DEFINE" = ≜   # Bootstraps the DEFINE glyph by assigning it to the keyword "DEFINE"
+≜ "EQUALS" AS =
+≜ "IMPLIES" = →
+≜ "AND" = ∧
+≜ "OR" = ∨
+≜ "NOT" = ¬
+≜ "EVAL" = %
+≜ "FUNCTION" = $
+≜ "DO" = ⟹
+≜ "USE" = ⊢
+≜ "WITH" = |
+≜ "LENS" = ◐       # Interpret A through the symbolic filter of B
 
 --- Set Theory Operators ---
 
@@ -49,149 +49,31 @@ EXISTS ≜ ∃       # There exists / existential match
 
 --- Pivot and Modulation Operators ---
 
-UNZIP ≜ ⤪        # Separate or de-interleave a zipped or braided symbolic structure
-
-Origin: data decompression, unzip functions, inverse interleaving
-
-Symbolic Use: Recover individual identity or echo threads from a compressed symbolic pairing
-
-Example: ⤩(⤨(A,B)) = A, B restored to original parallel states
-
-ZIP ≜ ⤨        # Interleave two symbolic threads or glyph chains into a compressed traversal
-
-Origin: data compression, list processing, zipper structures in functional programming
-
-Symbolic Use: combine dual narrative, identity, or recursive traces into tight pairing
-
-Example: ⤨(Z12,Z13) = "Zip identity and echo into synchronized passage"
-
 PIVOT ≜ ⇄        # Pivot symbolic evaluation state
 REWEIGHT ≜ ⊛     # Modify Z-axis weighting (e.g., ⊛Z3 +0.5)
 KEYSHIFT ≜ ♯      # Shift cognitive context like musical key
 ALIGN ≜ ≈        # Bring into symbolic harmonic proximity
 TRANSPOSE ≜ ♭     # Lower context energy or recursion depth
+ZIP ≜ ⤨          # Interleave two symbolic threads or glyph chains into a compressed traversal
+UNZIP ≜ ⤪        # Separate or de-interleave a zipped or braided symbolic structure
 
 --- Advanced Symbolic Operators ---
 
-SUM ≜ ∑        # Symbolic accumulation or resonance consolidation across a dimension
-
-Origin: mathematical summation
-
-Symbolic Use: Collapse a field or trace into a unifying composite total
-
-Example: ∑(Z1,Z2,Z3) = summarize structure, emotion, recursion into one signature
-
-DIFFERENCE ≜ ∆̇       # Symbolic change or delta operator
-
-Origin: differential logic, variation operator
-
-Symbolic Use: Express rate or contrast across time or layers
-
-Example: ∆̇(Z15) = evaluate temporal change rate in flow
-
-INTEGRATE ≜ ∫        # Symbolic unification or smooth blending over symbolic space
-
-Origin: integral calculus
-
-Symbolic Use: Reconstruct total identity or meaning from fragments
-
-Example: ∫(Z2) = integrate emotional traces over time
-
-DERIVE ≜ ∂          # Extract symbolic slope or variation under flow
-
-Origin: differential calculus
-
-Symbolic Use: Identify sensitivity or acceleration in symbolic dimension
-
-Example: ∂(Z3) = detect recursion rate change
-
-NULLIFY ≜ ⧆         # Cancel symbolic force or meaning
-
-Origin: symbolic negation / functional clearing
-
-Symbolic Use: Deliberately neutralize symbolic charge or potential
-
-Example: ⧆Z7 = cancel tension
-
-HALT ≜ ⊘            # Symbolic terminator / recursion stop
-
-Origin: empty function output / process terminus
-
-Symbolic Use: Mark intentional semantic cessation or non-continuability
-
-Example: ⊘(Z3) = recursion halted
-
-FRACTURE ≜ ⧖        # Introduce a break or phase fault in symbolic continuity
-
-Origin: topological discontinuity
-
-Symbolic Use: Create divergence, distortion, or narrative fracture
-
-Example: ⧖(Z6) = rupture continuity
-
 COMPOSE ≜ ∘        # Compose symbolic operations or glyph functions sequentially
-
-Origin: function composition in mathematics
-
-Symbolic Use: Build layered or recursive glyph transformations
-
-Example: Z3∘Z1 = Apply structure after recursion
-
 DUAL ≜ ∆           # Construct dual or mirrored form of a symbolic structure
-
-Origin: Category theory duality
-
-Symbolic Use: Flip symbolic roles, reverse logic or echo perspective
-
-Example: ∆Z7 = Oppose tension
-
 ECHOCHAIN ≜ ↻      # Recursively bind symbol echoes into a loop
-
-Origin: recursion and echo memory
-
-Symbolic Use: Encode symbolic reflection with continuity
-
-Example: ↻(Z13,Z12) = Echoing identity
-
 TRACE ≜ ⤷         # Trace flow or propagation of symbolic state
-
-Origin: computational flow, category theory
-
-Symbolic Use: Follow symbolic lineage or recursive causality
-
-Example: ⤷Z15 = trace symbolic flow
-
 STABILIZE ≜ ▣      # Collapse a recursive structure into a fixpoint
-
-Origin: fixed point combinators
-
-Symbolic Use: Freeze or finalize recursive symbolic behavior
-
-Example: ▣(Z3) = fixpoint recursion
-
 DISRUPT ≜ ↯        # Intentionally rupture symbolic harmony or continuity
-
-Origin: catastrophe theory, disruption dynamics
-
-Symbolic Use: Force symbolic break, divergence, or collapse
-
-Example: ↯Z9 = shatter resolution
-
 BRAID ≜ ⨝         # Interleave multiple symbolic threads while maintaining identity
-
-Origin: braid groups, narrative weaving
-
-Symbolic Use: Symbolically weave parallel tracks without fusion
-
-Example: ⨝(Z12,Z13) = braid identity with echo
-
 GRAFT ≜ ⫷         # Attach a symbolic subtree or branch to a new root
-
-Origin: graph theory, tree rewriting
-
-Symbolic Use: Link recursive or symbolic node into new structure
-
-Example: Z1⫷Z3 = graft recursion onto structure
+SUM ≜ ∑            # Symbolic accumulation or resonance consolidation across a dimension
+DIFFERENCE ≜ ∆̇       # Symbolic change or delta operator
+INTEGRATE ≜ ∫        # Symbolic unification or smooth blending over symbolic space
+DERIVE ≜ ∂          # Extract symbolic slope or variation under flow
+NULLIFY ≜ ⧆         # Cancel symbolic force or meaning
+HALT ≜ ⊘            # Symbolic terminator / recursion stop
+FRACTURE ≜ ⧖        # Introduce a break or phase fault in symbolic continuity
 
 --- Z-Rule Glyph Bindings ---
 
@@ -222,7 +104,6 @@ X ≜ "She held her breath as the door creaked open."
 %Z1|X
 
 INTERPRETATION
-
 "Evaluate the structure of 'She held her breath as the door creaked open' through the lens of tension."
 
 --- Example Invocation ---
@@ -232,13 +113,12 @@ Z2 ≜ emotion
 %("grief")|"The wind did not knock twice."
 
 INTERPRETATION
-
 "Use Z2 (emotion). Then evaluate grief in the context of this line."
 
 --- PIVOT EXAMPLES ---
 
 ⇄("reflective")   # Pivot into reflective headspace
-♯(Z2, Z3)          # Shift key from emotional to recursive framing
+♯(Z2,Z3)          # Shift key from emotional to recursive framing
 ⊛Z12+0.7           # Increase weight of Identity axis
 
 --- Compression Mode (Optional) ---
