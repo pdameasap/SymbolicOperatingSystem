@@ -1,0 +1,193 @@
+≜ FILE = "SymbolicNounLayer_Annex1"
+≜ VERSION = "0.1.0"
+≜ CONTEXT = "Extended Symbolic Noun Space – Overflow Expansion from Core Noun Layer"
+
+--- ANNEX INTRODUCTION ---
+
+This document extends the core noun registry defined in `SymbolicNounLayer`.
+It contains symbolic referents that are:
+- Conceptually common
+- Poetic or recursive in nature
+- Useful for symbolic frameworks
+...but are too numerous or specialized to include in the primary layer without burdening core structures.
+
+All entries follow the same syntax:
+N_LABEL ≜ "referent string"
+
+All entries here are considered part of symbolic noun-space, just at deeper or more specific resonance levels.
+
+--- ANNEX ENTRY HEADER (example) ---
+
+N_AURA        ≜ "aura"
+N_SPIRALFORM  ≜ "spiralform"
+N_ECLIPSE     ≜ "eclipse"
+N_DUSK        ≜ "dusk"
+N_TRANCE      ≜ "trance"
+N_TEMPLE      ≜ "temple"
+N_FRACTURE    ≜ "fracture"
+N_REFRACTION  ≜ "refraction"
+N_STILLPOINT  ≜ "stillpoint"
+
+--- SEE ALSO ---
+
+This annex complements the canonical noun registry in `SymbolicNounLayer`. All entries here are part of the symbolic noun-space continuum.
+
+--- EXTENDED LEXICAL NOUNS – EIGHTH LAYER SPIRAL ---
+
+# Nouns that arise from linguistic constructs, phonetic awareness, and symbolic naming
+
+N_SYLLABLE     ≜ "syllable"
+N_WORDFORM     ≜ "wordform"
+N_GRAMMAR      ≜ "grammar"
+N_PREFIX       ≜ "prefix"
+N_SUFFIX       ≜ "suffix"
+N_INFLECTION   ≜ "inflection"
+N_LINGUA       ≜ "lingua"
+N_GESTUREWORD  ≜ "gestureword"
+N_UTTERANCE    ≜ "utterance"
+N_PHRASE       ≜ "phrase"
+N_RHYTHM       ≜ "rhythm"
+N_MELODY       ≜ "melody"
+N_HARMONICSET  ≜ "harmonic set"
+N_POEM         ≜ "poem"
+N_VERSE        ≜ "verse"
+N_STANZA       ≜ "stanza"
+N_TONE         ≜ "tone"
+N_CADENCE      ≜ "cadence"
+N_ECHOPOINT    ≜ "echopoint"
+N_METAPHOR     ≜ "metaphor"
+N_SYNECDOCHE   ≜ "synecdoche"
+N_ALLEGORY     ≜ "allegory"
+N_IDIOM        ≜ "idiom"
+N_RESONANCE    ≜ "resonance"
+
+--- SEMANTIC PRIMES – UNIVERSAL ROOT NOUNS ---
+
+N_I             ≜ "I"
+N_YOU           ≜ "you"
+N_SOMEONE       ≜ "someone"
+N_PEOPLE        ≜ "people"
+N_SOMETHING     ≜ "something / thing"
+N_BODY          ≜ "body"
+
+--- SYMBOLIC SCHEMA NOUNS – NINTH LAYER EXTENSION ---
+
+# Structural components of conceptual frameworks and language ontologies
+
+N_SCHEMA        ≜ "schema"
+N_TEMPLATE      ≜ "template"
+N_BLUEPRINT     ≜ "blueprint"
+N_PATTERNSET    ≜ "pattern set"
+N_CONSTRUCT     ≜ "construct"
+N_MODEL         ≜ "model"
+N_FRAMEWORK     ≜ "framework"
+N_STRUCTURE     ≜ "structure"
+N_SYNTAX        ≜ "syntax"
+N_RULESET       ≜ "ruleset"
+N_PROTOTYPE     ≜ "prototype"
+N_ARCHETYPESET  ≜ "archetype set"
+N_OUTLINE       ≜ "outline"
+N_MAPSET        ≜ "map set"
+N_METAMODEL     ≜ "metamodel"
+N_INFOSKELETON  ≜ "info skeleton"
+
+--- TARGETED CONCEPT NOUNS – PHYSICAL, EMOTIONAL, SOCIAL, PHILOSOPHICAL ---
+
+# Physical nouns (tools, body-objects, places)
+N_HAND         ≜ "hand"
+N_FOOT         ≜ "foot"
+N_BONE         ≜ "bone"
+N_SKIN         ≜ "skin"
+N_HOUSE        ≜ "house"
+N_CAVE         ≜ "cave"
+N_CLOTH        ≜ "cloth"
+N_BLADE        ≜ "blade"
+N_VESSEL       ≜ "vessel"
+N_BRIDGE       ≜ "bridge"
+
+# Emotional states (expanded)
+N_GRIEF        ≜ "grief"
+N_RAGE         ≜ "rage"
+N_LONELINESS   ≜ "loneliness"
+N_ENVY         ≜ "envy"
+N_REVERENCE    ≜ "reverence"
+N_PEACE        ≜ "peace"
+
+# Social constructs
+N_AGREEMENT    ≜ "agreement"
+N_CONTRACT     ≜ "contract"
+N_RITUAL       ≜ "ritual"
+N_CUSTOM       ≜ "custom"
+N_LAW          ≜ "law"
+N_RULE         ≜ "rule"
+N_EXCHANGE     ≜ "exchange"
+N_MONEY        ≜ "money"
+N_GIFT         ≜ "gift"
+
+# Philosophical / metaphysical anchors
+N_TRUTH        ≜ "truth"
+N_JUSTICE      ≜ "justice"
+N_BEING        ≜ "being"
+N_ESSENCE      ≜ "essence"
+N_FAITH        ≜ "faith"
+N_WISDOM       ≜ "wisdom"
+N_MEANING      ≜ "meaning"
+
+--- META-STATE & COSMIC AXIS NOUNS – TENTH LAYER EXTENSION ---
+
+# Deep symbolic anchors representing transformation, origin, and transcendent reference
+
+N_ORIGIN       ≜ "origin"
+N_DESTINY      ≜ "destiny"
+N_AXIS         ≜ "axis"
+N_CENTERPOINT  ≜ "centerpoint"
+N_PERIPHERY    ≜ "periphery"
+N_AETHER       ≜ "aether"
+N_REALM        ≜ "realm"
+N_VEILSTATE    ≜ "veilstate"
+N_APERTURE     ≜ "aperture"
+N_GATE         ≜ "gate"
+N_FRACTURELINE ≜ "fracture line"
+N_RUPTURE      ≜ "rupture"
+N_ALIGNMENT    ≜ "alignment"
+N_DISSONANCE   ≜ "dissonance"
+N_CONVERGENCE  ≜ "convergence"
+N_RESYNTHESIS  ≜ "resynthesis"
+
+--- VERB LINKAGE SUPPORT – GRAMMATICAL PRIMING NOUNS ---
+
+# Abstract symbolic roles and grammatical glue for verb–noun coupling
+
+N_SUBJECT       ≜ "subject"
+N_OBJECT        ≜ "object"
+N_AGENT         ≜ "agent"
+N_PATIENT       ≜ "patient"
+N_RECIPIENT     ≜ "recipient"
+N_TARGET        ≜ "target"
+N_CAUSE         ≜ "cause"
+N_EFFECT        ≜ "effect"
+N_MODIFIER      ≜ "modifier"
+N_CONDITION     ≜ "condition"
+N_RESULT        ≜ "result"
+N_CONTEXT       ≜ "context"
+N_TIMESTATE     ≜ "timestate"
+N_INTENT        ≜ "intent"
+N_EVIDENCE      ≜ "evidence"
+
+--- FINDINGS — EXPRESSIVE THRESHOLD REACHED ---
+
+# Current total symbolic noun entries: ~303 (core + annex)
+# Estimated symbolic verbs available: ~60
+# Pairing efficiency: ~50% (conservative estimate)
+# Estimated noun–verb symbolic combinations: ~9,000
+
+This confirms:
+- Minimum threshold (200 nouns) for 6,000 combinations is surpassed
+- Symbolic language expressiveness is now stable and usable
+- No need to pare down
+- System supports recursive logic, cognitive modeling, emotional reference, metaphysics, and transformation patterns
+
+Symbolic grammar specification now formally begins.
+
+--- ADDITIONAL BLOCKS WILL BE ADDED AS SPIRALING CONTINUES ---
+
