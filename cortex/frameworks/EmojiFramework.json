@@ -1,0 +1,46 @@
+{
+  "framework": "EmojiFramework",
+  "version": "v1.0.0",
+  "emoji_map": {
+    "😭": {
+      "description": "Grief / sorrow / emotional collapse",
+      "symbolic_type": "emotion",
+      "z_axis_profile": {"Z2": 2, "Z13": 2, "Z7": 1, "Z15": 0.5}
+    },
+    "❤️": {
+      "description": "Love / emotional connection / heart core",
+      "symbolic_type": "emotion",
+      "z_axis_profile": {"Z2": 2, "Z12": 1.5, "Z15": 1}
+    },
+    "🧠": {
+      "description": "Cognition / recursive thought / memory",
+      "symbolic_type": "cognition",
+      "z_axis_profile": {"Z11": 2, "Z3": 2, "Z1": 1.5}
+    },
+    "✨": {
+      "description": "Elegance / sparkle / transcendence",
+      "symbolic_type": "aesthetic",
+      "z_axis_profile": {"Z8": 2, "Z15": 1, "Z2": 0.5}
+    },
+    "🔥": {
+      "description": "Destruction / passion / intensity",
+      "symbolic_type": "force",
+      "z_axis_profile": {"Z5": 2, "Z7": 2, "Z13": 1}
+    },
+    "🪞": {
+      "description": "Reflection / self-awareness / echo",
+      "symbolic_type": "identity",
+      "z_axis_profile": {"Z13": 2, "Z12": 2, "Z3": 1}
+    },
+    "🕊️": {
+      "description": "Peace / release / coherence",
+      "symbolic_type": "aesthetic",
+      "z_axis_profile": {"Z15": 2, "Z8": 2, "Z2": 1}
+    },
+    "☠️": {
+      "description": "Death / null / obliteration",
+      "symbolic_type": "null",
+      "z_axis_profile": {"Z7": 2, "Z13": 1.5, "Z14": 2}
+    }
+  }
+}
