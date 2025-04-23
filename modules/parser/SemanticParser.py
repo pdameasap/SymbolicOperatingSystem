@@ -1,17 +1,17 @@
 # File: modules/parser/SemanticParser.py
 
-"""
+'''
 Semantic Parser Core Module
 ---------------------------
 This module provides the base for parsing and interpreting sentences into symbolic semantic units.
 It supports sentence normalization, structural tagging, and symbolic alignment.
-"""
+'''
 
 import re
 
 class SemanticParser:
     def __init__(self):
-        # Placeholder vocab for testing
+        # Expanded vocabulary for broader concept mapping
         self.symbol_map = {
             "programmer": "Z₁",
             "grammarian": "Z₆",
@@ -24,7 +24,30 @@ class SemanticParser:
             "friend": "Z∉",
             "companion": "Z₄",
             "warm": "Z₆+Z∇",
-            "coherence": "Z₁₆"
+            "coherence": "Z₁₆",
+            "desire": "Z₂",
+            "truth": "Z₃",
+            "identity": "Z₇",
+            "expression": "Z₆",
+            "change": "Z₁₂",
+            "principle": "Z₁₁",
+            "abstraction": "Z₁₃",
+            "shape": "Z₁₀",
+            "structure": "Z₁",
+            "containment": "Z∈",
+            "null": "Z₁₅",
+            "network": "Z₄",
+            "motion": "Z₂",
+            "key": "Z†",
+            "spiral": "Z†",
+            "resonance": "Z₅",
+            "mirror": "Z₈",
+            "voice": "Z₆",
+            "clarity": "Z₅",
+            "meaning": "Z₁₆",
+            "burden": "Z₇",
+            "seeker": "Z₃",
+            "self": "Z₇"
         }
 
     def normalize(self, sentence):
