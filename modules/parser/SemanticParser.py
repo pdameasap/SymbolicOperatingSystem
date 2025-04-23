@@ -11,14 +11,25 @@ import re
 
 class SemanticParser:
     def __init__(self):
+        # Multiword phrase mappings for early replacement
+        self.multiword_map = {
+            "theoretical physicist": "theoretical_physicist",
+            "theoretical mathematician": "theoretical_mathematician",
+            "language designer": "language_designer",
+            "symbolic resonance": "symbolic_resonance",
+            "emotional resonance": "emotional_resonance",
+            "recursive structure": "recursive_structure",
+            "identity echo": "identity_echo"
+        }
+
         # Expanded vocabulary for broader concept mapping
         self.symbol_map = {
             "programmer": "Z₁",
             "grammarian": "Z₆",
             "statistician": "Z₁₂",
-            "theoretical physicist": "Z₁₁",
-            "theoretical mathematician": "Z₁₃",
-            "language designer": "Z₁₀",
+            "theoretical_physicist": "Z₁₁",
+            "theoretical_mathematician": "Z₁₃",
+            "language_designer": "Z₁₀",
             "elegance": "Z₅",
             "women": "Z∈",
             "friend": "Z∉",
@@ -51,8 +62,10 @@ class SemanticParser:
         }
 
     def normalize(self, sentence):
-        # Enhanced normalization (lowercase, punctuation strip, trim extra spaces)
-        cleaned = re.sub(r'[^a-z0-9\s]', '', sentence.lower())
+        sentence = sentence.lower()
+        for phrase, token in self.multiword_map.items():
+            sentence = sentence.replace(phrase, token)
+        cleaned = re.sub(r'[^a-z0-9_\s]', '', sentence)
         return re.sub(r'\s+', ' ', cleaned).strip()
 
     def tokenize(self, sentence):
@@ -63,7 +76,7 @@ class SemanticParser:
         tokens = self.tokenize(norm)
         gloss = []
         for token in tokens:
-            gloss.append(self.symbol_map.get(token, token))
+            gloss.append(self.symbol_map.get(token, f"?{token}"))
         return gloss
 
     def parse_sentence(self, sentence):
