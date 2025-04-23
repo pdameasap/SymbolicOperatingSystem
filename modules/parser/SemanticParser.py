@@ -51,8 +51,9 @@ class SemanticParser:
         }
 
     def normalize(self, sentence):
-        # Basic normalization (lowercase, strip punctuation)
-        return re.sub(r'[^a-z0-9\s]', '', sentence.lower())
+        # Enhanced normalization (lowercase, punctuation strip, trim extra spaces)
+        cleaned = re.sub(r'[^a-z0-9\s]', '', sentence.lower())
+        return re.sub(r'\s+', ' ', cleaned).strip()
 
     def tokenize(self, sentence):
         return sentence.split()
@@ -69,7 +70,7 @@ class SemanticParser:
         return {
             "original": sentence,
             "normalized": self.normalize(sentence),
-            "tokens": self.tokenize(sentence),
+            "tokens": self.tokenize(self.normalize(sentence)),
             "gloss": self.parse(sentence)
         }
 
