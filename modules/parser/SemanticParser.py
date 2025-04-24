@@ -9,6 +9,9 @@ It supports sentence normalization, structural tagging, and symbolic alignment.
 
 import re
 
+from symbolic_nouns import SYMBOLIC_NOUNS
+from symbolic_normalizer import normalize_noun
+
 class SemanticParser:
     def __init__(self):
         # Multiword phrase mappings for early replacement
@@ -59,6 +62,11 @@ class SemanticParser:
         cleaned = re.sub(r'[^a-z0-9_\s]', '', sentence)
         return re.sub(r'\s+', ' ', cleaned).strip()
 
+    def resolve_token_zglyph(self, word):
+        base = normalize_noun(word)
+        key = f"N_{base.upper()}"
+        return SYMBOLIC_NOUNS.get(key, None)
+
     def tokenize(self, sentence):
         return sentence.split()
 
@@ -67,8 +75,15 @@ class SemanticParser:
         tokens = self.tokenize(norm)
         gloss = []
         for token in tokens:
-            gloss.append(self.symbol_map.get(token, f"?{token}"))
+            # First check the direct symbolic map
+            if token in self.symbol_map:
+                gloss.append(self.symbol_map[token])
+            else:
+                # Then fallback to semantic noun resolution
+                z_entry = self.resolve_token_zglyph(token)
+                gloss.append(z_entry[1] if z_entry else f"?{token}")
         return gloss
+
 
     def parse_sentence(self, sentence):
         return {
