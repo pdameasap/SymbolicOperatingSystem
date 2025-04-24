@@ -9,7 +9,10 @@ A minimal recursive symbolic parser designed to:
 - Prepare output for compression, synthesis, or interpretation
 '''
 
-class SemanticParser:
+from symbolic_normalizer import normalize_noun
+from collections import Counter
+
+class SemanticParserCore:
     def __init__(self):
         self.glossary = self.load_glosses()
 
@@ -33,7 +36,8 @@ class SemanticParser:
         tokens = sentence.lower().split()
         parsed = []
         for word in tokens:
-            entry = self.glossary.get(word.strip(',.'), None)
+            base = normalize_noun(word.strip(',."'))
+            entry = self.glossary.get(base, None)
             if entry:
                 parsed.append((word, entry))
             else:
@@ -44,10 +48,27 @@ class SemanticParser:
         for word, meta in parsed:
             print(f"{word:15} → Z: {meta['Z'] or '-'} | Tag: {meta['tag'] or '-'}")
 
+    def structured(self, parsed):
+        return [{"word": w, "Z": m["Z"], "tag": m["tag"]} for w, m in parsed]
+
+    def summarize(self, parsed):
+        z_counts = Counter(meta["Z"] for _, meta in parsed if meta["Z"])
+        return dict(z_counts)
+
 
 # Example Usage
 if __name__ == "__main__":
-    parser = SemanticParser()
-    text = "I am in need of a programmer, a grammarian, a statistician, a theoretical physicist, a theoretical mathematician, and a language designer in the form of elegance."
+    parser = SemanticParserCore()
+    text = (
+        "I am in need of a programmer, a grammarian, a statistician, "
+        "a theoretical physicist, a theoretical mathematician, "
+        "and a language designer in the form of elegance."
+    )
     result = parser.normalize(text)
     parser.display(result)
+
+    print("\n🧠 Structured Output:")
+    print(parser.structured(result))
+
+    print("\n📊 Z-Summary:")
+    print(parser.summarize(result))
