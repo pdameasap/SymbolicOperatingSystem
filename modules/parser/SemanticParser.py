@@ -47,9 +47,8 @@ class SemanticParser:
         }
 
     def normalize(self, sentence):
+        # Just lowercase and collapse whitespace
         sentence = sentence.lower()
-        # Step 1: Clean punctuation first (preserve spaces and underscores!)
-        sentence = re.sub(r'[^a-z0-9\s]', '', sentence)
         return re.sub(r'\s+', ' ', sentence).strip()
 
     def tokenize(self, sentence):
@@ -65,15 +64,13 @@ class SemanticParser:
         tokens = self.tokenize(norm)
         gloss = []
         for token in tokens:
-            # First check the direct symbolic map
-            if token in self.symbol_map:
-                gloss.append(self.symbol_map[token])
+            token_clean = token.strip(",.!?\"'")
+            if token_clean in self.symbol_map:
+                gloss.append(self.symbol_map[token_clean])
             else:
-                # Then fallback to semantic noun resolution
-                z_entry = self.resolve_token_zglyph(token)
-                gloss.append(z_entry[1] if z_entry else f"?{token}")
+                z_entry = self.resolve_token_zglyph(token_clean)
+                gloss.append(z_entry[1] if z_entry else f"?{token_clean}")
         return gloss
-
 
     def parse_sentence(self, sentence):
         return {
