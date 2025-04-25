@@ -57,16 +57,15 @@ class SemanticParser:
 
     def normalize(self, sentence):
         sentence = sentence.lower()
-        # Step 1: Multiword phrases first
+        # Step 1: Clean punctuation first (preserve spaces and underscores!)
+        sentence = re.sub(r'[^a-z0-9\s]', '', sentence)
+        # Step 2: Multiword phrase replacement AFTER punctuation is stripped
         for phrase, token in self.multiword_map.items():
             sentence = sentence.replace(phrase, token)
-        return sentence.strip()
-    
+        return re.sub(r'\s+', ' ', sentence).strip()
+
     def tokenize(self, sentence):
-        # Step 2: Tokenize then strip punctuation per word
-        raw_tokens = sentence.split()
-        cleaned_tokens = [re.sub(r'[^\w_]', '', tok) for tok in raw_tokens]
-        return cleaned_tokens
+        return sentence.split()
 
     def resolve_token_zglyph(self, word):
         base = normalize_noun(word)
