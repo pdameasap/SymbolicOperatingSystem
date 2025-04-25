@@ -5,7 +5,6 @@ from modules.parser.symbolic_nouns import SYMBOLIC_NOUNS
 from modules.parser.symbolic_normalizer import normalize_noun
 
 class SemanticParser:
-    def __init__(self):
 
     def normalize(self, sentence):
         # Lowercase, remove punctuation but preserve underscores
