@@ -12,15 +12,12 @@ class SemanticParser:
         return re.sub(r'\s+', ' ', sentence).strip()
 
     def tokenize(self, sentence):
-        tokens = sentence.split()
-        cleaned_tokens = [t.strip(".,;:!?\"'()[]{}") for t in tokens]
-        return cleaned_tokens
+        return sentence.split()
 
     def resolve_token_zglyph(self, word):
         base = normalize_noun(word)
         key = f"N_{base.upper()}"
-        entry = SYMBOLIC_NOUNS.get(key, None)
-        return entry if isinstance(entry, dict) and "Z" in entry else None
+        return SYMBOLIC_NOUNS.get(key, None)
 
     def parse(self, sentence):
         norm = self.normalize(sentence)
@@ -29,23 +26,28 @@ class SemanticParser:
         for token in tokens:
             clean_token = token.strip(".,;:!?\"'()[]{}")  # Strip punctuation
             z_entry = self.resolve_token_zglyph(clean_token)
-            gloss.append(z_entry["Z"] if z_entry and "Z" in z_entry else f"?{token}")
+            gloss.append(z_entry["Z"] if z_entry else f"?{clean_token}")
         return gloss
 
     def parse_sentence(self, sentence):
-        norm = self.normalize(sentence)
-        tokens = self.tokenize(norm)
+        tokens = self.tokenize(self.normalize(sentence))
         gloss = self.parse(sentence)
-        result = {
+        tagged = []
+        for token, gloss_item in zip(tokens, gloss):
+            z_value = None
+            tag_value = None
+            if not gloss_item.startswith("?"):
+                base = normalize_noun(token)
+                key = f"N_{base.upper()}"
+                entry = SYMBOLIC_NOUNS.get(key)
+                if entry:
+                    z_value = entry.get("Z")
+                    tag_value = entry.get("tag")
+            tagged.append({"word": token, "Z": z_value, "tag": tag_value})
+        return {
             "original": sentence,
-            "normalized": norm,
+            "normalized": self.normalize(sentence),
             "tokens": tokens,
-            "gloss": gloss
+            "gloss": gloss,
+            "tagged": tagged
         }
-        return result
-
-# Example use
-if __name__ == "__main__":
-    parser = SemanticParser()
-    result = parser.parse_sentence("A language designer and a theoretical physicist.")
-    print(result)
