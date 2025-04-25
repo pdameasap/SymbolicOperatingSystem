@@ -57,9 +57,9 @@ class SemanticParser:
 
     def normalize(self, sentence):
         sentence = sentence.lower()
+        cleaned = re.sub(r'[^\w\s]', '', sentence)  # First remove punctuation
         for phrase, token in self.multiword_map.items():
-            sentence = sentence.replace(phrase, token)
-        cleaned = re.sub(r'[^\w\s]', '', sentence)
+            cleaned = cleaned.replace(phrase, token)  # Then apply multiword mapping
         return re.sub(r'\s+', ' ', cleaned).strip()
 
     def resolve_token_zglyph(self, word):
