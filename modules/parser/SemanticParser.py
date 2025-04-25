@@ -57,10 +57,14 @@ class SemanticParser:
 
 def normalize(self, sentence):
     sentence = sentence.lower()
-    sentence = re.sub(r'[^\w\s]', '', sentence)  # Keeps underscores
+    # Step 1: Replace multiword phrases *before* punctuation is removed
     for phrase, token in self.multiword_map.items():
-        sentence = sentence.replace(phrase, token)  # Applies after punctuation is stripped
+        sentence = sentence.replace(phrase, token)
+    # Step 2: Remove punctuation (but keep underscores!)
+    sentence = re.sub(r'[^\w\s]', '', sentence)
+    # Step 3: Normalize spacing
     return re.sub(r'\s+', ' ', sentence).strip()
+
 
 
 
