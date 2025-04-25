@@ -12,7 +12,8 @@ class SemanticParser:
         return re.sub(r'\s+', ' ', sentence).strip()
 
     def tokenize(self, sentence):
-        return sentence.split()
+        tokens = sentence.split()
+        return [t.strip(".,;:!?\"'()[]{}") for t in tokens]  # Clean each token here
 
     def resolve_token_zglyph(self, word):
         base = normalize_noun(word)
@@ -26,9 +27,8 @@ class SemanticParser:
         tokens = self.tokenize(norm)
         gloss = []
         for token in tokens:
-            clean_token = token.strip(".,;:!?\"'()[]{}")  # Strip punctuation
-            z_entry = self.resolve_token_zglyph(clean_token)
-            gloss.append(z_entry[1] if z_entry else f"?{clean_token}")
+            z_entry = self.resolve_token_zglyph(token)
+            gloss.append(z_entry[1] if z_entry else f"?{token}")
         return gloss
 
     def parse_sentence(self, sentence):
