@@ -9,8 +9,8 @@ It supports sentence normalization, structural tagging, and symbolic alignment.
 
 import re
 
-from symbolic_nouns import SYMBOLIC_NOUNS
-from symbolic_normalizer import normalize_noun
+from modules.parser.symbolic_nouns import SYMBOLIC_NOUNS
+from modules.parser.symbolic_normalizer import normalize_noun
 
 class SemanticParser:
     def __init__(self):
