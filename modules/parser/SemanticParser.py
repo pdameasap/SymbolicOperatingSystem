@@ -27,7 +27,10 @@ class SemanticParser:
         for token in tokens:
             clean_token = token.strip(".,;:!?\"'()[]{}")
             z_entry = self.resolve_token_zglyph(clean_token)
-            gloss.append(z_entry["Z"] if z_entry else f"?{token}")
+            if z_entry:
+                gloss.append({"Z": z_entry["Z"], "tag": z_entry["tag"]})
+            else:
+                gloss.append({"Z": None, "tag": None})
         return gloss
 
     def parse_sentence(self, sentence):
