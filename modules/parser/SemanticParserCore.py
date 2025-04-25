@@ -1,47 +1,20 @@
 # File: modules/parser/SemanticParserCore.py
 
-'''
-Semantic Parser Core
----------------------
-A minimal recursive symbolic parser designed to:
-- Normalize symbolic meaning from filtered input
-- Annotate glosses and context per token
-- Prepare output for compression, synthesis, or interpretation
-'''
-
 from modules.parser.symbolic_normalizer import normalize_noun
+from modules.parser.symbolic_nouns import SYMBOLIC_NOUNS
 
 from collections import Counter
 
 class SemanticParserCore:
-    def __init__(self):
-        self.glossary = self.load_glosses()
-
-    def load_glosses(self):
-        # For now, hardcoded symbolic glosses; can be expanded
-        return {
-            "programmer": {"Z": "Z₁", "tag": "structure"},
-            "grammarian": {"Z": "Z₆", "tag": "expression"},
-            "statistician": {"Z": "Z₁₂", "tag": "change"},
-            "physicist": {"Z": "Z₁₁", "tag": "stasis"},
-            "mathematician": {"Z": "Z₁₃", "tag": "abstraction"},
-            "language designer": {"Z": "Z₁₀", "tag": "architecture"},
-            "woman": {"Z": "Z₈", "tag": "containment"},
-            "friend": {"Z": "Z₂", "tag": "relation"},
-            "companion": {"Z": "Z₄", "tag": "network"},
-            "warmth": {"Z": "Z₆", "tag": "expression"},
-            "elegance": {"Z": "Z₅", "tag": "aesthetic cognition"},
-            "language designer": "language_designer"
-        }
-
     def normalize(self, sentence):
         tokens = sentence.lower().split()
         parsed = []
         for word in tokens:
             base = normalize_noun(word.strip(',."'))
-            entry = self.glossary.get(base, None)
+            key = f"N_{base.upper()}"
+            entry = SYMBOLIC_NOUNS.get(key)
             if entry:
-                parsed.append((word, entry))
+                parsed.append((word, {"Z": entry[1], "tag": None}))
             else:
                 parsed.append((word, {"Z": None, "tag": None}))
         return parsed
