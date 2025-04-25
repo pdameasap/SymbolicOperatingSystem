@@ -5,7 +5,6 @@ from modules.parser.SemanticParser import SemanticParser
 class CorpusParser(SemanticParser):
     def __init__(self):
         super().__init__()
-        print("[DEBUG] CorpusParser initialized (extends SemanticParser)")
 
     def parse_lines(self, lines):
         parsed_lines = []
