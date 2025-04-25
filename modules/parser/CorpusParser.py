@@ -13,14 +13,10 @@ class CorpusParser(SemanticParser):
         for i, line in enumerate(lines):
             parsed = self.parse_sentence(line)
             glosses = [
-                {
-                    "word": w,
-                    "Z": g if g and not g.startswith("?") else None,
-                    "tag": self.resolve_token_zglyph(w)["tag"] if self.resolve_token_zglyph(w) else None
-                }
+                {"word": w, "Z": g["Z"], "tag": g["tag"]}
                 for w, g in zip(parsed["tokens"], parsed["gloss"])
             ]
-            z_tags = [g for g in parsed["gloss"] if g and not g.startswith("?")]
+            z_tags = [g["Z"] for g in parsed["gloss"] if g["Z"]]
 
             for z in z_tags:
                 z_summary[z] = z_summary.get(z, 0) + 1
@@ -36,3 +32,7 @@ class CorpusParser(SemanticParser):
             "lines": parsed_lines,
             "z_summary": z_summary
         }
+
+    def parse_stream(self, stream):
+        for line in stream:
+            yield self.parse_sentence(line)
