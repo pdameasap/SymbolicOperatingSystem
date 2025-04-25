@@ -50,11 +50,11 @@ class SemanticParser:
         tokens = self.tokenize(norm)
         gloss = []
         for token in tokens:
-            base_token = token.strip(",.?!:;\"'")
-            if base_token in self.symbol_map:
-                gloss.append(self.symbol_map[base_token])
+            base = token.strip(".,;:!?\"'()[]{}")  # This removes punctuation from each word
+            if base in self.symbol_map:
+                gloss.append(self.symbol_map[base])
             else:
-                z_entry = self.resolve_token_zglyph(base_token)
+                z_entry = self.resolve_token_zglyph(base)
                 gloss.append(z_entry[1] if z_entry else f"?{token}")
         return gloss
 
