@@ -32,7 +32,3 @@ class CorpusParser(SemanticParser):
             "lines": parsed_lines,
             "z_summary": z_summary
         }
-
-    def parse_stream(self, stream):
-        for line in stream:
-            yield self.parse_sentence(line)
