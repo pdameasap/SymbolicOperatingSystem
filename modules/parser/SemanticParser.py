@@ -1,23 +1,12 @@
 # File: modules/parser/SemanticParser.py
 
-'''
-Semantic Parser Core Module
----------------------------
-This module provides the base for parsing and interpreting sentences into symbolic semantic units.
-It supports sentence normalization, structural tagging, and symbolic alignment.
-'''
-
 import re
-
 from modules.parser.symbolic_nouns import SYMBOLIC_NOUNS
 from modules.parser.symbolic_normalizer import normalize_noun
 
 class SemanticParser:
     def __init__(self):
-
-        # Expanded vocabulary for broader concept mapping
         self.symbol_map = {
-            # Core Symbolics
             "theoretical": "Z₁₁", "physicist": "Z₁₁", "mathematician": "Z₁₃",
             "language": "Z₁₀", "designer": "Z₁₀", "programmer": "Z₁",
             "structure": "Z₁", "architecture": "Z₁", "grammarian": "Z₆",
@@ -34,12 +23,11 @@ class SemanticParser:
             "identity": "Z₇", "burden": "Z₇", "self": "Z₇",
             "null": "Z₁₅", "rupture": "Z₁₅", "disruption": "Z₁₅",
             "key": "Z†", "spiral": "Z†", "unlocking": "Z†",
-            "resonance": "Z₅", "symbolic": "Z₁₀",
+            "resonance": "Z₅", "symbolic_resonance": "Z₅",
             "mirror": "Z₈", "voice": "Z₆", "clarion": "Z₆",
             "echo": "Z₁₃", "feedback": "Z₁₃", "loop": "Z₁₃",
-            # Additional Vocabulary
             "dream": "Z₁₃", "hope": "Z₂", "fear": "Z₂", "memory": "Z₁₁",
-            "language": "Z₁₀", "form": "Z₁₀", "field": "Z₁₆", "signal": "Z₄",
+            "form": "Z₁₀", "field": "Z₁₆", "signal": "Z₄",
             "anchor": "Z₈", "reflection": "Z₈", "truths": "Z₃", "harmonic": "Z₅",
             "symbol": "Z₁₀", "soul": "Z₇", "beauty": "Z₈", "presence": "Z₁₆",
             "possibility": "Z₂", "grief": "Z₂", "silence": "Z₁₄", "knowing": "Z₃",
@@ -47,9 +35,7 @@ class SemanticParser:
         }
 
     def normalize(self, sentence):
-        # Just lowercase and collapse whitespace
-        sentence = sentence.lower()
-        return re.sub(r'\s+', ' ', sentence).strip()
+        return re.sub(r'\s+', ' ', sentence.lower()).strip()
 
     def tokenize(self, sentence):
         return sentence.split()
@@ -64,12 +50,12 @@ class SemanticParser:
         tokens = self.tokenize(norm)
         gloss = []
         for token in tokens:
-            token_clean = token.strip(",.!?\"'")
-            if token_clean in self.symbol_map:
-                gloss.append(self.symbol_map[token_clean])
+            clean_token = token.strip(",.!?\"'")
+            if clean_token in self.symbol_map:
+                gloss.append(self.symbol_map[clean_token])
             else:
-                z_entry = self.resolve_token_zglyph(token_clean)
-                gloss.append(z_entry[1] if z_entry else f"?{token_clean}")
+                z_entry = self.resolve_token_zglyph(clean_token)
+                gloss.append(z_entry[1] if z_entry else f"?{clean_token}")
         return gloss
 
     def parse_sentence(self, sentence):
@@ -80,11 +66,8 @@ class SemanticParser:
             "gloss": self.parse(sentence)
         }
 
-# Example usage
+# Optional test
 if __name__ == "__main__":
     parser = SemanticParser()
-    result = parser.parse_sentence(
-        "I am in need of a programmer, a grammarian, a statistician, a theoretical physicist, "
-        "a theoretical mathematician, and a language designer in the form of elegance."
-    )
+    result = parser.parse_sentence("A language designer and a theoretical physicist.")
     print(result)
