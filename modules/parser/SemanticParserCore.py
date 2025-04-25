@@ -31,6 +31,7 @@ class SemanticParserCore:
             "companion": {"Z": "Z₄", "tag": "network"},
             "warmth": {"Z": "Z₆", "tag": "expression"},
             "elegance": {"Z": "Z₅", "tag": "aesthetic cognition"},
+            "language designer": "language_designer"
         }
 
     def normalize(self, sentence):
