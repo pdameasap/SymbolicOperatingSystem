@@ -6,17 +6,16 @@ from modules.parser.symbolic_nouns import SYMBOLIC_NOUNS
 from collections import Counter
 
 class SemanticParserCore:
+    def __init__(self):
+        pass
+
     def normalize(self, sentence):
         tokens = sentence.lower().split()
         parsed = []
         for word in tokens:
             base = normalize_noun(word.strip(',."'))
-            key = f"N_{base.upper()}"
-            entry = SYMBOLIC_NOUNS.get(key)
-            if entry:
-                parsed.append((word, {"Z": entry[1], "tag": None}))
-            else:
-                parsed.append((word, {"Z": None, "tag": None}))
+            entry = SYMBOLIC_NOUNS.get(f"N_{base.upper()}", {"Z": None, "tag": None})
+            parsed.append((word, entry))
         return parsed
 
     def display(self, parsed):

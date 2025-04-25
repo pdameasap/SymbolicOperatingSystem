@@ -1,34 +1,39 @@
-# File: modules/parser/CorpusParser.py
+# File: modules/parser/SemanticParser.py
 
-from modules.parser.SemanticParser import SemanticParser
+import re
+from modules.parser.symbolic_nouns import SYMBOLIC_NOUNS
+from modules.parser.symbolic_normalizer import normalize_noun
 
-class CorpusParser(SemanticParser):
-    def __init__(self):
-        super().__init__()
+class SemanticParser:
 
-    def parse_lines(self, lines):
-        parsed_lines = []
-        z_summary = {}
+    def normalize(self, sentence):
+        # Lowercase, remove punctuation but preserve underscores
+        sentence = re.sub(r'[^\w\s]', '', sentence.lower())
+        return re.sub(r'\s+', ' ', sentence).strip()
 
-        for i, line in enumerate(lines):
-            parsed = self.parse_sentence(line)
-            glosses = [
-                {"word": w, "Z": g["Z"], "tag": g["tag"]}
-                for w, g in zip(parsed["tokens"], parsed["gloss"])
-            ]
-            z_tags = [g["Z"] for g in parsed["gloss"] if g["Z"]]
+    def tokenize(self, sentence):
+        return sentence.split()
 
-            for z in z_tags:
-                z_summary[z] = z_summary.get(z, 0) + 1
+    def resolve_token_zglyph(self, word):
+        base = normalize_noun(word)
+        key = f"N_{base.upper()}"
+        result = SYMBOLIC_NOUNS.get(key)
+        return result if isinstance(result, dict) else None
 
-            parsed_lines.append({
-                "line_number": i + 1,
-                "text": line,
-                "z_tags": z_tags,
-                "glosses": glosses
-            })
+    def parse(self, sentence):
+        norm = self.normalize(sentence)
+        tokens = self.tokenize(norm)
+        gloss = []
+        for token in tokens:
+            clean_token = token.strip(".,;:!?\"'()[]{}")
+            z_entry = self.resolve_token_zglyph(clean_token)
+            gloss.append(z_entry["Z"] if z_entry else f"?{token}")
+        return gloss
 
+    def parse_sentence(self, sentence):
         return {
-            "lines": parsed_lines,
-            "z_summary": z_summary
+            "original": sentence,
+            "normalized": self.normalize(sentence),
+            "tokens": self.tokenize(self.normalize(sentence)),
+            "gloss": self.parse(sentence)
         }
