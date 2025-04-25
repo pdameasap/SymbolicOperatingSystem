@@ -59,7 +59,7 @@ class SemanticParser:
         sentence = sentence.lower()
         for phrase, token in self.multiword_map.items():
             sentence = sentence.replace(phrase, token)
-        cleaned = re.sub(r'[^a-z0-9_\s]', '', sentence)
+        cleaned = re.sub(r'[^\w\s]', '', sentence)
         return re.sub(r'\s+', ' ', cleaned).strip()
 
     def resolve_token_zglyph(self, word):
