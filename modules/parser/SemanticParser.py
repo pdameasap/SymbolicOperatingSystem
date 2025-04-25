@@ -17,7 +17,9 @@ class SemanticParser:
     def resolve_token_zglyph(self, word):
         base = normalize_noun(word)
         key = f"N_{base.upper()}"
-        return SYMBOLIC_NOUNS.get(key, None)
+        result = SYMBOLIC_NOUNS.get(key, None)
+        print(f"[DEBUG] resolve_token_zglyph: word='{word}' base='{base}' key='{key}' result='{result}'")
+        return result
 
     def parse(self, sentence):
         norm = self.normalize(sentence)
