@@ -1,23 +1,30 @@
-import sys
-from pathlib import Path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+# File: modules/parser/CorpusParser.py
 
-document = [
-    "I am in need of a programmer and a grammarian.",
-    "A theoretical physicist would also be nice.",
-    "Perhaps a language designer, too.",
-    "Warmth and elegance are especially important."
-]
+from modules.parser.SemanticParserCore import SemanticParserCore
+from collections import Counter
 
-cp = CorpusParser()
-parsed = cp.parse_lines(document)
+class CorpusParser:
+    def __init__(self):
+        self.parser = SemanticParserCore()
 
-for line in parsed["lines"]:
-    print(f"\nLine {line['line_number']}: {line['text']}")
-    print("Z-Tags:", line["z_tags"])
-    for gloss in line["glosses"]:
-        print(f"  {gloss['word']:12} → Z: {gloss['Z'] or '-'} | Tag: {gloss['tag'] or '-'}")
+    def parse_lines(self, lines):
+        results = []
+        z_counter = Counter()
 
-print("\n📊 Total Z-Summary:")
-for z, count in parsed["z_summary"].items():
-    print(f"  {z}: {count}")
+        for idx, line in enumerate(lines):
+            parsed = self.parser.normalize(line)
+            z_tags = [meta["Z"] for _, meta in parsed if meta["Z"]]
+            z_counter.update(z_tags)
+
+            results.append({
+                "line_number": idx + 1,
+                "text": line,
+                "tokens": [w for w, _ in parsed],
+                "glosses": self.parser.structured(parsed),
+                "z_tags": sorted(set(z_tags))
+            })
+
+        return {
+            "lines": results,
+            "z_summary": dict(z_counter)
+        }
