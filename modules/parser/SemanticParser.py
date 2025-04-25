@@ -55,12 +55,13 @@ class SemanticParser:
             "patterning": "Z₁₀", "fractal": "Z₁₃", "interlock": "Z₁₀", "alignment": "Z₁₆"
         }
 
-    def normalize(self, sentence):
-        sentence = sentence.lower()
-        sentence = re.sub(r'[^\w\s]', '', sentence)  # Remove punctuation first
-        for phrase, token in self.multiword_map.items():
-            sentence = sentence.replace(phrase, token)  # THEN apply replacements
-        return re.sub(r'\s+', ' ', sentence).strip()
+def normalize(self, sentence):
+    sentence = sentence.lower()
+    sentence = re.sub(r'[^\w\s]', '', sentence)  # Keeps underscores
+    for phrase, token in self.multiword_map.items():
+        sentence = sentence.replace(phrase, token)  # Applies after punctuation is stripped
+    return re.sub(r'\s+', ' ', sentence).strip()
+
 
 
     def resolve_token_zglyph(self, word):
