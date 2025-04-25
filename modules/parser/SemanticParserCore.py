@@ -9,7 +9,7 @@ A minimal recursive symbolic parser designed to:
 - Prepare output for compression, synthesis, or interpretation
 '''
 
-from modules import normalize_noun
+from modules.parser.modules import normalize_noun
 from collections import Counter
 
 class SemanticParserCore:
