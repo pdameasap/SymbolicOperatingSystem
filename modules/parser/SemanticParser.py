@@ -24,9 +24,9 @@ class SemanticParser:
         tokens = self.tokenize(norm)
         gloss = []
         for token in tokens:
-            clean_token = token.strip(".,;:!?\"'()[]{}")
-            _, z_value = self.resolve_token_zglyph(clean_token)
-            gloss.append(z_value if z_value else f"?{clean_token}")
+            clean_token = token.strip(".,;:!?\"'()[]{}")  # Strip punctuation
+            z_entry = self.resolve_token_zglyph(clean_token)
+            gloss.append(z_entry[1] if z_entry else f"?{clean_token}")
         return gloss
 
     def parse_sentence(self, sentence):
