@@ -1,53 +1,34 @@
-# File: modules/parser/SemanticParser.py
+# File: modules/parser/CorpusParser.py
 
-import re
-from modules.parser.symbolic_nouns import SYMBOLIC_NOUNS
-from modules.parser.symbolic_normalizer import normalize_noun
+from modules.parser.SemanticParser import SemanticParser
 
-class SemanticParser:
+class CorpusParser(SemanticParser):
+    def __init__(self):
+        super().__init__()
 
-    def normalize(self, sentence):
-        # Lowercase, remove punctuation but preserve underscores
-        sentence = re.sub(r'[^\w\s]', '', sentence.lower())
-        return re.sub(r'\s+', ' ', sentence).strip()
+    def parse_lines(self, lines):
+        parsed_lines = []
+        z_summary = {}
 
-    def tokenize(self, sentence):
-        return sentence.split()
+        for i, line in enumerate(lines):
+            parsed = self.parse_sentence(line)
+            glosses = [
+                {"word": w, "Z": g["Z"], "tag": g["tag"]}
+                for w, g in zip(parsed["tokens"], parsed["gloss"])
+            ]
+            z_tags = [g["Z"] for g in parsed["gloss"] if g["Z"]]
 
-    def resolve_token_zglyph(self, word):
-        base = normalize_noun(word)
-        key = f"N_{base.upper()}"
-        return SYMBOLIC_NOUNS.get(key, None)
+            for z in z_tags:
+                z_summary[z] = z_summary.get(z, 0) + 1
 
-    def parse(self, sentence):
-        norm = self.normalize(sentence)
-        tokens = self.tokenize(norm)
-        gloss = []
-        for token in tokens:
-            clean_token = token.strip(".,;:!?\"'()[]{}")  # Strip punctuation
-            z_entry = self.resolve_token_zglyph(clean_token)
-            gloss.append(z_entry["Z"] if z_entry else f"?{clean_token}")
-        return gloss
+            parsed_lines.append({
+                "line_number": i + 1,
+                "text": line,
+                "z_tags": z_tags,
+                "glosses": glosses
+            })
 
-    def parse_sentence(self, sentence):
-        tokens = self.tokenize(self.normalize(sentence))
-        gloss = self.parse(sentence)
-        tagged = []
-        for token, gloss_item in zip(tokens, gloss):
-            z_value = None
-            tag_value = None
-            if not gloss_item.startswith("?"):
-                base = normalize_noun(token)
-                key = f"N_{base.upper()}"
-                entry = SYMBOLIC_NOUNS.get(key)
-                if entry:
-                    z_value = entry.get("Z")
-                    tag_value = entry.get("tag")
-            tagged.append({"word": token, "Z": z_value, "tag": tag_value})
         return {
-            "original": sentence,
-            "normalized": self.normalize(sentence),
-            "tokens": tokens,
-            "gloss": gloss,
-            "tagged": tagged
+            "lines": parsed_lines,
+            "z_summary": z_summary
         }
