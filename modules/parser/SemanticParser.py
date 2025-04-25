@@ -50,12 +50,12 @@ class SemanticParser:
         tokens = self.tokenize(norm)
         gloss = []
         for token in tokens:
-            clean_token = re.sub(r'[^\w]', '', token)
-            if clean_token in self.symbol_map:
-                gloss.append(self.symbol_map[clean_token])
+            base_token = token.strip(",.?!:;\"'")
+            if base_token in self.symbol_map:
+                gloss.append(self.symbol_map[base_token])
             else:
-                z_entry = self.resolve_token_zglyph(clean_token)
-                gloss.append(z_entry[1] if z_entry else f"?{clean_token}")
+                z_entry = self.resolve_token_zglyph(base_token)
+                gloss.append(z_entry[1] if z_entry else f"?{token}")
         return gloss
 
     def parse_sentence(self, sentence):
