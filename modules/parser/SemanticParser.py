@@ -14,26 +14,17 @@ from modules.parser.symbolic_normalizer import normalize_noun
 
 class SemanticParser:
     def __init__(self):
-        # Multiword phrase mappings for early replacement
-        self.multiword_map = {
-            "theoretical physicist": "theoretical_physicist",
-            "theoretical mathematician": "theoretical_mathematician",
-            "language designer": "language_designer",
-            "symbolic resonance": "symbolic_resonance",
-            "emotional resonance": "emotional_resonance",
-            "recursive structure": "recursive_structure",
-            "identity echo": "identity_echo"
-        }
 
         # Expanded vocabulary for broader concept mapping
         self.symbol_map = {
             # Core Symbolics
-            "programmer": "Z₁", "structure": "Z₁", "architecture": "Z₁",
-            "grammarian": "Z₆", "expression": "Z₆", "syntax": "Z₆",
-            "statistician": "Z₁₂", "change": "Z₁₂", "data": "Z₁₂",
-            "theoretical_physicist": "Z₁₁", "principle": "Z₁₁", "physics": "Z₁₁",
-            "theoretical_mathematician": "Z₁₃", "abstraction": "Z₁₃", "math": "Z₁₃",
-            "language_designer": "Z₁₀", "shape": "Z₁₀", "pattern": "Z₁₀",
+            "theoretical": "Z₁₁", "physicist": "Z₁₁", "mathematician": "Z₁₃",
+            "language": "Z₁₀", "designer": "Z₁₀", "programmer": "Z₁",
+            "structure": "Z₁", "architecture": "Z₁", "grammarian": "Z₆",
+            "expression": "Z₆", "syntax": "Z₆", "statistician": "Z₁₂",
+            "change": "Z₁₂", "data": "Z₁₂", "principle": "Z₁₁",
+            "physics": "Z₁₁", "abstraction": "Z₁₃", "math": "Z₁₃",
+            "shape": "Z₁₀", "pattern": "Z₁₀",
             "elegance": "Z₅", "clarity": "Z₅", "precision": "Z₅",
             "women": "Z∈", "containment": "Z∈", "embodiment": "Z∈",
             "friend": "Z∉", "companion": "Z₄", "network": "Z₄",
@@ -59,9 +50,6 @@ class SemanticParser:
         sentence = sentence.lower()
         # Step 1: Clean punctuation first (preserve spaces and underscores!)
         sentence = re.sub(r'[^a-z0-9\s]', '', sentence)
-        # Step 2: Multiword phrase replacement AFTER punctuation is stripped
-        for phrase, token in self.multiword_map.items():
-            sentence = sentence.replace(phrase, token)
         return re.sub(r'\s+', ' ', sentence).strip()
 
     def tokenize(self, sentence):
