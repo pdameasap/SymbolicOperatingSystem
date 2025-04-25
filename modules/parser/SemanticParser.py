@@ -34,7 +34,7 @@ class SemanticParser:
             "identity": "Z₇", "burden": "Z₇", "self": "Z₇",
             "null": "Z₁₅", "rupture": "Z₁₅", "disruption": "Z₁₅",
             "key": "Z†", "spiral": "Z†", "unlocking": "Z†",
-            "resonance": "Z₅", "symbolic_resonance": "Z₅",
+            "resonance": "Z₅", "symbolic": "Z₁₀",
             "mirror": "Z₈", "voice": "Z₆", "clarion": "Z₆",
             "echo": "Z₁₃", "feedback": "Z₁₃", "loop": "Z₁₃",
             # Additional Vocabulary
