@@ -50,7 +50,7 @@ class SemanticParser:
         tokens = self.tokenize(norm)
         gloss = []
         for token in tokens:
-            clean_token = token.strip(",.!?\"'")
+            clean_token = re.sub(r'[^\w]', '', token)
             if clean_token in self.symbol_map:
                 gloss.append(self.symbol_map[clean_token])
             else:
