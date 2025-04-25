@@ -49,17 +49,18 @@ class SemanticParser:
         key = f"N_{base.upper()}"
         return SYMBOLIC_NOUNS.get(key, None)
 
-    def parse(self, sentence):
-        norm = self.normalize(sentence)
-        tokens = self.tokenize(norm)
-        gloss = []
-        for token in tokens:
-            if token in self.symbol_map:
-                gloss.append(self.symbol_map[token])
-            else:
-                z_entry = self.resolve_token_zglyph(token)
-                gloss.append(z_entry[1] if z_entry else f"?{token}")
-        return gloss
+def parse(self, sentence):
+    norm = self.normalize(sentence)
+    tokens = self.tokenize(norm)
+    gloss = []
+    for token in tokens:
+        clean_token = token.strip(".,;:!?\"'()[]{}")  # Strip punctuation here
+        if clean_token in self.symbol_map:
+            gloss.append(self.symbol_map[clean_token])
+        else:
+            z_entry = self.resolve_token_zglyph(clean_token)
+            gloss.append(z_entry[1] if z_entry else f"?{clean_token}")
+    return gloss
 
     def parse_sentence(self, sentence):
         return {
