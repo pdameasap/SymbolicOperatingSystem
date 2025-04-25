@@ -1,30 +1,35 @@
 # File: modules/parser/CorpusParser.py
 
-from modules.parser.SemanticParserCore import SemanticParserCore
-from collections import Counter
+from modules.parser.SemanticParser import SemanticParser
 
-class CorpusParser:
+class CorpusParser(SemanticParser):
     def __init__(self):
-        self.parser = SemanticParserCore()
+        super().__init__()
+        print("[DEBUG] CorpusParser initialized (extends SemanticParser)")
 
     def parse_lines(self, lines):
-        results = []
-        z_counter = Counter()
+        parsed_lines = []
+        z_summary = {}
 
-        for idx, line in enumerate(lines):
-            parsed = self.parser.normalize(line)
-            z_tags = [meta["Z"] for _, meta in parsed if meta["Z"]]
-            z_counter.update(z_tags)
+        for i, line in enumerate(lines):
+            parsed = self.parse_sentence(line)
+            glosses = [
+                {"word": w, "Z": g if g and not g.startswith("?") else None, "tag": self.glossary.get(w, {}).get("tag")}
+                for w, g in zip(parsed["tokens"], parsed["gloss"])
+            ]
+            z_tags = [g for g in parsed["gloss"] if g and not g.startswith("?")]
 
-            results.append({
-                "line_number": idx + 1,
+            for z in z_tags:
+                z_summary[z] = z_summary.get(z, 0) + 1
+
+            parsed_lines.append({
+                "line_number": i + 1,
                 "text": line,
-                "tokens": [w for w, _ in parsed],
-                "glosses": self.parser.structured(parsed),
-                "z_tags": sorted(set(z_tags))
+                "z_tags": z_tags,
+                "glosses": glosses
             })
 
         return {
-            "lines": results,
-            "z_summary": dict(z_counter)
+            "lines": parsed_lines,
+            "z_summary": z_summary
         }
