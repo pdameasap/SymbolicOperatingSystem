@@ -2,8 +2,6 @@ import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-from modules.parser.CorpusParser import CorpusParser
-
 document = [
     "I am in need of a programmer and a grammarian.",
     "A theoretical physicist would also be nice.",
