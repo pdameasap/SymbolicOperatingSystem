@@ -2,7 +2,7 @@
 
 The Versare Framework for Recursive Symbolic Cognition
 
-This project is a cognitive operating system—not for machines, but for symbolic architectures. It defines a modular framework in Python for evaluating meaning, resonance, identity, and emotion using a universal symbolic profile (Z₁–Z₁₅).
+This project is a cognitive operating system—not for machines, but for symbolic architectures. It defines a modular framework in Python for evaluating meaning, resonance, identity, and emotion using a universal symbolic profile (Z₁–Z₁₆).
 
 Core Structure
 
@@ -10,7 +10,7 @@ FrameworkBase.py – Defines symbolic rule scaffolding
 
 ReflectiveFrameworkBase.py – Adds self-trace, modulation hooks, and echo memory
 
-EvaluativeFrameworkBase.py – Implements full Z₁–Z₁₅ evaluation loop with recursive query architecture
+EvaluativeFrameworkBase.py – Implements full Z₁–Z₁₆ evaluation loop with recursive query architecture
 
 Optional: symbolic_test.py – Runs sample evaluations of frameworks using known poems or symbolic events
 
