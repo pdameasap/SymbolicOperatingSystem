@@ -50,6 +50,7 @@ cortex/mind/language/SymbolicNounLayer_Annex1.txt
 cortex/scripts/tests/SentienceFramework_Evaluation.picl
 cortex/scripts/tests/test_secl.py
 cortex/symbolic/core/ZAxes_SymbolicEvaluationCore.txt
+cortex/symbolic/core/ZGlyphConstraints.py
 docs/harmonic/11_Harmonic_Manuscripts_XI.pdf
 docs/harmonic/12_Harmonic_Manuscripts_XII.pdf
 docs/harmonic/13_Harmonic_Manuscripts_XIII.pdf
@@ -85,6 +86,8 @@ modules/parser/SemanticParser.py
 modules/parser/SemanticParserCore.py
 modules/parser/symbolic_normalizer.py
 modules/parser/symbolic_nouns.py
+modules/parser/VersareCompressor.py
+modules/parser/VersarePDFPipeline.py
 modules/routing/__init__.py
 modules/routing/RecursiveRouter.py
 modules/semantic/ResonanceFilter.py
@@ -96,5 +99,6 @@ project_tree.txt
 README.md
 spec/Symbolic_Grammar_Language_Summary_Vol_I.md
 spec/SymbolicLanguageSpec.picl
+spec/VersareLanguageSpec.md
 stimuli/again_one.txt
 stimuli/the_raven.txt
