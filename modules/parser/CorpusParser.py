@@ -1,6 +1,6 @@
 # File: modules/parser/CorpusParser.py
 
-from SymbolicOperatingSystem.modules.parser.SemanticParser import SemanticParser
+from modules.parser.SemanticParser import SemanticParser
 
 class CorpusParser(SemanticParser):
     def __init__(self):
