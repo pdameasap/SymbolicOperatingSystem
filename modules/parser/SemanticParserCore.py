@@ -1,7 +1,7 @@
 # File: modules/parser/SemanticParserCore.py
 
-from SymbolicOperatingSystem.modules.parser.symbolic_normalizer import normalize_noun
-from SymbolicOperatingSystem.modules.parser.symbolic_nouns import SYMBOLIC_NOUNS
+from modules.parser.symbolic_normalizer import normalize_noun
+from modules.parser.symbolic_nouns import SYMBOLIC_NOUNS
 
 from collections import Counter
 
