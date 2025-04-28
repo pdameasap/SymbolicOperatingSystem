@@ -1,8 +1,8 @@
 """
 Versare Z-Glyph Constraint System
 
-This module demonstrates how the dual constraint system (mathematical definitions and sixfold descriptions)
-for Z-Glyphs can be formalized in code. It provides a framework for representing Z-Glyphs as computational
+This module implements the dual constraint system (mathematical definitions and sixfold descriptions)
+for Z-Glyphs in the Versare language. It provides a framework for representing Z-Glyphs as computational
 objects that encapsulate both their operational logic and semantic field.
 """
 
