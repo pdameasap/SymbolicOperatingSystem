@@ -2,8 +2,8 @@
 
 import re
 
-from modules.parser.symbolic_nouns import SYMBOLIC_NOUNS
-from modules.parser.symbolic_normalizer import normalize_noun
+from SymbolicOperatingSystem.modules.parser.symbolic_nouns import SYMBOLIC_NOUNS
+from SymbolicOperatingSystem.modules.parser.symbolic_normalizer import normalize_noun
 
 class SemanticParser:
 
