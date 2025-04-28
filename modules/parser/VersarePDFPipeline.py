@@ -20,10 +20,10 @@ logger = logging.getLogger(__name__)
 # Import necessary modules using relative imports
 try:
     from .VersareCompressor import VersareCompressor
-    from ..pdf_pipeline_modular.pdf_processor import extract_text_from_pdf
+    from ..pdf.pdf_processor import extract_text_from_pdf
 except ImportError as e:
     logger.error(f"Error importing required modules: {e}")
-    logger.error("Please ensure VersareCompressor.py and pdf_pipeline_modular are in the correct locations.")
+    logger.error("Please ensure VersareCompressor.py and pdf/ are in the correct locations.")
     sys.exit(1)
 
 def run_versare_pipeline(pdf_dir: str, output_dir: str, corpus_name: Optional[str] = None, incremental_glossary: bool = False, debug: bool = False):
