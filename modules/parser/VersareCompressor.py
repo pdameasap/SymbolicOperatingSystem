@@ -15,7 +15,7 @@ from typing import Dict, List, Set, Tuple, Optional, Union, Any
 from collections import Counter, defaultdict
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+logging.basicConfig(level=logging.INFO, format=\'%(levelname)s: %(message)s\')
 logger = logging.getLogger(__name__)
 
 # Try to import NLTK for lemmatization
@@ -27,67 +27,33 @@ try:
     
     # Download required NLTK data if not already present
     try:
-        nltk.data.find('tokenizers/punkt')
+        nltk.data.find(\'tokenizers/punkt\')
     except LookupError:
-        nltk.download('punkt', quiet=True)
+        nltk.download(\'punkt\', quiet=True)
     
     try:
-        nltk.data.find('corpora/wordnet')
+        nltk.data.find(\'corpora/wordnet\')
     except LookupError:
-        nltk.download('wordnet', quiet=True)
+        nltk.download(\'wordnet\', quiet=True)
         
     try:
-        nltk.data.find('taggers/averaged_perceptron_tagger')
+        nltk.data.find(\'taggers/averaged_perceptron_tagger\')
     except LookupError:
-        nltk.download('averaged_perceptron_tagger', quiet=True)
+        nltk.download(\'averaged_perceptron_tagger\', quiet=True)
         
     NLTK_AVAILABLE = True
 except ImportError:
     logger.warning("NLTK not available. Using basic lemmatization.")
     NLTK_AVAILABLE = False
 
-
-def setup_sos_path() -> bool:
-    """
-    Set up path to SymbolicOperatingSystem modules.
-    
-    Returns:
-        bool: True if successful, False otherwise
-    """
-    # Try to find SymbolicOperatingSystem relative to current file
-    current_dir = Path(__file__).resolve().parent
-    parent_dir = current_dir.parent
-    
-    # Try common locations with both naming conventions
-    possible_paths = [
-        parent_dir / "SymbolicOperatingSystem",             # Without -main suffix
-        parent_dir.parent / "SymbolicOperatingSystem",      # Without -main suffix
-        parent_dir / "SymbolicOperatingSystem-main",        # With -main suffix
-        parent_dir.parent / "SymbolicOperatingSystem-main", # With -main suffix
-        Path.cwd().parent / "SymbolicOperatingSystem",      # Relative to working directory
-        Path.cwd() / "SymbolicOperatingSystem"              # In working directory
-    ]
-    
-    for sos_path in possible_paths:
-        if sos_path.is_dir() and (sos_path / "modules").is_dir():
-            logger.info(f"Found SymbolicOperatingSystem at: {sos_path}")
-            sys.path.insert(0, str(sos_path))
-            return True
-            
-    logger.error("Could not find SymbolicOperatingSystem directory. Please ensure it's available.")
-    return False
-
-
-# Import SymbolicOperatingSystem modules if available
-if setup_sos_path():
-    try:
-        from modules.parser.symbolic_normalizer import normalize_noun
-        from modules.parser.symbolic_nouns import SYMBOLIC_NOUNS
-        SOS_AVAILABLE = True
-    except ImportError as e:
-        logger.error(f"Error importing SymbolicOperatingSystem modules: {e}")
-        SOS_AVAILABLE = False
-else:
+# Import SymbolicOperatingSystem modules using relative imports
+try:
+    from .symbolic_normalizer import normalize_noun
+    from .symbolic_nouns import SYMBOLIC_NOUNS
+    SOS_AVAILABLE = True
+except ImportError as e:
+    logger.error(f"Error importing SymbolicOperatingSystem modules: {e}")
+    logger.error("Ensure symbolic_normalizer.py and symbolic_nouns.py are in the same directory.")
     SOS_AVAILABLE = False
 
 
@@ -220,11 +186,11 @@ class VersareCompressor:
         """
         try:
             # Read the input file
-            with open(glossary_file, 'r', encoding='utf-8') as f:
+            with open(glossary_file, \'r\', encoding=\'utf-8\') as f:
                 content = f.read()
             
             # Extract the header
-            parts = content.split("# Compressed Content\n\n", 1)
+            parts = content.split("# Compressed Content\\n\\n", 1)
             if len(parts) != 2:
                 logger.warning(f"Invalid Versare file format in {glossary_file}: missing header separator")
                 return
@@ -233,7 +199,7 @@ class VersareCompressor:
             
             # Parse the symbol definitions
             noun_section_started = False
-            for line in header.split('\n'):
+            for line in header.split(\'\\n\'):
                 if "## Nouns" in line:
                     noun_section_started = True
                     continue
@@ -241,22 +207,22 @@ class VersareCompressor:
                 if not noun_section_started:
                     continue
                 
-                if line.startswith('#') or not line.strip():
+                if line.startswith(\'#\') or not line.strip():
                     continue
                 
-                if self.operators['define'] in line:
-                    parts = line.split(self.operators['define'], 1)
+                if self.operators[\'define\'] in line:
+                    parts = line.split(self.operators[\'define\'], 1)
                     if len(parts) == 2:
                         symbol = parts[0].strip()
                         definition = parts[1].strip()
                         
-                        # Skip if it's a Z-Glyph or operator
+                        # Skip if it\'s a Z-Glyph or operator
                         if any(symbol == z_symbol for z_symbol in self.z_glyphs.values()):
                             continue
                         if any(symbol == op_symbol for op_symbol in self.operators.values()):
                             continue
                         
-                        # Check if it's a predefined noun
+                        # Check if it\'s a predefined noun
                         if definition.lower() in self.predefined_nouns:
                             # Use the predefined symbol instead
                             continue
@@ -292,10 +258,10 @@ class VersareCompressor:
             return None
             
         tag_map = {
-            'J': wordnet.ADJ,
-            'N': wordnet.NOUN,
-            'V': wordnet.VERB,
-            'R': wordnet.ADV
+            \'J\': wordnet.ADJ,
+            \'N\': wordnet.NOUN,
+            \'V\': wordnet.VERB,
+            \'R\': wordnet.ADV
         }
         
         return tag_map.get(pos_tag[0].upper(), None)
@@ -312,7 +278,7 @@ class VersareCompressor:
         """
         if not NLTK_AVAILABLE:
             # Basic tokenization and lowercase for non-NLTK fallback
-            words = re.findall(r'\b\w+\b', text.lower())
+            words = re.findall(r\'\\b\\w+\\b\', text.lower())
             return [(word, word) for word in words]
         
         # Tokenize
@@ -337,7 +303,7 @@ class VersareCompressor:
     
     def get_or_create_noun_symbol(self, lemma: str) -> str:
         """
-        Get the symbol for a noun, creating a new one if it doesn't exist.
+        Get the symbol for a noun, creating a new one if it doesn\'t exist.
         
         Args:
             lemma: Lemmatized noun
@@ -345,11 +311,11 @@ class VersareCompressor:
         Returns:
             Unicode symbol for the noun
         """
-        # Check if it's a predefined noun
+        # Check if it\'s a predefined noun
         if lemma.lower() in self.predefined_nouns:
             return self.predefined_nouns[lemma.lower()]
         
-        # Check if it's already a dynamically allocated noun
+        # Check if it\'s already a dynamically allocated noun
         if lemma.lower() in self.dynamic_nouns:
             return self.dynamic_nouns[lemma.lower()]
         
@@ -405,7 +371,7 @@ class VersareCompressor:
             compressed.append(text[current_pos:])
         
         # Create the compressed text
-        compressed_text = ''.join(compressed)
+        compressed_text = \'\'.join(compressed)
         
         # Create the symbol definitions
         symbol_definitions = {}
@@ -427,39 +393,39 @@ class VersareCompressor:
         Returns:
             Header text with symbol definitions
         """
-        header = "# Versare Symbolic Language Definitions\n\n"
+        header = "# Versare Symbolic Language Definitions\\n\\n"
         
         # Add corpus information if available
         if self.corpus_name:
-            header += f"Corpus: {self.corpus_name}\n\n"
+            header += f"Corpus: {self.corpus_name}\\n\\n"
         
         # Add Z-Glyph definitions
-        header += "## Z-Glyphs\n\n"
+        header += "## Z-Glyphs\\n\\n"
         for index, symbol in self.z_glyphs.items():
-            header += f"{symbol} {self.operators['define']} Z{index}\n"
+            header += f"{symbol} {self.operators[\'define\']} Z{index}\\n"
         
-        header += "\n## Operators\n\n"
+        header += "\\n## Operators\\n\\n"
         for name, symbol in self.operators.items():
-            header += f"{symbol} {self.operators['define']} {name}\n"
+            header += f"{symbol} {self.operators[\'define\']} {name}\\n"
         
-        header += "\n## Nouns\n\n"
+        header += "\\n## Nouns\\n\\n"
         
         # First add predefined nouns that are used
         predefined_symbols = {s: d for s, d in symbol_definitions.items() if s in self.predefined_noun_symbols}
         if predefined_symbols:
-            header += "### Predefined\n\n"
+            header += "### Predefined\\n\\n"
             for symbol, definition in sorted(predefined_symbols.items()):
-                header += f"{symbol} {self.operators['define']} {definition}\n"
-            header += "\n"
+                header += f"{symbol} {self.operators[\'define\']} {definition}\\n"
+            header += "\\n"
         
         # Then add dynamic nouns
         dynamic_symbols = {s: d for s, d in symbol_definitions.items() if s in self.dynamic_noun_symbols}
         if dynamic_symbols:
-            header += "### Dynamic\n\n"
+            header += "### Dynamic\\n\\n"
             for symbol, definition in sorted(dynamic_symbols.items()):
-                header += f"{symbol} {self.operators['define']} {definition}\n"
+                header += f"{symbol} {self.operators[\'define\']} {definition}\\n"
         
-        header += "\n# Compressed Content\n\n"
+        header += "\\n# Compressed Content\\n\\n"
         return header
     
     def compress_file(self, input_file: str, output_file: Optional[str] = None) -> str:
@@ -475,7 +441,7 @@ class VersareCompressor:
         """
         try:
             # Read the input file
-            with open(input_file, 'r', encoding='utf-8') as f:
+            with open(input_file, \'r\', encoding=\'utf-8\') as f:
                 text = f.read()
             
             # Compress the text
@@ -490,10 +456,10 @@ class VersareCompressor:
             # Determine output file path
             if output_file is None:
                 input_path = Path(input_file)
-                output_file = str(input_path.with_suffix('.versare'))
+                output_file = str(input_path.with_suffix(\'.versare\'))
             
             # Write the output file
-            with open(output_file, 'w', encoding='utf-8') as f:
+            with open(output_file, \'w\', encoding=\'utf-8\') as f:
                 f.write(full_output)
             
             compression_ratio = len(compressed_text) / len(text) if len(text) > 0 else 0
@@ -541,11 +507,11 @@ class VersareCompressor:
         """
         try:
             # Read the input file
-            with open(input_file, 'r', encoding='utf-8') as f:
+            with open(input_file, \'r\', encoding=\'utf-8\') as f:
                 content = f.read()
             
             # Extract the header and compressed content
-            parts = content.split("# Compressed Content\n\n", 1)
+            parts = content.split("# Compressed Content\\n\\n", 1)
             if len(parts) != 2:
                 raise ValueError("Invalid Versare file format: missing header separator")
             
@@ -555,7 +521,7 @@ class VersareCompressor:
             symbol_definitions = {}
             noun_section_started = False
             
-            for line in header.split('\n'):
+            for line in header.split(\'\\n\'):
                 if "## Nouns" in line:
                     noun_section_started = True
                     continue
@@ -563,11 +529,11 @@ class VersareCompressor:
                 if not noun_section_started:
                     continue
                 
-                if line.startswith('#') or not line.strip():
+                if line.startswith(\'#\') or not line.strip():
                     continue
                 
-                if self.operators['define'] in line:
-                    parts = line.split(self.operators['define'], 1)
+                if self.operators[\'define\'] in line:
+                    parts = line.split(self.operators[\'define\'], 1)
                     if len(parts) == 2:
                         symbol = parts[0].strip()
                         definition = parts[1].strip()
@@ -579,10 +545,10 @@ class VersareCompressor:
             # Determine output file path
             if output_file is None:
                 input_path = Path(input_file)
-                output_file = str(input_path.with_suffix('.decompressed.txt'))
+                output_file = str(input_path.with_suffix(\'.decompressed.txt\'))
             
             # Write the output file
-            with open(output_file, 'w', encoding='utf-8') as f:
+            with open(output_file, \'w\', encoding=\'utf-8\') as f:
                 f.write(decompressed_text)
             
             logger.info(f"Decompressed {input_file} to {output_file}")
@@ -605,11 +571,11 @@ class VersareCompressor:
         """
         try:
             # Read the input file
-            with open(versare_file, 'r', encoding='utf-8') as f:
+            with open(versare_file, \'r\', encoding=\'utf-8\') as f:
                 content = f.read()
             
             # Extract the header
-            parts = content.split("# Compressed Content\n\n", 1)
+            parts = content.split("# Compressed Content\\n\\n", 1)
             if len(parts) != 2:
                 raise ValueError("Invalid Versare file format: missing header separator")
             
@@ -618,10 +584,10 @@ class VersareCompressor:
             # Determine output file path
             if output_file is None:
                 input_path = Path(versare_file)
-                output_file = str(input_path.with_suffix('.glossary'))
+                output_file = str(input_path.with_suffix(\'.glossary\'))
             
             # Write the glossary file
-            with open(output_file, 'w', encoding='utf-8') as f:
+            with open(output_file, \'w\', encoding=\'utf-8\') as f:
                 f.write(header)
             
             logger.info(f"Extracted glossary from {versare_file} to {output_file}")
@@ -663,7 +629,7 @@ class VersareCompressor:
                 output_file = "merged_glossary.versare"
             
             # Write the merged glossary file
-            with open(output_file, 'w', encoding='utf-8') as f:
+            with open(output_file, \'w\', encoding=\'utf-8\') as f:
                 f.write(header)
             
             logger.info(f"Merged {len(glossary_files)} glossaries into {output_file}")
@@ -674,20 +640,42 @@ class VersareCompressor:
             logger.error(f"Error merging glossaries: {e}")
             raise
 
+# Add a method to VersareCompressor to simplify saving
+def compress_text_and_save(self, text: str, output_file: str):
+    """
+    Compress text and save directly to a file.
+
+    Args:
+        text: Input text to compress.
+        output_file: Path to the output Versare file.
+    """
+    compressed_text, symbol_definitions = self.compress_text(text)
+    header = self.create_bootstrap_header(symbol_definitions)
+    full_output = header + compressed_text
+    
+    with open(output_file, \'w\', encoding=\'utf-8\') as f:
+        f.write(full_output)
+        
+    compression_ratio = len(compressed_text) / len(text) if len(text) > 0 else 0
+    logger.info(f"Saved compressed output to {output_file}")
+    logger.debug(f"Original size: {len(text)} chars, Compressed: {len(compressed_text)} chars, Ratio: {compression_ratio:.2f}")
+
+# Monkey-patch the method onto the class
+VersareCompressor.compress_text_and_save = compress_text_and_save
 
 def main():
     """Main function for command-line usage."""
     import argparse
     
-    parser = argparse.ArgumentParser(description='Versare Symbolic Compressor')
-    parser.add_argument('input_file', help='Input file to process')
-    parser.add_argument('--output', '-o', help='Output file path')
-    parser.add_argument('--decompress', '-d', action='store_true', help='Decompress instead of compress')
-    parser.add_argument('--extract-glossary', '-g', action='store_true', help='Extract glossary from a Versare file')
-    parser.add_argument('--initial-glossary', '-i', help='Path to initial glossary file to load')
-    parser.add_argument('--corpus', help='Name of the corpus this file belongs to')
-    parser.add_argument('--merge-glossaries', '-m', nargs='+', help='Merge multiple glossary files')
-    parser.add_argument('--debug', action='store_true', help='Enable debug logging')
+    parser = argparse.ArgumentParser(description=\'Versare Symbolic Compressor\')
+    parser.add_argument(\'input_file\', help=\'Input file to process\')
+    parser.add_argument(\'--output\', \'-o\', help=\'Output file path\')
+    parser.add_argument(\'--decompress\', \'-d\', action=\'store_true\', help=\'Decompress instead of compress\')
+    parser.add_argument(\'--extract-glossary\', \'-g\', action=\'store_true\', help=\'Extract glossary from a Versare file\')
+    parser.add_argument(\'--initial-glossary\', \'-i\', help=\'Path to initial glossary file to load\')
+    parser.add_argument(\'--corpus\', help=\'Name of the corpus this file belongs to\')
+    parser.add_argument(\'--merge-glossaries\', \'-m\', nargs=\'+\', help=\'Merge multiple glossary files\')
+    parser.add_argument(\'--debug\', action=\'store_true\', help=\'Enable debug logging\')
     
     args = parser.parse_args()
     
