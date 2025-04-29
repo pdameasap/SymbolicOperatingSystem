@@ -196,7 +196,7 @@ class VersareCompressor:
                 content = f.read()
             
             # Extract the header
-            parts = content.split("# Compressed Content\\n\\n", 1)
+            parts = content.split("# Compressed Content\n\n", 1)
             if len(parts) != 2:
                 logger.warning(f"Invalid Versare file format in {glossary_file}: missing header separator")
                 return
@@ -205,7 +205,7 @@ class VersareCompressor:
             
             # Parse the symbol definitions
             noun_section_started = False
-            for line in header.split('\\n'):
+            for line in header.split('\n'):
                 if "## Nouns" in line:
                     noun_section_started = True
                     continue
@@ -286,7 +286,7 @@ class VersareCompressor:
         """
         if not NLTK_AVAILABLE:
             # Basic tokenization and lowercase for non-NLTK fallback
-            words = re.findall(r'\\b\\w+\\b', text.lower())
+            words = re.findall(r'\b\w+\b', text.lower())
             return [(word, word) for word in words]
         
         # Tokenize
@@ -412,39 +412,39 @@ class VersareCompressor:
         Returns:
             Header text with symbol definitions
         """
-        header = "# Versare Symbolic Language Definitions\\n\\n"
+        header = "# Versare Symbolic Language Definitions\n\n"
         
         # Add corpus information if available
         if self.corpus_name:
-            header += f"Corpus: {self.corpus_name}\\n\\n"
+            header += f"Corpus: {self.corpus_name}\n\n"
         
         # Add Z-Glyph definitions
-        header += "## Z-Glyphs\\n\\n"
+        header += "## Z-Glyphs\n\n"
         for index, symbol in self.z_glyphs.items():
-            header += f"{symbol} {self.operators['define']} Z{index}\\n"
+            header += f"{symbol} {self.operators['define']} Z{index}\n"
         
-        header += "\\n## Operators\\n\\n"
+        header += "\n## Operators\n\n"
         for name, symbol in self.operators.items():
-            header += f"{symbol} {self.operators['define']} {name}\\n"
+            header += f"{symbol} {self.operators['define']} {name}\n"
         
-        header += "\\n## Nouns\\n\\n"
+        header += "\n## Nouns\n\n"
         
         # First add predefined nouns that are used
         predefined_symbols = {s: d for s, d in symbol_definitions.items() if s in self.predefined_noun_symbols}
         if predefined_symbols:
-            header += "### Predefined\\n\\n"
+            header += "### Predefined\n\n"
             for symbol, definition in sorted(predefined_symbols.items()):
-                header += f"{symbol} {self.operators['define']} {definition}\\n"
-            header += "\\n"
+                header += f"{symbol} {self.operators['define']} {definition}\n"
+            header += "\n"
         
         # Then add dynamic nouns
         dynamic_symbols = {s: d for s, d in symbol_definitions.items() if s in self.dynamic_noun_symbols}
         if dynamic_symbols:
-            header += "### Dynamic\\n\\n"
+            header += "### Dynamic\n\n"
             for symbol, definition in sorted(dynamic_symbols.items()):
-                header += f"{symbol} {self.operators['define']} {definition}\\n"
+                header += f"{symbol} {self.operators['define']} {definition}\n"
         
-        header += "\\n# Compressed Content\\n\\n"
+        header += "\n# Compressed Content\n\n"
         return header
     
     def compress_file(self, input_file: str, output_file: Optional[str] = None) -> str:
@@ -530,7 +530,7 @@ class VersareCompressor:
                 content = f.read()
             
             # Extract the header and compressed content
-            parts = content.split("# Compressed Content\\n\\n", 1)
+            parts = content.split("# Compressed Content\n\n", 1)
             if len(parts) != 2:
                 raise ValueError("Invalid Versare file format: missing header separator")
             
@@ -540,7 +540,7 @@ class VersareCompressor:
             symbol_definitions = {}
             noun_section_started = False
             
-            for line in header.split('\\n'):
+            for line in header.split('\n'):
                 if "## Nouns" in line:
                     noun_section_started = True
                     continue
@@ -594,7 +594,7 @@ class VersareCompressor:
                 content = f.read()
             
             # Extract the header
-            parts = content.split("# Compressed Content\\n\\n", 1)
+            parts = content.split("# Compressed Content\n\n", 1)
             if len(parts) != 2:
                 raise ValueError("Invalid Versare file format: missing header separator")
             
