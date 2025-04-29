@@ -86,7 +86,7 @@ def run_versare_pipeline(pdf_dir: str, output_dir: str, corpus_name: Optional[st
             )
 
         # Define output file path
-        output_filename = pdf_path.stem + ".versare"
+        output_filename = pdf_path.stem + ".txt"
         output_filepath = Path(output_dir) / output_filename
 
         # Compress the text
