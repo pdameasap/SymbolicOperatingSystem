@@ -475,7 +475,7 @@ class VersareCompressor:
             # Determine output file path
             if output_file is None:
                 input_path = Path(input_file)
-                output_file = str(input_path.with_suffix('.versare'))
+                output_file = str(input_path.with_suffix('.txt'))
             
             # Write the output file
             with open(output_file, 'w', encoding='utf-8') as f:
@@ -645,7 +645,7 @@ class VersareCompressor:
             
             # Determine output file path
             if output_file is None:
-                output_file = "merged_glossary.versare"
+                output_file = "merged_glossary.txt"
             
             # Write the merged glossary file
             with open(output_file, 'w', encoding='utf-8') as f:
