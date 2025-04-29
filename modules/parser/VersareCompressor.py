@@ -65,8 +65,14 @@ class VersareCompressor:
     # Unicode ranges for noun allocation
     PREDEFINED_NOUN_START = 0x1D400  # Mathematical Alphanumeric Symbols
     PREDEFINED_NOUN_END = 0x1D7FF
-    DYNAMIC_NOUN_START = 0x1F300     # Miscellaneous Symbols and Pictographs
-    DYNAMIC_NOUN_END = 0x1F5FF
+    
+    # Primary Dynamic Noun Range (BMP safe, includes general symbols, various pictographs)
+    DYNAMIC_NOUN_START = 0x2000
+    DYNAMIC_NOUN_END = 0xF8FF
+    
+    # Secondary Dynamic Noun Range (Supplementary Private Use A and B)
+    SECONDARY_DYNAMIC_NOUN_START = 0xF0000
+    SECONDARY_DYNAMIC_NOUN_END = 0x10FFFD
     
     def __init__(self, initial_glossary_file: Optional[str] = None, corpus_name: Optional[str] = None, debug: bool = False):
         """
@@ -236,6 +242,8 @@ class VersareCompressor:
                             code_point = ord(symbol)
                             if self.DYNAMIC_NOUN_START <= code_point <= self.DYNAMIC_NOUN_END:
                                 self.next_dynamic_code_point = max(self.next_dynamic_code_point, code_point + 1)
+                            elif self.SECONDARY_DYNAMIC_NOUN_START <= code_point <= self.SECONDARY_DYNAMIC_NOUN_END:
+                                self.next_dynamic_code_point = max(self.next_dynamic_code_point, code_point + 1)
                         except (TypeError, ValueError):
                             pass
             
@@ -326,10 +334,21 @@ class VersareCompressor:
             self.dynamic_noun_symbols[symbol] = lemma
             self.next_dynamic_code_point += 1
             return symbol
-        else:
-            logger.error(f"Ran out of Unicode code points for dynamic nouns. Using fallback.")
-            # Fallback: use the lemma itself
-            return lemma
+
+        if self.DYNAMIC_NOUN_END < self.next_dynamic_code_point < self.SECONDARY_DYNAMIC_NOUN_START:
+            # Jump to Secondary Dynamic Range
+            self.next_dynamic_code_point = self.SECONDARY_DYNAMIC_NOUN_START
+
+        if self.SECONDARY_DYNAMIC_NOUN_START <= self.next_dynamic_code_point <= self.SECONDARY_DYNAMIC_NOUN_END:
+            symbol = chr(self.next_dynamic_code_point)
+            self.dynamic_nouns[lemma.lower()] = symbol
+            self.dynamic_noun_symbols[symbol] = lemma
+            self.next_dynamic_code_point += 1
+            return symbol
+
+        logger.error(f"Ran out of Unicode code points for dynamic nouns. Using fallback.")
+        # Fallback: use the lemma itself
+        return lemma
     
     def compress_text(self, text: str) -> Tuple[str, Dict[str, str]]:
         """
