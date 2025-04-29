@@ -192,7 +192,7 @@ class VersareCompressor:
         """
         try:
             # Read the input file
-            with open(glossary_file, 'r', encoding='utf-8') as f:
+            with open(glossary_file, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
             
             # Extract the header
@@ -460,7 +460,7 @@ class VersareCompressor:
         """
         try:
             # Read the input file
-            with open(input_file, 'r', encoding='utf-8') as f:
+            with open(input_file, 'r', encoding='utf-8', errors='ignore') as f:
                 text = f.read()
             
             # Compress the text
@@ -478,7 +478,7 @@ class VersareCompressor:
                 output_file = str(input_path.with_suffix('.txt'))
             
             # Write the output file
-            with open(output_file, 'w', encoding='utf-8') as f:
+            with open(output_file, 'w', encoding='utf-8', errors='ignore') as f:
                 f.write(full_output)
             
             compression_ratio = len(compressed_text) / len(text) if len(text) > 0 else 0
@@ -526,7 +526,7 @@ class VersareCompressor:
         """
         try:
             # Read the input file
-            with open(input_file, 'r', encoding='utf-8') as f:
+            with open(input_file, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
             
             # Extract the header and compressed content
@@ -567,7 +567,7 @@ class VersareCompressor:
                 output_file = str(input_path.with_suffix('.decompressed.txt'))
             
             # Write the output file
-            with open(output_file, 'w', encoding='utf-8') as f:
+            with open(output_file, 'w', encoding='utf-8', errors='ignore') as f:
                 f.write(decompressed_text)
             
             logger.info(f"Decompressed {input_file} to {output_file}")
@@ -590,7 +590,7 @@ class VersareCompressor:
         """
         try:
             # Read the input file
-            with open(versare_file, 'r', encoding='utf-8') as f:
+            with open(versare_file, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
             
             # Extract the header
@@ -606,7 +606,7 @@ class VersareCompressor:
                 output_file = str(input_path.with_suffix('.glossary'))
             
             # Write the glossary file
-            with open(output_file, 'w', encoding='utf-8') as f:
+            with open(output_file, 'w', encoding='utf-8', errors='ignore') as f:
                 f.write(header)
             
             logger.info(f"Extracted glossary from {versare_file} to {output_file}")
@@ -648,7 +648,7 @@ class VersareCompressor:
                 output_file = "merged_glossary.txt"
             
             # Write the merged glossary file
-            with open(output_file, 'w', encoding='utf-8') as f:
+            with open(output_file, 'w', encoding='utf-8', errors='ignore') as f:
                 f.write(header)
             
             logger.info(f"Merged {len(glossary_files)} glossaries into {output_file}")
@@ -672,7 +672,7 @@ def compress_text_and_save(self, text: str, output_file: str):
     header = self.create_bootstrap_header(symbol_definitions)
     full_output = header + compressed_text
     
-    with open(output_file, 'w', encoding='utf-8') as f:
+    with open(output_file, 'w', encoding='utf-8', errors='ignore') as f:
         f.write(full_output)
         
     compression_ratio = len(compressed_text) / len(text) if len(text) > 0 else 0
