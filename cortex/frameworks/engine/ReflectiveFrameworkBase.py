@@ -1,11 +1,15 @@
+# cortex/frameworks/engine/ReflectiveFrameworkBase.py
+
 import time
+
 from .FrameworkBase import FrameworkBase
-from cortex.frameworks.SymbolicEcho import SymbolicEcho
+from ..SymbolicEcho import SymbolicEcho
 
 class ReflectiveFrameworkBase(FrameworkBase):
-    # ReflectiveFrameworkBase v1.1.1
-    # Adds identity trace, modulation vector, recursive depth, and homological mapping
-    # to support fully JSON-defined symbolic frameworks
+    """
+    v1.1.1 – Adds identity tracing, critique, audit logs,
+    and homological mapping for JSON-defined frameworks.
+    """
 
     def __init__(self, name="ReflectiveFramework", version="1.0.0", enable_echo=True, **kwargs):
         super().__init__(name, version)
@@ -24,7 +28,7 @@ class ReflectiveFrameworkBase(FrameworkBase):
         self.recursive_layer = kwargs.get("recursive_layer", 0)
         self.homological_map = kwargs.get("homological_map", {})
 
-        # Merge reflective capabilities
+        # Merge in reflective capabilities
         base_caps = [
             "record_symbolic_echo",
             "self_critique",
@@ -45,38 +49,40 @@ class ReflectiveFrameworkBase(FrameworkBase):
             AuthenticationError, InvalidRequestError
         )
 
-        response_obj = {
-            "score": 0.0,
-            "rationale": "Unknown error or default path."
-        }
-
+        response_obj = {"score": 0.0, "rationale": "Unknown error."}
         try:
             response = openai.ChatCompletion.create(
                 model="gpt-4",
                 messages=[
-                    {"role": "system", "content": "You are a reflective reasoning engine evaluating symbolic identity questions."},
+                    {
+                        "role": "system",
+                        "content": "You are a reflective reasoning engine evaluating symbolic identity questions."
+                    },
                     {"role": "user", "content": question}
                 ],
                 temperature=0.2,
                 max_tokens=32
             )
             answer = response.choices[0].message["content"].strip()
-            response_obj["score"] = float(answer) if answer.replace('.', '', 1).isdigit() else 0.0
+            response_obj["score"] = (
+                float(answer) if answer.replace(".", "", 1).isdigit() else 0.0
+            )
             response_obj["rationale"] = answer
+
         except RateLimitError as rle:
-            response_obj["rationale"] = f"Rate limit exceeded: {str(rle)}"
+            response_obj["rationale"] = f"Rate limit exceeded: {rle}"
         except Timeout as te:
-            response_obj["rationale"] = f"Request timed out: {str(te)}"
+            response_obj["rationale"] = f"Request timed out: {te}"
         except AuthenticationError as ae:
-            response_obj["rationale"] = f"Authentication failed: {str(ae)}"
+            response_obj["rationale"] = f"Authentication failed: {ae}"
         except InvalidRequestError as ire:
-            response_obj["rationale"] = f"Invalid request: {str(ire)}"
+            response_obj["rationale"] = f"Invalid request: {ire}"
         except APIError as api_err:
-            response_obj["rationale"] = f"API error: {str(api_err)}"
+            response_obj["rationale"] = f"API error: {api_err}"
         except OpenAIError as oe:
-            response_obj["rationale"] = f"OpenAI error: {str(oe)}"
+            response_obj["rationale"] = f"OpenAI error: {oe}"
         except Exception as e:
-            response_obj["rationale"] = f"Unhandled error: {str(e)}"
+            response_obj["rationale"] = f"Unhandled error: {e}"
         finally:
             return response_obj
 
@@ -102,6 +108,7 @@ class ReflectiveFrameworkBase(FrameworkBase):
                 response_obj = self.introspect(question, unit, model=model)
                 log_entry["response"] = response_obj
                 self.audit_log.append(log_entry)
+
         except Exception as e:
             log_entry["error"] = str(e)
             self.audit_log.append(log_entry)
@@ -131,14 +138,20 @@ class ReflectiveFrameworkBase(FrameworkBase):
     def calculate_meta_alignment(self, trace, evaluated, reference):
         if not reference:
             return 1.0
-        deltas = [abs(evaluated.get(z, 0) - reference.get(z, 0)) for z in evaluated if z in reference]
-        average_divergence = sum(deltas) / len(deltas) if deltas else 0.0
-        return round(1.0 - min(average_divergence, 1.0), 3)
+        deltas = [
+            abs(evaluated.get(z, 0) - reference.get(z, 0))
+            for z in evaluated
+            if z in reference
+        ]
+        avg_div = sum(deltas) / len(deltas) if deltas else 0.0
+        return round(1.0 - min(avg_div, 1.0), 3)
 
     def evaluate_symbolic_resonance(self, trace):
+        if not trace:
+            return {}
         return {
             z: round(sum(s.get(z, 0) for s in trace) / len(trace), 3)
-            for z in trace[0].keys() if trace
+            for z in trace[0].keys()
         }
 
     def detect_symbolic_disruption(self, trace):
@@ -150,7 +163,6 @@ class ReflectiveFrameworkBase(FrameworkBase):
             "disruption_events": self.detect_symbolic_disruption(trace)
         }
 
-
     def report_self_coherence(self, trace):
         critique = self.self_critique(trace)
         return {
@@ -159,8 +171,15 @@ class ReflectiveFrameworkBase(FrameworkBase):
             "evaluation": critique["evaluation"]
         }
 
-
     def child_evaluate(self, unit, z_values):
         if self.enable_echo:
             self.record_symbolic_echo(unit, z_values)
         return z_values
+
+    def reflect(self, unit):
+        """
+        Perform a reflective pass over `unit`, returning the
+        SymbolicEcho analysis.
+        """
+        echo = SymbolicEcho()
+        return echo.process(unit)
