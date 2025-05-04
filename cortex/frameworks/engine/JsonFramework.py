@@ -1,5 +1,5 @@
 import json
-from ReflectiveFrameworkBase import ReflectiveFrameworkBase
+from .ReflectiveFrameworkBase import ReflectiveFrameworkBase
 
 class JsonFramework(ReflectiveFrameworkBase):
     def __init__(self, json_path):
