@@ -1,4 +1,5 @@
-import json from cortex.frameworks.engine.JsonFramework import JsonFramework
+import json
+from cortex.frameworks.engine.JsonFramework import JsonFramework
 
 class SymbolicMathFramework(JsonFramework): ''' SymbolicMathFramework v1.0.0 Extends JsonFramework to support symbolic mathematical operators and Z-axis evaluations using predefined mappings from JSON. '''
 
