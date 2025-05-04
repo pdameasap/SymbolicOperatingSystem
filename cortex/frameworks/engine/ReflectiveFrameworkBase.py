@@ -1,6 +1,6 @@
 from .FrameworkBase import FrameworkBase
 import time
-from .SymbolicEcho import SymbolicEcho
+from ..SymbolicEcho import SymbolicEcho
 
 class ReflectiveFrameworkBase(FrameworkBase):
     # ReflectiveFrameworkBase v1.1.1
