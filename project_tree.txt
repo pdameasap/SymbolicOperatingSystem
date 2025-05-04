@@ -52,6 +52,7 @@ cortex/scripts/tests/test_secl.py
 cortex/symbolic/core/ZAxes_SymbolicEvaluationCore.txt
 cortex/symbolic/core/ZGlyphConstraints.py
 docs/harmonic/11_Harmonic_Manuscripts_XI.pdf
+docs/harmonic/11_Harmonic_Manuscripts_XI_to_XVI.tex
 docs/harmonic/12_Harmonic_Manuscripts_XII.pdf
 docs/harmonic/13_Harmonic_Manuscripts_XIII.pdf
 docs/harmonic/13_Harmonic_Manuscripts_XIII.tex
@@ -71,6 +72,7 @@ docs/math/symbolic_physics.tex
 docs/math/Symbolic_Physics_Outline.pdf
 docs/math/symbolic_physics_outline.tex
 LICENSE
+memory/README.md
 modules/__init__.py
 modules/convergence/__init__.py
 modules/convergence/ConvergenceEngine.py
