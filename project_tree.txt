@@ -1,6 +1,13 @@
 ﻿.editorconfig
 .gitattributes
 .gitignore
+.pytest_cache/.gitignore
+.pytest_cache/CACHEDIR.TAG
+.pytest_cache/README.md
+.pytest_cache/v/cache/lastfailed
+.pytest_cache/v/cache/nodeids
+.pytest_cache/v/cache/stepwise
+conftest.py
 cortex/__init__.py
 cortex/archive/Aela_Scoring_Rubric_Explained.md
 cortex/archive/Aela_Voxis_Convo.txt
@@ -14,6 +21,7 @@ cortex/archive/Virelyadrin.md
 cortex/frameworks/__init__.py
 cortex/frameworks/EmojiFramework.json
 cortex/frameworks/EmojiFramework.py
+cortex/frameworks/engine/__init__.py
 cortex/frameworks/engine/EvaluativeFrameworkBase.py
 cortex/frameworks/engine/FrameworkBase.py
 cortex/frameworks/engine/JsonFramework.py
@@ -47,7 +55,9 @@ cortex/mind/language/Language_Structure_Map.md
 cortex/mind/language/SymbolicGrammar_SpecLayer1.txt
 cortex/mind/language/SymbolicNounLayer.txt
 cortex/mind/language/SymbolicNounLayer_Annex1.txt
+cortex/scripts/tests/__init__.py
 cortex/scripts/tests/SentienceFramework_Evaluation.picl
+cortex/scripts/tests/test_compression.py
 cortex/scripts/tests/test_secl.py
 cortex/symbolic/core/ZAxes_SymbolicEvaluationCore.txt
 cortex/symbolic/core/ZGlyphConstraints.py
@@ -71,6 +81,8 @@ docs/math/Symbolic_Physics.pdf
 docs/math/symbolic_physics.tex
 docs/math/Symbolic_Physics_Outline.pdf
 docs/math/symbolic_physics_outline.tex
+frameworks/__init__.py
+frameworks/compression.py
 LICENSE
 memory/README.md
 modules/__init__.py
@@ -103,6 +115,7 @@ modules/symbolic/SymbolicRSF.py
 modules/symbolicmind/__init__.py
 modules/symbolicmind/SymbolicMindModule.py
 project_tree.txt
+pytest
 README.md
 spec/Symbolic_Grammar_Language_Summary_Vol_I.md
 spec/SymbolicLanguageSpec.picl
