@@ -88,6 +88,11 @@ modules/parser/symbolic_normalizer.py
 modules/parser/symbolic_nouns.py
 modules/parser/VersareCompressor.py
 modules/parser/VersarePDFPipeline.py
+modules/pdf/__init__.py
+modules/pdf/pdf_processor.py
+modules/pdf/pipeline.py
+modules/pdf/run_pipeline.py
+modules/pdf/zglyph_parser.py
 modules/routing/__init__.py
 modules/routing/RecursiveRouter.py
 modules/semantic/ResonanceFilter.py
