@@ -1,0 +1,8 @@
+{
+  "_comment": "Populate these arrays with your noun lexicon, Z‑glyph definitions, operators, and emoji inventory",
+  "nouns": [],
+  "z_glyphs": [],
+  "operators": [],
+  "emoji": [],
+  "grammar_file": "cortex/mind/language/grammar.bnf"
+}
