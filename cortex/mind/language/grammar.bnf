@@ -1,0 +1,20 @@
+(* Versare Grammar in EBNF *)
+<program>        ::= { <statement> } ;
+<statement>      ::= <definition> | <invocation> | <clause> | <conditional> ;
+<definition>     ::= "≜" <NAME> "=" <expression> ;
+<invocation>     ::= "⊢" <NAME> ;
+<clause>         ::= <noun_phrase> <predicate> [ <emoji> ] ;
+<conditional>    ::= "IF" "(" <expression> ")" "⟹" "THEN" "(" <expression> ")" ;
+<expression>     ::= <noun_phrase> | <predicate> | <function_call> | <evaluation> ;
+<evaluation>     ::= "%" <Z_GLYPH> "|" <expression> ;
+<function_call>  ::= "$" <NAME> "(" [ <argument_list> ] ")" ;
+<argument_list>  ::= <expression> { "," <expression> } ;
+<noun_phrase>    ::= <noun> { <modifier> } ;
+<predicate>      ::= <Z_GLYPH> { <Z_GLYPH> } ;
+<modifier>       ::= "%" <NAME> | <emoji> ;
+
+(* Terminals *)
+<NAME>           ::= letter { letter | digit | "_" } ;
+<noun>           ::= /* matched against spec/versare_language.json.nouns */ ;
+<Z_GLYPH>        ::= /* one of Z₁…Z₁₈ */ ;
+<emoji>          ::= /* any emoji in spec/versare_language.json.emoji */ ;
