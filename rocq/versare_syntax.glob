@@ -1,5 +1,6 @@
-DIGEST 240fdc23c4eaeb07abb7ba6103a49998
+DIGEST 82e747620330af0324b6394709a86181
 Frocq.versare_syntax
 R39:56 Coq.Strings.String <> <> lib
 R74:87 Coq.Lists.List <> <> lib
 R97:109 Coq.Lists.List ListNotations <> mod
+mod 120:123 <> rocq
