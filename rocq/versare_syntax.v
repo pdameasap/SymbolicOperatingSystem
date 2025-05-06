@@ -37,4 +37,3 @@ Inductive expr : Type :=
 
 End versare_syntax.
 
-Export versare_syntax.
