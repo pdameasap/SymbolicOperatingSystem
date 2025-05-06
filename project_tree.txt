@@ -51,6 +51,7 @@ cortex/interpreter/SECLInterpreter.py
 cortex/interpreter/SigilParser.py
 cortex/interpreter/SymbolicExpressionResolver.py
 cortex/language/picl/picl_bootstrap.picl
+cortex/mind/language/grammar.bnf
 cortex/mind/language/Language_Structure_Map.md
 cortex/mind/language/SymbolicGrammar_SpecLayer1.txt
 cortex/mind/language/SymbolicNounLayer.txt
@@ -117,8 +118,13 @@ modules/symbolicmind/SymbolicMindModule.py
 project_tree.txt
 pytest
 README.md
+rocq/_CoqProject
+rocq/versare_properties.v
+rocq/versare_semantics.v
+rocq/versare_syntax.v
 spec/Symbolic_Grammar_Language_Summary_Vol_I.md
 spec/SymbolicLanguageSpec.picl
+spec/versare_language.json
 spec/VersareLanguageSpec.md
 stimuli/again_one.txt
 stimuli/the_raven.txt
