@@ -4,7 +4,7 @@ Require Import Coq.Strings.String.
 Require Import Coq.Lists.List.
 Import ListNotations.
 
-Module VersareSyntax.
+Module rocq.versare_syntax.
 
 (* === Emoji inventory === *)
 Inductive emoji : Type :=
