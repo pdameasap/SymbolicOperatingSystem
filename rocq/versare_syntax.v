@@ -4,6 +4,7 @@ Require Import Coq.Strings.String.
 Require Import Coq.Lists.List.
 Import ListNotations.
 
+Module rocq.
 Module rocq.versare_syntax.
 
 (* === Emoji inventory === *)
@@ -35,6 +36,7 @@ Inductive expr : Type :=
   | ECall    (fname : string) (args : list expr)
   .
 
-End rocq.versare_syntax.
+End versare_syntax.
+End rocq.
 
 Export rocq.versare_syntax.
