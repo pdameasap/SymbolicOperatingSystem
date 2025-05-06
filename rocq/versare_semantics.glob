@@ -213,39 +213,39 @@ R1342:1343 rocq.versare_semantics <> v1:20 var
 R1347:1350 rocq.versare_semantics <> z18v proj
 R1352:1353 rocq.versare_semantics <> v2:21 var
 def 1418:1427 <> clause_sem
-R1437:1440 rocq.versare_syntax VersareSyntax noun ind
+R1437:1440 rocq.versare_syntax rocq.versare_syntax noun ind
 binder 1430:1433 <> subj:22
 R1452:1455 Coq.Init.Datatypes <> list ind
-R1457:1462 rocq.versare_syntax VersareSyntax Zglyph ind
+R1457:1462 rocq.versare_syntax rocq.versare_syntax Zglyph ind
 binder 1444:1448 <> preds:23
 R1467:1473 rocq.versare_semantics <> zvector rec
 R1480:1494 rocq.versare_semantics <> default_zvector def
 def 1509:1516 <> modulate
-R1525:1529 rocq.versare_syntax VersareSyntax emoji ind
+R1525:1529 rocq.versare_syntax rocq.versare_syntax emoji ind
 binder 1519:1521 <> emo:24
 R1537:1543 rocq.versare_semantics <> zvector rec
 binder 1533:1533 <> v:25
 R1548:1554 rocq.versare_semantics <> zvector rec
 R1561:1561 rocq.versare_semantics <> v:25 var
 def 1596:1601 <> interp
-R1608:1611 rocq.versare_syntax VersareSyntax expr ind
+R1608:1611 rocq.versare_syntax rocq.versare_syntax expr ind
 binder 1604:1604 <> e:26
 R1616:1622 rocq.versare_semantics <> zvector rec
 R1635:1635 rocq.versare_semantics <> e:26 var
-R1646:1652 rocq.versare_syntax VersareSyntax EClause constr
+R1646:1652 rocq.versare_syntax rocq.versare_syntax EClause constr
 R1665:1668 Coq.Init.Datatypes <> None constr
 R1677:1686 rocq.versare_semantics <> clause_sem def
-R1703:1709 rocq.versare_syntax VersareSyntax EClause constr
+R1703:1709 rocq.versare_syntax rocq.versare_syntax EClause constr
 R1723:1726 Coq.Init.Datatypes <> Some constr
 R1734:1741 rocq.versare_semantics <> modulate def
 R1746:1755 rocq.versare_semantics <> clause_sem def
-R1773:1779 rocq.versare_syntax VersareSyntax EDefine constr
+R1773:1779 rocq.versare_syntax rocq.versare_syntax EDefine constr
 R1804:1809 rocq.versare_semantics <> interp:27 def
-R1820:1826 rocq.versare_syntax VersareSyntax EInvoke constr
+R1820:1826 rocq.versare_syntax rocq.versare_syntax EInvoke constr
 R1850:1864 rocq.versare_semantics <> default_zvector def
-R1870:1872 rocq.versare_syntax VersareSyntax EIf constr
+R1870:1872 rocq.versare_syntax rocq.versare_syntax EIf constr
 R1900:1905 rocq.versare_semantics <> interp:27 def
-R1919:1923 rocq.versare_syntax VersareSyntax EEval constr
+R1919:1923 rocq.versare_syntax rocq.versare_syntax EEval constr
 R1949:1963 rocq.versare_semantics <> default_zvector def
-R1969:1973 rocq.versare_syntax VersareSyntax ECall constr
+R1969:1973 rocq.versare_syntax rocq.versare_syntax ECall constr
 R1999:2013 rocq.versare_semantics <> default_zvector def
