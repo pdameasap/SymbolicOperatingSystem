@@ -35,6 +35,6 @@ Inductive expr : Type :=
   | ECall    (fname : string) (args : list expr)
   .
 
-End VersareSyntax.
+End rocq.versare_syntax.
 
-Export VersareSyntax.
+Export rocq.versare_syntax.
