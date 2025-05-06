@@ -1,0 +1,5 @@
+DIGEST b3a55ed75491b17903d598085fddacfe
+Frocq.versare_properties
+R43:54 Coq.Init.Nat <> <> lib
+R72:85 Coq.Lists.List <> <> lib
+R95:107 Coq.Lists.List ListNotations <> mod

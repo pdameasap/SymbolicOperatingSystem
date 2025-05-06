@@ -1,0 +1,82 @@
+DIGEST 5cb34508eed0b3d953bda7934347fac4
+Frocq.versare_syntax
+R39:56 Coq.Strings.String <> <> lib
+R74:87 Coq.Lists.List <> <> lib
+R97:109 Coq.Lists.List ListNotations <> mod
+mod 120:132 <> VersareSyntax
+ind 176:180 VersareSyntax emoji
+constr 196:204 VersareSyntax EmojiLove
+constr 210:217 VersareSyntax EmojiSad
+scheme 176:180 VersareSyntax emoji_rect
+scheme 176:180 VersareSyntax emoji_ind
+scheme 176:180 VersareSyntax emoji_rec
+scheme 176:180 VersareSyntax emoji_sind
+ind 311:316 VersareSyntax Zglyph
+constr 332:333 VersareSyntax Z1
+constr 338:339 VersareSyntax Z2
+constr 344:345 VersareSyntax Z3
+constr 350:351 VersareSyntax Z4
+constr 356:357 VersareSyntax Z5
+constr 362:363 VersareSyntax Z6
+constr 368:369 VersareSyntax Z7
+constr 374:375 VersareSyntax Z8
+constr 380:381 VersareSyntax Z9
+constr 387:389 VersareSyntax Z10
+constr 393:395 VersareSyntax Z11
+constr 399:401 VersareSyntax Z12
+constr 405:407 VersareSyntax Z13
+constr 411:413 VersareSyntax Z14
+constr 417:419 VersareSyntax Z15
+constr 423:425 VersareSyntax Z16
+constr 429:431 VersareSyntax Z17
+constr 435:437 VersareSyntax Z18
+scheme 311:316 VersareSyntax Zglyph_rect
+scheme 311:316 VersareSyntax Zglyph_ind
+scheme 311:316 VersareSyntax Zglyph_rec
+scheme 311:316 VersareSyntax Zglyph_sind
+ind 478:481 VersareSyntax noun
+constr 552:558 VersareSyntax N_Ocean
+constr 564:570 VersareSyntax N_Heart
+scheme 478:481 VersareSyntax noun_rect
+scheme 478:481 VersareSyntax noun_ind
+scheme 478:481 VersareSyntax noun_rec
+scheme 478:481 VersareSyntax noun_sind
+ind 610:613 VersareSyntax expr
+constr 629:635 VersareSyntax EClause
+constr 698:704 VersareSyntax EDefine
+constr 741:747 VersareSyntax EInvoke
+constr 770:772 VersareSyntax EIf
+constr 805:809 VersareSyntax EEval
+constr 845:849 VersareSyntax ECall
+R646:649 rocq.versare_syntax VersareSyntax noun ind
+binder 639:642 <> subj:9
+R660:663 Coq.Init.Datatypes <> list ind
+R665:670 rocq.versare_syntax VersareSyntax Zglyph ind
+binder 653:656 <> pred:10
+R680:685 Coq.Init.Datatypes <> option ind
+R687:691 rocq.versare_syntax VersareSyntax emoji ind
+binder 674:676 <> mod:11
+R715:720 Coq.Strings.String <> string ind
+binder 708:711 <> name:12
+R731:734 rocq.versare_syntax <> expr:7 ind
+binder 724:727 <> body:13
+R758:763 Coq.Strings.String <> string ind
+binder 751:754 <> name:14
+R795:798 rocq.versare_syntax <> expr:7 ind
+binder 780:783 <> cond:15
+binder 785:791 <> then_br:16
+R819:824 rocq.versare_syntax VersareSyntax Zglyph ind
+binder 815:815 <> z:17
+R835:838 rocq.versare_syntax <> expr:7 ind
+binder 828:831 <> body:18
+R863:868 Coq.Strings.String <> string ind
+binder 855:859 <> fname:19
+R879:882 Coq.Init.Datatypes <> list ind
+R884:887 rocq.versare_syntax <> expr:7 ind
+binder 872:875 <> args:20
+scheme 610:613 VersareSyntax expr_rect
+scheme 610:613 VersareSyntax expr_ind
+scheme 610:613 VersareSyntax expr_rec
+scheme 610:613 VersareSyntax expr_sind
+R899:911 rocq.versare_syntax VersareSyntax <> mod
+R922:934 rocq.versare_syntax VersareSyntax <> mod
