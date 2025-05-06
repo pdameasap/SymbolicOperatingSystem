@@ -4,38 +4,3 @@ R43:54 Coq.Init.Nat <> <> lib
 R72:85 Coq.Lists.List <> <> lib
 R95:107 Coq.Lists.List ListNotations <> mod
 R125:138 versare_syntax <> <> lib
-R156:172 versare_semantics <> <> lib
-prf 248:267 <> interp_deterministic
-binder 278:278 <> e:1
-binder 280:281 <> v1:2
-binder 283:284 <> v2:3
-R302:307 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R297:299 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R289:294 versare_semantics <> interp def
-R296:296 versare_properties <> e:1 var
-R300:301 versare_properties <> v1:2 var
-R321:326 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R316:318 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R308:313 versare_semantics <> interp def
-R315:315 versare_properties <> e:1 var
-R319:320 versare_properties <> v2:3 var
-R329:331 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R327:328 versare_properties <> v1:2 var
-R332:333 versare_properties <> v2:3 var
-prf 435:449 <> modulate_linear
-binder 460:460 <> m:4
-binder 462:463 <> v1:5
-binder 465:466 <> v2:6
-R502:506 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R471:478 versare_semantics <> modulate def
-R480:480 versare_properties <> m:4 var
-R483:494 versare_semantics <> zvector_plus def
-R496:497 versare_properties <> v1:5 var
-R499:500 versare_properties <> v2:6 var
-R507:518 versare_semantics <> zvector_plus def
-R521:528 versare_semantics <> modulate def
-R530:530 versare_properties <> m:4 var
-R532:533 versare_properties <> v1:5 var
-R537:544 versare_semantics <> modulate def
-R546:546 versare_properties <> m:4 var
-R548:549 versare_properties <> v2:6 var

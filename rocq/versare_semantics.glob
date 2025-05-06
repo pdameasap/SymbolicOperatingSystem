@@ -213,39 +213,3 @@ R1337:1338 versare_semantics <> v1:20 var
 R1342:1345 versare_semantics <> z18v proj
 R1347:1348 versare_semantics <> v2:21 var
 def 1413:1422 <> clause_sem
-R1432:1435 versare_syntax versare_syntax noun ind
-binder 1425:1428 <> subj:22
-R1447:1450 Coq.Init.Datatypes <> list ind
-R1452:1457 versare_syntax versare_syntax Zglyph ind
-binder 1439:1443 <> preds:23
-R1462:1468 versare_semantics <> zvector rec
-R1475:1489 versare_semantics <> default_zvector def
-def 1504:1511 <> modulate
-R1520:1524 versare_syntax versare_syntax emoji ind
-binder 1514:1516 <> emo:24
-R1532:1538 versare_semantics <> zvector rec
-binder 1528:1528 <> v:25
-R1543:1549 versare_semantics <> zvector rec
-R1556:1556 versare_semantics <> v:25 var
-def 1591:1596 <> interp
-R1603:1606 versare_syntax versare_syntax expr ind
-binder 1599:1599 <> e:26
-R1611:1617 versare_semantics <> zvector rec
-R1630:1630 versare_semantics <> e:26 var
-R1641:1647 versare_syntax versare_syntax EClause constr
-R1660:1663 Coq.Init.Datatypes <> None constr
-R1672:1681 versare_semantics <> clause_sem def
-R1698:1704 versare_syntax versare_syntax EClause constr
-R1718:1721 Coq.Init.Datatypes <> Some constr
-R1729:1736 versare_semantics <> modulate def
-R1741:1750 versare_semantics <> clause_sem def
-R1768:1774 versare_syntax versare_syntax EDefine constr
-R1799:1804 versare_semantics <> interp:27 def
-R1815:1821 versare_syntax versare_syntax EInvoke constr
-R1845:1859 versare_semantics <> default_zvector def
-R1865:1867 versare_syntax versare_syntax EIf constr
-R1895:1900 versare_semantics <> interp:27 def
-R1914:1918 versare_syntax versare_syntax EEval constr
-R1944:1958 versare_semantics <> default_zvector def
-R1964:1968 versare_syntax versare_syntax ECall constr
-R1994:2008 versare_semantics <> default_zvector def

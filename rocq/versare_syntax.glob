@@ -1,4 +1,4 @@
-DIGEST ac4b7d8f3c362f48c31efb3a5ef39967
+DIGEST d02ad86feb09a9c610c99d7492d0dc9b
 Fversare_syntax
 R39:56 Coq.Strings.String <> <> lib
 R74:87 Coq.Lists.List <> <> lib
@@ -79,4 +79,3 @@ scheme 611:614 versare_syntax expr_ind
 scheme 611:614 versare_syntax expr_rec
 scheme 611:614 versare_syntax expr_sind
 R900:913 versare_syntax versare_syntax <> mod
-R924:937 versare_syntax versare_syntax <> mod
