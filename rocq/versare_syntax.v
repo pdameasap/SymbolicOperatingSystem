@@ -4,8 +4,6 @@ Require Import Coq.Strings.String.
 Require Import Coq.Lists.List.
 Import ListNotations.
 
-Module versare_syntax.
-
 (* === Emoji inventory === *)
 Inductive emoji : Type :=
   | EmojiLove
@@ -34,6 +32,3 @@ Inductive expr : Type :=
   | EEval    (z : Zglyph) (body : expr)
   | ECall    (fname : string) (args : list expr)
   .
-
-End versare_syntax.
-
