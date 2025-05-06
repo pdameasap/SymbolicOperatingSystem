@@ -1,5 +1,251 @@
-DIGEST a6aa5cb68658e04f6809c2efd9bf8840
+DIGEST c9721afe44bb8343a5cc0b5984dd193f
 Frocq.versare_semantics
 R42:53 Coq.Init.Nat <> <> lib
 R71:84 Coq.Lists.List <> <> lib
 R94:106 Coq.Lists.List ListNotations <> mod
+R124:142 rocq.versare_syntax <> <> lib
+rec 210:216 <> zvector
+proj 232:234 <> z1v
+proj 244:246 <> z2v
+proj 256:258 <> z3v
+proj 268:270 <> z4v
+proj 280:282 <> z5v
+proj 294:296 <> z6v
+proj 306:308 <> z7v
+proj 318:320 <> z8v
+proj 330:332 <> z9v
+proj 342:345 <> z10v
+proj 356:359 <> z11v
+proj 368:371 <> z12v
+proj 380:383 <> z13v
+proj 392:395 <> z14v
+proj 404:407 <> z15v
+proj 418:421 <> z16v
+proj 430:433 <> z17v
+proj 442:445 <> z18v
+R239:241 Coq.Init.Datatypes <> nat ind
+R251:253 Coq.Init.Datatypes <> nat ind
+R263:265 Coq.Init.Datatypes <> nat ind
+R275:277 Coq.Init.Datatypes <> nat ind
+R287:289 Coq.Init.Datatypes <> nat ind
+R301:303 Coq.Init.Datatypes <> nat ind
+R313:315 Coq.Init.Datatypes <> nat ind
+R325:327 Coq.Init.Datatypes <> nat ind
+R337:339 Coq.Init.Datatypes <> nat ind
+R349:351 Coq.Init.Datatypes <> nat ind
+R363:365 Coq.Init.Datatypes <> nat ind
+R375:377 Coq.Init.Datatypes <> nat ind
+R387:389 Coq.Init.Datatypes <> nat ind
+R399:401 Coq.Init.Datatypes <> nat ind
+R411:413 Coq.Init.Datatypes <> nat ind
+R425:427 Coq.Init.Datatypes <> nat ind
+R437:439 Coq.Init.Datatypes <> nat ind
+R449:451 Coq.Init.Datatypes <> nat ind
+def 496:510 <> default_zvector
+R514:520 rocq.versare_semantics <> zvector rec
+R530:532 rocq.versare_semantics <> z1v proj
+R530:532 rocq.versare_semantics <> z1v proj
+R530:532 rocq.versare_semantics <> z1v proj
+R542:544 rocq.versare_semantics <> z2v proj
+R542:544 rocq.versare_semantics <> z2v proj
+R554:556 rocq.versare_semantics <> z3v proj
+R554:556 rocq.versare_semantics <> z3v proj
+R566:568 rocq.versare_semantics <> z4v proj
+R566:568 rocq.versare_semantics <> z4v proj
+R578:580 rocq.versare_semantics <> z5v proj
+R578:580 rocq.versare_semantics <> z5v proj
+R591:593 rocq.versare_semantics <> z6v proj
+R591:593 rocq.versare_semantics <> z6v proj
+R603:605 rocq.versare_semantics <> z7v proj
+R603:605 rocq.versare_semantics <> z7v proj
+R615:617 rocq.versare_semantics <> z8v proj
+R615:617 rocq.versare_semantics <> z8v proj
+R627:629 rocq.versare_semantics <> z9v proj
+R627:629 rocq.versare_semantics <> z9v proj
+R639:642 rocq.versare_semantics <> z10v proj
+R639:642 rocq.versare_semantics <> z10v proj
+R652:655 rocq.versare_semantics <> z11v proj
+R652:655 rocq.versare_semantics <> z11v proj
+R664:667 rocq.versare_semantics <> z12v proj
+R664:667 rocq.versare_semantics <> z12v proj
+R676:679 rocq.versare_semantics <> z13v proj
+R676:679 rocq.versare_semantics <> z13v proj
+R688:691 rocq.versare_semantics <> z14v proj
+R688:691 rocq.versare_semantics <> z14v proj
+R700:703 rocq.versare_semantics <> z15v proj
+R700:703 rocq.versare_semantics <> z15v proj
+R713:716 rocq.versare_semantics <> z16v proj
+R713:716 rocq.versare_semantics <> z16v proj
+R725:728 rocq.versare_semantics <> z17v proj
+R725:728 rocq.versare_semantics <> z17v proj
+R737:740 rocq.versare_semantics <> z18v proj
+R737:740 rocq.versare_semantics <> z18v proj
+def 796:807 <> zvector_plus
+R818:824 rocq.versare_semantics <> zvector rec
+binder 810:811 <> v1:20
+binder 813:814 <> v2:21
+R829:835 rocq.versare_semantics <> zvector rec
+R845:847 rocq.versare_semantics <> z1v proj
+R845:847 rocq.versare_semantics <> z1v proj
+R845:847 rocq.versare_semantics <> z1v proj
+R873:875 rocq.versare_semantics <> z2v proj
+R873:875 rocq.versare_semantics <> z2v proj
+R902:904 rocq.versare_semantics <> z3v proj
+R902:904 rocq.versare_semantics <> z3v proj
+R930:932 rocq.versare_semantics <> z4v proj
+R930:932 rocq.versare_semantics <> z4v proj
+R959:961 rocq.versare_semantics <> z5v proj
+R959:961 rocq.versare_semantics <> z5v proj
+R987:989 rocq.versare_semantics <> z6v proj
+R987:989 rocq.versare_semantics <> z6v proj
+R1016:1018 rocq.versare_semantics <> z7v proj
+R1016:1018 rocq.versare_semantics <> z7v proj
+R1044:1046 rocq.versare_semantics <> z8v proj
+R1044:1046 rocq.versare_semantics <> z8v proj
+R1073:1075 rocq.versare_semantics <> z9v proj
+R1073:1075 rocq.versare_semantics <> z9v proj
+R1101:1104 rocq.versare_semantics <> z10v proj
+R1101:1104 rocq.versare_semantics <> z10v proj
+R1130:1133 rocq.versare_semantics <> z11v proj
+R1130:1133 rocq.versare_semantics <> z11v proj
+R1158:1161 rocq.versare_semantics <> z12v proj
+R1158:1161 rocq.versare_semantics <> z12v proj
+R1187:1190 rocq.versare_semantics <> z13v proj
+R1187:1190 rocq.versare_semantics <> z13v proj
+R1215:1218 rocq.versare_semantics <> z14v proj
+R1215:1218 rocq.versare_semantics <> z14v proj
+R1244:1247 rocq.versare_semantics <> z15v proj
+R1244:1247 rocq.versare_semantics <> z15v proj
+R1272:1275 rocq.versare_semantics <> z16v proj
+R1272:1275 rocq.versare_semantics <> z16v proj
+R1301:1304 rocq.versare_semantics <> z17v proj
+R1301:1304 rocq.versare_semantics <> z17v proj
+R1329:1332 rocq.versare_semantics <> z18v proj
+R1329:1332 rocq.versare_semantics <> z18v proj
+R860:862 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R853:855 rocq.versare_semantics <> z1v proj
+R858:859 rocq.versare_semantics <> v1:20 var
+R863:865 rocq.versare_semantics <> z1v proj
+R868:869 rocq.versare_semantics <> v2:21 var
+R888:890 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R881:883 rocq.versare_semantics <> z2v proj
+R886:887 rocq.versare_semantics <> v1:20 var
+R891:893 rocq.versare_semantics <> z2v proj
+R896:897 rocq.versare_semantics <> v2:21 var
+R917:919 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R910:912 rocq.versare_semantics <> z3v proj
+R915:916 rocq.versare_semantics <> v1:20 var
+R920:922 rocq.versare_semantics <> z3v proj
+R925:926 rocq.versare_semantics <> v2:21 var
+R945:947 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R938:940 rocq.versare_semantics <> z4v proj
+R943:944 rocq.versare_semantics <> v1:20 var
+R948:950 rocq.versare_semantics <> z4v proj
+R953:954 rocq.versare_semantics <> v2:21 var
+R974:976 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R967:969 rocq.versare_semantics <> z5v proj
+R972:973 rocq.versare_semantics <> v1:20 var
+R977:979 rocq.versare_semantics <> z5v proj
+R982:983 rocq.versare_semantics <> v2:21 var
+R1002:1004 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R995:997 rocq.versare_semantics <> z6v proj
+R1000:1001 rocq.versare_semantics <> v1:20 var
+R1005:1007 rocq.versare_semantics <> z6v proj
+R1010:1011 rocq.versare_semantics <> v2:21 var
+R1031:1033 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1024:1026 rocq.versare_semantics <> z7v proj
+R1029:1030 rocq.versare_semantics <> v1:20 var
+R1034:1036 rocq.versare_semantics <> z7v proj
+R1039:1040 rocq.versare_semantics <> v2:21 var
+R1059:1061 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1052:1054 rocq.versare_semantics <> z8v proj
+R1057:1058 rocq.versare_semantics <> v1:20 var
+R1062:1064 rocq.versare_semantics <> z8v proj
+R1067:1068 rocq.versare_semantics <> v2:21 var
+R1088:1090 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1081:1083 rocq.versare_semantics <> z9v proj
+R1086:1087 rocq.versare_semantics <> v1:20 var
+R1091:1093 rocq.versare_semantics <> z9v proj
+R1096:1097 rocq.versare_semantics <> v2:21 var
+R1116:1118 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1109:1112 rocq.versare_semantics <> z10v proj
+R1114:1115 rocq.versare_semantics <> v1:20 var
+R1119:1122 rocq.versare_semantics <> z10v proj
+R1124:1125 rocq.versare_semantics <> v2:21 var
+R1145:1147 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1138:1141 rocq.versare_semantics <> z11v proj
+R1143:1144 rocq.versare_semantics <> v1:20 var
+R1148:1151 rocq.versare_semantics <> z11v proj
+R1153:1154 rocq.versare_semantics <> v2:21 var
+R1173:1175 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1166:1169 rocq.versare_semantics <> z12v proj
+R1171:1172 rocq.versare_semantics <> v1:20 var
+R1176:1179 rocq.versare_semantics <> z12v proj
+R1181:1182 rocq.versare_semantics <> v2:21 var
+R1202:1204 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1195:1198 rocq.versare_semantics <> z13v proj
+R1200:1201 rocq.versare_semantics <> v1:20 var
+R1205:1208 rocq.versare_semantics <> z13v proj
+R1210:1211 rocq.versare_semantics <> v2:21 var
+R1230:1232 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1223:1226 rocq.versare_semantics <> z14v proj
+R1228:1229 rocq.versare_semantics <> v1:20 var
+R1233:1236 rocq.versare_semantics <> z14v proj
+R1238:1239 rocq.versare_semantics <> v2:21 var
+R1259:1261 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1252:1255 rocq.versare_semantics <> z15v proj
+R1257:1258 rocq.versare_semantics <> v1:20 var
+R1262:1265 rocq.versare_semantics <> z15v proj
+R1267:1268 rocq.versare_semantics <> v2:21 var
+R1287:1289 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1280:1283 rocq.versare_semantics <> z16v proj
+R1285:1286 rocq.versare_semantics <> v1:20 var
+R1290:1293 rocq.versare_semantics <> z16v proj
+R1295:1296 rocq.versare_semantics <> v2:21 var
+R1316:1318 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1309:1312 rocq.versare_semantics <> z17v proj
+R1314:1315 rocq.versare_semantics <> v1:20 var
+R1319:1322 rocq.versare_semantics <> z17v proj
+R1324:1325 rocq.versare_semantics <> v2:21 var
+R1344:1346 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1337:1340 rocq.versare_semantics <> z18v proj
+R1342:1343 rocq.versare_semantics <> v1:20 var
+R1347:1350 rocq.versare_semantics <> z18v proj
+R1352:1353 rocq.versare_semantics <> v2:21 var
+def 1418:1427 <> clause_sem
+R1437:1440 rocq.versare_syntax VersareSyntax noun ind
+binder 1430:1433 <> subj:22
+R1452:1455 Coq.Init.Datatypes <> list ind
+R1457:1462 rocq.versare_syntax VersareSyntax Zglyph ind
+binder 1444:1448 <> preds:23
+R1467:1473 rocq.versare_semantics <> zvector rec
+R1480:1494 rocq.versare_semantics <> default_zvector def
+def 1509:1516 <> modulate
+R1525:1529 rocq.versare_syntax VersareSyntax emoji ind
+binder 1519:1521 <> emo:24
+R1537:1543 rocq.versare_semantics <> zvector rec
+binder 1533:1533 <> v:25
+R1548:1554 rocq.versare_semantics <> zvector rec
+R1561:1561 rocq.versare_semantics <> v:25 var
+def 1596:1601 <> interp
+R1608:1611 rocq.versare_syntax VersareSyntax expr ind
+binder 1604:1604 <> e:26
+R1616:1622 rocq.versare_semantics <> zvector rec
+R1635:1635 rocq.versare_semantics <> e:26 var
+R1646:1652 rocq.versare_syntax VersareSyntax EClause constr
+R1665:1668 Coq.Init.Datatypes <> None constr
+R1677:1686 rocq.versare_semantics <> clause_sem def
+R1703:1709 rocq.versare_syntax VersareSyntax EClause constr
+R1723:1726 Coq.Init.Datatypes <> Some constr
+R1734:1741 rocq.versare_semantics <> modulate def
+R1746:1755 rocq.versare_semantics <> clause_sem def
+R1773:1779 rocq.versare_syntax VersareSyntax EDefine constr
+R1804:1809 rocq.versare_semantics <> interp:27 def
+R1820:1826 rocq.versare_syntax VersareSyntax EInvoke constr
+R1850:1864 rocq.versare_semantics <> default_zvector def
+R1870:1872 rocq.versare_syntax VersareSyntax EIf constr
+R1900:1905 rocq.versare_semantics <> interp:27 def
+R1919:1923 rocq.versare_syntax VersareSyntax EEval constr
+R1949:1963 rocq.versare_semantics <> default_zvector def
+R1969:1973 rocq.versare_syntax VersareSyntax ECall constr
+R1999:2013 rocq.versare_semantics <> default_zvector def
