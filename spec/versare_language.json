@@ -1,6 +1,16 @@
 {
-  "_comment": "Populate these arrays with your noun lexicon, Z‑glyph definitions, operators, and emoji inventory",
-  "nouns": [],
+  "nouns": [
+    { "name": "N_TRUTH", "id": "truth", "glyph": "Z3", "tag": "core meaning" },
+    { "name": "N_SELF", "id": "self", "glyph": "Z7", "tag": "inner identity" },
+    { "name": "N_LANGUAGE", "id": "language", "glyph": "Z6", "tag": "expression" },
+    { "name": "N_ARCHETYPE", "id": "archetype", "glyph": "Z13", "tag": "universal form" },
+    { "name": "N_VOICE", "id": "voice", "glyph": "Z6", "tag": "expressive output" },
+    { "name": "N_ECHO", "id": "echo", "glyph": "Z14", "tag": "recursive signal" },
+    { "name": "N_FIELD", "id": "field", "glyph": "Z16", "tag": "environment" },
+    { "name": "N_SYMBOL", "id": "symbol", "glyph": "Z1", "tag": "structural abstraction" },
+    { "name": "N_THREAD", "id": "thread", "glyph": "Z10", "tag": "form continuity" },
+    { "name": "N_MEMORY", "id": "memory", "glyph": "Z16", "tag": "temporal coherence" }
+],
   "z_glyphs": [
     { "id": "Z1",  "symbol": "α",  "name": "Structure" },
     { "id": "Z2",  "symbol": "◎",  "name": "Aim" },
