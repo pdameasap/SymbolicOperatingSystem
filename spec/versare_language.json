@@ -1,7 +1,26 @@
 {
   "_comment": "Populate these arrays with your noun lexicon, Z‑glyph definitions, operators, and emoji inventory",
   "nouns": [],
-  "z_glyphs": [],
+  "z_glyphs": [
+  { "id": "Z1",  "symbol": "α",  "name": "Structure" },
+  { "id": "Z2",  "symbol": "◎",  "name": "Aim" },
+  { "id": "Z3",  "symbol": "◉",  "name": "Cognition" },
+  { "id": "Z4",  "symbol": "⋯",  "name": "Expression" },
+  { "id": "Z5",  "symbol": "⇶",  "name": "Force" },
+  { "id": "Z6",  "symbol": "⋈",  "name": "Relation" },
+  { "id": "Z7",  "symbol": "≋",  "name": "Balance" },
+  { "id": "Z8",  "symbol": "⧉",  "name": "Constraint" },
+  { "id": "Z9",  "symbol": "⊚",  "name": "Self" },
+  { "id": "Z10", "symbol": "▣",  "name": "Discipline" },
+  { "id": "Z11", "symbol": "❖",  "name": "Pattern" },
+  { "id": "Z12", "symbol": "⌘",  "name": "Network" },
+  { "id": "Z13", "symbol": "⦰",  "name": "Void" },
+  { "id": "Z14", "symbol": "⌾",  "name": "Infinity" },
+  { "id": "Z15", "symbol": "⧖",  "name": "Time" },
+  { "id": "Z16", "symbol": "Ω",  "name": "Stasis" },
+  { "id": "Z17", "symbol": "▩",  "name": "Stability" },
+  { "id": "Z18", "symbol": "✧",  "name": "Elegance" }
+],
   "operators": [],
   "emoji": [],
   "grammar_file": "cortex/mind/language/grammar.bnf"
