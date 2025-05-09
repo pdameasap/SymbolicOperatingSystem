@@ -11,7 +11,7 @@ definition          ::= "≜" identifier "=" expression ;
 invocation          ::= "⊢" identifier ;
 function_call       ::= "$" identifier "(" [ argument_list ] ")" ;
 evaluation          ::= "%" z_rule "|" expression ;
-conditional         ::= "IF" "(" expression ")" "⟹" "THEN" "(" expression ")" ;
+conditional         ::= expression "⟹" expression ;
 
 clause              ::= verb "(" noun_phrase ")" [ "$" modifier noun_phrase ] ;
 expression          ::= noun_phrase | function_call | evaluation | conditional | emoji_expr ;
