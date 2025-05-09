@@ -482,6 +482,22 @@
     { "sigil": "⊚", "comment": "Encapsulation (also Z9 – Self)" },
     { "sigil": "◐", "comment": "Lens (semantically distinct from glyphs)" }
   ],
-  "emoji": [],
+  "emoji": [
+    { "sigil": "💡", "comment": "Idea / Illumination / Clarity" },
+    { "sigil": "🧠", "comment": "Mind / Cognition / Intelligence" },
+    { "sigil": "🕸️", "comment": "Web / Network / Interconnection" },
+    { "sigil": "🎤", "comment": "Voice / Expression / Broadcast" },
+    { "sigil": "🛡️", "comment": "Protection / Integrity / Boundaries" },
+    { "sigil": "🏋️", "comment": "Effort / Strength / Resistance" },
+    { "sigil": "🚣️", "comment": "Journey / Transition / Guidance" },
+    { "sigil": "🔄", "comment": "Loop / Feedback / Cycle" },
+    { "sigil": "🔨", "comment": "Impact / Force / Construct" },
+    { "sigil": "💥", "comment": "Disruption / Break / Intensity" },
+    { "sigil": "🔇", "comment": "Silence / Withholding / Pause" },
+    { "sigil": "🗿", "comment": "Endurance / Legacy / Stillness" },
+    { "sigil": "😔", "comment": "Grief / Depth / Sorrow" },
+    { "sigil": "😄", "comment": "Joy / Openness / Lightness" },
+    { "sigil": "🔥", "comment": "Passion / Transformation / Burn" }
+  ],
   "grammar_file": "cortex/mind/language/grammar.bnf"
 }
