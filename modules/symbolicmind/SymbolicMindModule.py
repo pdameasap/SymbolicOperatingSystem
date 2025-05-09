@@ -1,3 +1,5 @@
+
+# File: modules/symbolicmind/SymbolicMindModule.py
 # SymbolicMindModule v1.0.0
 # Full convergent orchestration scaffold for recursive symbolic cognition
 
