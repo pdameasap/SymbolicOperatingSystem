@@ -1,4 +1,4 @@
-# pdf_pipeline_modular/pdf_processor.py
+# modules/pdf/pdf_processor.py
 
 import os
 import logging
