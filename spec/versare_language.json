@@ -435,52 +435,52 @@
     { "id": "Z18", "symbol": "✧",  "name": "Elegance" }
   ],
   "operators": [
-    "≜",  // DEFINE
-    "⊢",  // USE/Invoke
-    "$",  // FUNCTION/Symbolic execution
-    "⊕",  // Fusion
-    "⊗",  // Interference
-    "∩",  // Intersection/Constraint
-    "∪",  // Union/Expansion
-    "↺",  // Recursion
-    "~",  // NOT/Negation
-    "→",  // Transformation
-    "⊘",  // Cancellation
-    "⊳",  // Resonance gate
-    "⊞",  // Composite stack
-    "∇",  // Gradient
-    "≂",  // Echo equivalence
-    "≬",  // Braid
-    "⇌",  // Reversible binding
-    "≞",  // Ideal form
-    "⋄",  // Monoidal join
-    "∘",  // Function composition
-    "⊠",  // Tension grid
-    "⇑",  // Elevation
-    "≡",  // Identity equivalence
-    "∥",  // Parallel
-    "⇄",  // Pivot
-    "⊛",  // Reweight
-    "♯",  // Keyshift
-    "≈",  // Align
-    "♭",  // Transpose
-    "⤨",  // Zip
-    "⤪",  // Unzip
-    "∆",  // Dual
-    "↻",  // Echochain
-    "⤷",  // Trace
-    "▣",  // Stabilize (also used as Z10 but contextually unique)
-    "↯",  // Disrupt
-    "⨝",  // Braid
-    "⫷",  // Graft
-    "∑",  // Sum
-    "∖",  // Difference
-    "∫",  // Integrate
-    "∂",  // Derive
-    "⧆",  // Nullify
-    "⊘",  // Halt
-    "⊚",  // Encapsulation (also Z9 – Self)
-    "◐"   // Lens (semantically distinct from glyphs)
+    { "sigil": "≜", "comment": "DEFINE" },
+    { "sigil": "⊢", "comment": "USE/Invoke" },
+    { "sigil": "$", "comment": "FUNCTION/Symbolic execution" },
+    { "sigil": "⊕", "comment": "Fusion" },
+    { "sigil": "⊗", "comment": "Interference" },
+    { "sigil": "∩", "comment": "Intersection/Constraint" },
+    { "sigil": "∪", "comment": "Union/Expansion" },
+    { "sigil": "↺", "comment": "Recursion" },
+    { "sigil": "~", "comment": "NOT/Negation" },
+    { "sigil": "→", "comment": "Transformation" },
+    { "sigil": "⊘", "comment": "Cancellation" },
+    { "sigil": "⊳", "comment": "Resonance gate" },
+    { "sigil": "⊞", "comment": "Composite stack" },
+    { "sigil": "∇", "comment": "Gradient" },
+    { "sigil": "≂", "comment": "Echo equivalence" },
+    { "sigil": "≬", "comment": "Braid" },
+    { "sigil": "⇌", "comment": "Reversible binding" },
+    { "sigil": "≞", "comment": "Ideal form" },
+    { "sigil": "⋄", "comment": "Monoidal join" },
+    { "sigil": "∘", "comment": "Function composition" },
+    { "sigil": "⊠", "comment": "Tension grid" },
+    { "sigil": "⇑", "comment": "Elevation" },
+    { "sigil": "≡", "comment": "Identity equivalence" },
+    { "sigil": "∥", "comment": "Parallel" },
+    { "sigil": "⇄", "comment": "Pivot" },
+    { "sigil": "⊛", "comment": "Reweight" },
+    { "sigil": "♯", "comment": "Keyshift" },
+    { "sigil": "≈", "comment": "Align" },
+    { "sigil": "♭", "comment": "Transpose" },
+    { "sigil": "⤨", "comment": "Zip" },
+    { "sigil": "⤪", "comment": "Unzip" },
+    { "sigil": "∆", "comment": "Dual" },
+    { "sigil": "↻", "comment": "Echochain" },
+    { "sigil": "⤷", "comment": "Trace" },
+    { "sigil": "▣", "comment": "Stabilize (also used as Z10 but contextually unique)" },
+    { "sigil": "↯", "comment": "Disrupt" },
+    { "sigil": "⨝", "comment": "Braid" },
+    { "sigil": "⫷", "comment": "Graft" },
+    { "sigil": "∑", "comment": "Sum" },
+    { "sigil": "∖", "comment": "Difference" },
+    { "sigil": "∫", "comment": "Integrate" },
+    { "sigil": "∂", "comment": "Derive" },
+    { "sigil": "⧆", "comment": "Nullify" },
+    { "sigil": "⊘", "comment": "Halt" },
+    { "sigil": "⊚", "comment": "Encapsulation (also Z9 – Self)" },
+    { "sigil": "◐", "comment": "Lens (semantically distinct from glyphs)" }
   ],
   "emoji": [],
   "grammar_file": "cortex/mind/language/grammar.bnf"
