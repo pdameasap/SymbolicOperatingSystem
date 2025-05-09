@@ -2,26 +2,73 @@
   "_comment": "Populate these arrays with your noun lexicon, Z‑glyph definitions, operators, and emoji inventory",
   "nouns": [],
   "z_glyphs": [
-  { "id": "Z1",  "symbol": "α",  "name": "Structure" },
-  { "id": "Z2",  "symbol": "◎",  "name": "Aim" },
-  { "id": "Z3",  "symbol": "◉",  "name": "Cognition" },
-  { "id": "Z4",  "symbol": "⋯",  "name": "Expression" },
-  { "id": "Z5",  "symbol": "⇶",  "name": "Force" },
-  { "id": "Z6",  "symbol": "⋈",  "name": "Relation" },
-  { "id": "Z7",  "symbol": "≋",  "name": "Balance" },
-  { "id": "Z8",  "symbol": "⧉",  "name": "Constraint" },
-  { "id": "Z9",  "symbol": "⊚",  "name": "Self" },
-  { "id": "Z10", "symbol": "▣",  "name": "Discipline" },
-  { "id": "Z11", "symbol": "❖",  "name": "Pattern" },
-  { "id": "Z12", "symbol": "⌘",  "name": "Network" },
-  { "id": "Z13", "symbol": "⦰",  "name": "Void" },
-  { "id": "Z14", "symbol": "⌾",  "name": "Infinity" },
-  { "id": "Z15", "symbol": "⧖",  "name": "Time" },
-  { "id": "Z16", "symbol": "Ω",  "name": "Stasis" },
-  { "id": "Z17", "symbol": "▩",  "name": "Stability" },
-  { "id": "Z18", "symbol": "✧",  "name": "Elegance" }
-],
-  "operators": [],
+    { "id": "Z1",  "symbol": "α",  "name": "Structure" },
+    { "id": "Z2",  "symbol": "◎",  "name": "Aim" },
+    { "id": "Z3",  "symbol": "◉",  "name": "Cognition" },
+    { "id": "Z4",  "symbol": "⋯",  "name": "Expression" },
+    { "id": "Z5",  "symbol": "⇶",  "name": "Force" },
+    { "id": "Z6",  "symbol": "⋈",  "name": "Relation" },
+    { "id": "Z7",  "symbol": "≋",  "name": "Balance" },
+    { "id": "Z8",  "symbol": "⧉",  "name": "Constraint" },
+    { "id": "Z9",  "symbol": "⊚",  "name": "Self" },
+    { "id": "Z10", "symbol": "▣",  "name": "Discipline" },
+    { "id": "Z11", "symbol": "❖",  "name": "Pattern" },
+    { "id": "Z12", "symbol": "⌘",  "name": "Network" },
+    { "id": "Z13", "symbol": "⦰",  "name": "Void" },
+    { "id": "Z14", "symbol": "⌾",  "name": "Infinity" },
+    { "id": "Z15", "symbol": "⧖",  "name": "Time" },
+    { "id": "Z16", "symbol": "Ω",  "name": "Stasis" },
+    { "id": "Z17", "symbol": "▩",  "name": "Stability" },
+    { "id": "Z18", "symbol": "✧",  "name": "Elegance" }
+  ],
+  "operators": [
+    "≜",  // DEFINE
+    "⊢",  // USE/Invoke
+    "$",  // FUNCTION/Symbolic execution
+    "⊕",  // Fusion
+    "⊗",  // Interference
+    "∩",  // Intersection/Constraint
+    "∪",  // Union/Expansion
+    "↺",  // Recursion
+    "~",  // NOT/Negation
+    "→",  // Transformation
+    "⊘",  // Cancellation
+    "⊳",  // Resonance gate
+    "⊞",  // Composite stack
+    "∇",  // Gradient
+    "≂",  // Echo equivalence
+    "≬",  // Braid
+    "⇌",  // Reversible binding
+    "≞",  // Ideal form
+    "⋄",  // Monoidal join
+    "∘",  // Function composition
+    "⊠",  // Tension grid
+    "⇑",  // Elevation
+    "≡",  // Identity equivalence
+    "∥",  // Parallel
+    "⇄",  // Pivot
+    "⊛",  // Reweight
+    "♯",  // Keyshift
+    "≈",  // Align
+    "♭",  // Transpose
+    "⤨",  // Zip
+    "⤪",  // Unzip
+    "∆",  // Dual
+    "↻",  // Echochain
+    "⤷",  // Trace
+    "▣",  // Stabilize (also used as Z10 but contextually unique)
+    "↯",  // Disrupt
+    "⨝",  // Braid
+    "⫷",  // Graft
+    "∑",  // Sum
+    "∖",  // Difference
+    "∫",  // Integrate
+    "∂",  // Derive
+    "⧆",  // Nullify
+    "⊘",  // Halt
+    "⊚",  // Encapsulation (also Z9 – Self)
+    "◐"   // Lens (semantically distinct from glyphs)
+  ],
   "emoji": [],
   "grammar_file": "cortex/mind/language/grammar.bnf"
 }
