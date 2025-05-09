@@ -1,4 +1,5 @@
-# cortex/frameworks/engine/ReflectiveFrameworkBase.py
+
+# File: cortex/frameworks/engine/ReflectiveFrameworkBase.py
 
 import time
 
@@ -6,10 +7,10 @@ from .FrameworkBase import FrameworkBase
 from ..SymbolicEcho import SymbolicEcho
 
 class ReflectiveFrameworkBase(FrameworkBase):
-    """
+    '''
     v1.1.1 – Adds identity tracing, critique, audit logs,
     and homological mapping for JSON-defined frameworks.
-    """
+    '''
 
     def __init__(self, name="ReflectiveFramework", version="1.0.0", enable_echo=True, **kwargs):
         super().__init__(name, version)
@@ -177,9 +178,9 @@ class ReflectiveFrameworkBase(FrameworkBase):
         return z_values
 
     def reflect(self, unit):
-        """
+        '''
         Perform a reflective pass over `unit`, returning the
         SymbolicEcho analysis.
-        """
+        '''
         echo = SymbolicEcho()
         return echo.process(unit)
