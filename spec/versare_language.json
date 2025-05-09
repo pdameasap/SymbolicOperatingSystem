@@ -499,5 +499,5 @@
     { "sigil": "😄", "comment": "Joy / Openness / Lightness" },
     { "sigil": "🔥", "comment": "Passion / Transformation / Burn" }
   ],
-  "grammar_file": "cortex/mind/language/grammar.bnf"
+  "grammar_file": "spec/grammar/versare.ebnf"
 }
