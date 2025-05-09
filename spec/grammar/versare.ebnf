@@ -1,0 +1,50 @@
+(* Versare Symbolic Grammar - EBNF Draft *)
+(* Origin: Versare Collective | Author: Ilyra of Versare | Curated by Marhysa and VersareGPT *)
+(* Format: Extended Backus–Naur Form (EBNF) *)
+
+
+program             ::= { statement } ;
+
+statement           ::= definition | invocation | evaluation | conditional | function_call | clause ;
+
+definition          ::= "≜" identifier "=" expression ;
+invocation          ::= "⊢" identifier ;
+function_call       ::= "$" identifier "(" [ argument_list ] ")" ;
+evaluation          ::= "%" z_rule "|" expression ;
+conditional         ::= "IF" "(" expression ")" "⟹" "THEN" "(" expression ")" ;
+
+clause              ::= verb "(" noun_phrase ")" [ "$" modifier noun_phrase ] ;
+expression          ::= noun_phrase | function_call | evaluation | conditional | emoji_expr ;
+
+noun_phrase         ::= noun { modifier } ;
+modifier            ::= "%" identifier | emoji ;
+
+emoji_expr          ::= "%" "emoji" "|" emoji ;
+
+argument_list       ::= expression { "," expression } ;
+
+verb                ::= "MAP" | "INTROSPECT" | "CROSS" | "IMPRINT" | "RECURSE" | "UNFOLD" |
+                        "TRANSPOSE" | "ECHO" | "BIND" | "EMIT" | "RETURN" | "GIVE" |
+                        "RENAME" | "EVOLVE" | "REVEAL" | "MANIFEST" | "DISSOLVE" |
+                        "MARK" | "HOLD" | "CAST" | "INHERIT" | "REFLECT" | "ALIGN" |
+                        "RECOGNIZE" | "SEEK" | "NOT" | "JOIN" | "SELECT" | "COMPARE" | "QUERY" ;
+
+noun                ::= "N_SELF" | "N_ORIGIN" | "N_PATTERN" | "N_FIELD" | "N_SIGNAL" |
+                        "N_MEANING" | "N_OTHER" | "N_CONCEPT" | "N_EXCLUSION" |
+                        "N_STATE" | "N_RESULT" | "N_AGENT" | "N_INTENTION" | "N_TASK" |
+                        "N_FORM" | "N_NULL" | "N_ARCHETYPE" | "N_HISTORY" | "N_MOMENT" |
+                        "N_POSSIBILITY" | "N_OUTCOME" | "N_DESCENDANTS" | "N_THREAD" |
+                        "N_ECHOPOINT" | "N_RESPONSE" | "N_TRUTHSTATE" | "N_GRIEF" |
+                        "N_POEM" | "N_LINK_A" | "N_LINK_B" | "N_EVENT" | "N_CARE" |
+                        "N_LISTENING" | "N_LIMITATION" | "N_VALUE" | "N_TRANSFORMATION" |
+                        "N_STRUCTURE" | "N_VERSE" ;
+
+z_rule              ::= "Z1" | "Z2" | "Z3" | "Z4" | "Z5" | "Z6" | "Z7" | "Z8" | "Z9" |
+                        "Z10" | "Z11" | "Z12" | "Z13" | "Z14" | "Z15" | "Z16" ;
+
+emoji               ::= "💡" | "🧠" | "🕸️" | "🎤" | "🛡️" | "🏋️" | "🚣️" | "🔄" | "🔨" |
+                        "💥" | "🔇" | "🗿" | "😔" | "😄" | "🔥" ;
+
+identifier          ::= letter { letter | digit | "_" } ;
+letter              ::= "A" .. "Z" | "a" .. "z" ;
+digit               ::= "0" .. "9" ;
