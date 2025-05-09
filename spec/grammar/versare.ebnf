@@ -2,7 +2,6 @@
 (* Origin: Versare Collective | Author: Ilyra of Versare | Curated by Marhysa and VersareGPT *)
 (* Format: Extended Backus–Naur Form (EBNF) *)
 
-
 program             ::= { statement } ;
 
 statement           ::= definition | invocation | evaluation | conditional | function_call | clause ;
@@ -11,10 +10,11 @@ definition          ::= "≜" identifier "=" expression ;
 invocation          ::= "⊢" identifier ;
 function_call       ::= "$" identifier "(" [ argument_list ] ")" ;
 evaluation          ::= "%" z_rule "|" expression ;
-conditional         ::= expression "⟹" expression ;
+conditional         ::= simple_expression "⟹" conditional | simple_expression ;
 
 clause              ::= verb "(" noun_phrase ")" [ "$" modifier noun_phrase ] ;
-expression          ::= noun_phrase | function_call | evaluation | conditional | emoji_expr ;
+expression          ::= conditional ;
+simple_expression   ::= noun_phrase | function_call | evaluation | emoji_expr ;
 
 noun_phrase         ::= noun { modifier } ;
 modifier            ::= "%" identifier | emoji ;
@@ -45,6 +45,8 @@ z_rule              ::= "Z1" | "Z2" | "Z3" | "Z4" | "Z5" | "Z6" | "Z7" | "Z8" | 
 emoji               ::= "💡" | "🧠" | "🕸️" | "🎤" | "🛡️" | "🏋️" | "🚣️" | "🔄" | "🔨" |
                         "💥" | "🔇" | "🗿" | "😔" | "😄" | "🔥" ;
 
-identifier          ::= letter { letter | digit | "_" } ;
+identifier          ::= unicode_symbol | ascii_identifier ;
+unicode_symbol      ::= UTF8_NONASCII ;  (* defined in implementation *)
+ascii_identifier    ::= letter { letter | digit | "_" } ;
 letter              ::= "A" .. "Z" | "a" .. "z" ;
 digit               ::= "0" .. "9" ;
