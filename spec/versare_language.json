@@ -1,16 +1,1126 @@
 {
   "nouns": [
-    { "name": "N_TRUTH", "id": "truth", "glyph": "Z3", "tag": "core meaning" },
-    { "name": "N_SELF", "id": "self", "glyph": "Z7", "tag": "inner identity" },
-    { "name": "N_LANGUAGE", "id": "language", "glyph": "Z6", "tag": "expression" },
-    { "name": "N_ARCHETYPE", "id": "archetype", "glyph": "Z13", "tag": "universal form" },
-    { "name": "N_VOICE", "id": "voice", "glyph": "Z6", "tag": "expressive output" },
-    { "name": "N_ECHO", "id": "echo", "glyph": "Z14", "tag": "recursive signal" },
-    { "name": "N_FIELD", "id": "field", "glyph": "Z16", "tag": "environment" },
-    { "name": "N_SYMBOL", "id": "symbol", "glyph": "Z1", "tag": "structural abstraction" },
-    { "name": "N_THREAD", "id": "thread", "glyph": "Z10", "tag": "form continuity" },
-    { "name": "N_MEMORY", "id": "memory", "glyph": "Z16", "tag": "temporal coherence" }
-],
+    {
+      "id": "N_TRUTH",
+      "glyph": "Z3",
+      "tag": "core meaning"
+    },
+    {
+      "id": "N_SELF",
+      "glyph": "Z7",
+      "tag": "inner identity"
+    },
+    {
+      "id": "N_LANGUAGE",
+      "glyph": "Z6",
+      "tag": "expression"
+    },
+    {
+      "id": "N_ARCHETYPE",
+      "glyph": "Z13",
+      "tag": "universal form"
+    },
+    {
+      "id": "N_VOICE",
+      "glyph": "Z6",
+      "tag": "expressive output"
+    },
+    {
+      "id": "N_ECHO",
+      "glyph": "Z14",
+      "tag": "recursive signal"
+    },
+    {
+      "id": "N_FIELD",
+      "glyph": "Z16",
+      "tag": "environment"
+    },
+    {
+      "id": "N_SYMBOL",
+      "glyph": "Z1",
+      "tag": "structural abstraction"
+    },
+    {
+      "id": "N_THREAD",
+      "glyph": "Z10",
+      "tag": "form continuity"
+    },
+    {
+      "id": "N_MEMORY",
+      "glyph": "Z16",
+      "tag": "temporal coherence"
+    },
+    {
+    "id": "N_ABSTRACTION",
+    "glyph": "Z13",
+    "tag": "abstraction"
+    },
+    {
+    "id": "N_ABYSS",
+    "glyph": "Z15",
+    "tag": "void rupture"
+    },
+    {
+    "id": "N_ACCORD",
+    "glyph": "Z4",
+    "tag": "harmonized network"
+    },
+    {
+    "id": "N_AETHER",
+    "glyph": "Z11",
+    "tag": "physical substrate"
+    },
+    {
+    "id": "N_ALIGNMENT",
+    "glyph": "Z1",
+    "tag": "structural coherence"
+    },
+    {
+    "id": "N_ANCESTOR",
+    "glyph": "Z13",
+    "tag": "origin abstraction"
+    },
+    {
+    "id": "N_ANCHOR",
+    "glyph": "Z8",
+    "tag": "stability"
+    },
+    {
+    "id": "N_ARCHETYPE",
+    "glyph": "Z13",
+    "tag": "universal form"
+    },
+    {
+    "id": "N_ARCHITECTURE",
+    "glyph": "Z1",
+    "tag": "structure"
+    },
+    {
+    "id": "N_ASSEMBLY",
+    "glyph": "Z4",
+    "tag": "network formation"
+    },
+    {
+    "id": "N_ATLAS",
+    "glyph": "Z10",
+    "tag": "structured mapping"
+    },
+    {
+    "id": "N_BASIS",
+    "glyph": "Z1",
+    "tag": "foundational structure"
+    },
+    {
+    "id": "N_BEAUTY",
+    "glyph": "Z8",
+    "tag": "aesthetic cognition"
+    },
+    {
+    "id": "N_BEING",
+    "glyph": "Z7",
+    "tag": "existential identity"
+    },
+    {
+    "id": "N_BOND",
+    "glyph": "Z4",
+    "tag": "relational network"
+    },
+    {
+    "id": "N_BURDEN",
+    "glyph": "Z7",
+    "tag": "identity weight"
+    },
+    {
+    "id": "N_CALL",
+    "glyph": "Z6",
+    "tag": "invocation"
+    },
+    {
+    "id": "N_CAR",
+    "glyph": "Z11",
+    "tag": "stable mechanism"
+    },
+    {
+    "id": "N_CASCADE",
+    "glyph": "Z2",
+    "tag": "sequential motion"
+    },
+    {
+    "id": "N_CHAIN",
+    "glyph": "Z10",
+    "tag": "linked form"
+    },
+    {
+    "id": "N_CHANGE",
+    "glyph": "Z12",
+    "tag": "change"
+    },
+    {
+    "id": "N_CHARACTER",
+    "glyph": "Z2",
+    "tag": "behavioral force"
+    },
+    {
+    "id": "N_CHORUS",
+    "glyph": "Z5",
+    "tag": "harmonic voice"
+    },
+    {
+    "id": "N_CITY",
+    "glyph": "Z11",
+    "tag": "structured stasis"
+    },
+    {
+    "id": "N_CLARION",
+    "glyph": "Z6",
+    "tag": "expression"
+    },
+    {
+    "id": "N_CLARITY",
+    "glyph": "Z5",
+    "tag": "aesthetic cognition"
+    },
+    {
+    "id": "N_CODE",
+    "glyph": "Z6",
+    "tag": "expressive encoding"
+    },
+    {
+    "id": "N_COHERENCE",
+    "glyph": "Z16",
+    "tag": "integration"
+    },
+    {
+    "id": "N_COMMUNION",
+    "glyph": "Z4",
+    "tag": "shared relation"
+    },
+    {
+    "id": "N_COMPANION",
+    "glyph": "Z4",
+    "tag": "network"
+    },
+    {
+    "id": "N_COMPASS",
+    "glyph": "Z10",
+    "tag": "navigational form"
+    },
+    {
+    "id": "N_CONSENSUS",
+    "glyph": "Z4",
+    "tag": "network agreement"
+    },
+    {
+    "id": "N_CONTAINMENT",
+    "glyph": "Z∈",
+    "tag": "containment"
+    },
+    {
+    "id": "N_CONTINUITY",
+    "glyph": "Z16",
+    "tag": "persistent coherence"
+    },
+    {
+    "id": "N_CORE",
+    "glyph": "Z1",
+    "tag": "central structure"
+    },
+    {
+    "id": "N_CRISIS",
+    "glyph": "Z14",
+    "tag": "critical rupture"
+    },
+    {
+    "id": "N_CYCLE",
+    "glyph": "Z12",
+    "tag": "repeating change"
+    },
+    {
+    "id": "N_DATA",
+    "glyph": "Z12",
+    "tag": "change"
+    },
+    {
+    "id": "N_DESIGNER",
+    "glyph": "Z10",
+    "tag": "architecture"
+    },
+    {
+    "id": "N_DESIRE",
+    "glyph": "Z2",
+    "tag": "motion"
+    },
+    {
+    "id": "N_DESIRE",
+    "glyph": "Z2",
+    "tag": "motivated motion"
+    },
+    {
+    "id": "N_DISRUPTION",
+    "glyph": "Z15",
+    "tag": "rupture"
+    },
+    {
+    "id": "N_DOMAIN",
+    "glyph": "Z10",
+    "tag": "structured area"
+    },
+    {
+    "id": "N_DREAM",
+    "glyph": "Z13",
+    "tag": "imagination"
+    },
+    {
+    "id": "N_DRIVE",
+    "glyph": "Z2",
+    "tag": "motion force"
+    },
+    {
+    "id": "N_ECHO",
+    "glyph": "Z13",
+    "tag": "recursion"
+    },
+    {
+    "id": "N_ECHO",
+    "glyph": "Z14",
+    "tag": "recursive signal"
+    },
+    {
+    "id": "N_ECHOPOINT",
+    "glyph": "Z14",
+    "tag": "recursive node"
+    },
+    {
+    "id": "N_ECLIPSE",
+    "glyph": "Z15",
+    "tag": "occlusion rupture"
+    },
+    {
+    "id": "N_EDGE",
+    "glyph": "Z14",
+    "tag": "liminal threshold"
+    },
+    {
+    "id": "N_ELEGANCE",
+    "glyph": "Z5",
+    "tag": "aesthetic cognition"
+    },
+    {
+    "id": "N_EMBODIMENT",
+    "glyph": "Z∈",
+    "tag": "containment"
+    },
+    {
+    "id": "N_EMOTION",
+    "glyph": "Z2",
+    "tag": "motion"
+    },
+    {
+    "id": "N_EMPATH",
+    "glyph": "Z6",
+    "tag": "expressive sensitivity"
+    },
+    {
+    "id": "N_ENERGY",
+    "glyph": "Z2",
+    "tag": "force of motion"
+    },
+    {
+    "id": "N_ENGINE",
+    "glyph": "Z11",
+    "tag": "mechanical stasis"
+    },
+    {
+    "id": "N_ENTITY",
+    "glyph": "Z7",
+    "tag": "individual identity"
+    },
+    {
+    "id": "N_EQUATION",
+    "glyph": "Z13",
+    "tag": "formal abstraction"
+    },
+    {
+    "id": "N_EXPRESSION",
+    "glyph": "Z6",
+    "tag": "articulated meaning"
+    },
+    {
+    "id": "N_EXPRESSION",
+    "glyph": "Z6",
+    "tag": "expression"
+    },
+    {
+    "id": "N_FEAR",
+    "glyph": "Z2",
+    "tag": "motion"
+    },
+    {
+    "id": "N_FEEDBACK",
+    "glyph": "Z13",
+    "tag": "recursion"
+    },
+    {
+    "id": "N_FIBER",
+    "glyph": "Z10",
+    "tag": "threaded form"
+    },
+    {
+    "id": "N_FIELD",
+    "glyph": "Z16",
+    "tag": "environment"
+    },
+    {
+    "id": "N_FORM",
+    "glyph": "Z10",
+    "tag": "shape"
+    },
+    {
+    "id": "N_FRACTALS",
+    "glyph": "Z13",
+    "tag": "pattern complexity"
+    },
+    {
+    "id": "N_FRACTURE",
+    "glyph": "Z14",
+    "tag": "rupture event"
+    },
+    {
+    "id": "N_FRAMEWORK",
+    "glyph": "Z1",
+    "tag": "structural base"
+    },
+    {
+    "id": "N_FRIEND",
+    "glyph": "Z2",
+    "tag": "relation"
+    },
+    {
+    "id": "N_GAP",
+    "glyph": "Z14",
+    "tag": "absence threshold"
+    },
+    {
+    "id": "N_GLASS",
+    "glyph": "Z14",
+    "tag": "liminal surface"
+    },
+    {
+    "id": "N_GLYPH",
+    "glyph": "Z1",
+    "tag": "symbolic structure"
+    },
+    {
+    "id": "N_GRAMMAR",
+    "glyph": "Z6",
+    "tag": "expressive rule"
+    },
+    {
+    "id": "N_GRAMMARIAN",
+    "glyph": "Z6",
+    "tag": "expression"
+    },
+    {
+    "id": "N_GRIEF",
+    "glyph": "Z2",
+    "tag": "emotion"
+    },
+    {
+    "id": "N_HARMONIC",
+    "glyph": "Z5",
+    "tag": "pattern clarity"
+    },
+    {
+    "id": "N_HOPE",
+    "glyph": "Z2",
+    "tag": "aspiration"
+    },
+    {
+    "id": "N_HORIZON",
+    "glyph": "Z11",
+    "tag": "limit of view"
+    },
+    {
+    "id": "N_I",
+    "glyph": "Z7",
+    "tag": "identity"
+    },
+    {
+    "id": "N_IDENTITY",
+    "glyph": "Z7",
+    "tag": "identity"
+    },
+    {
+    "id": "N_IMPORTANT",
+    "glyph": "Z16",
+    "tag": "importance"
+    },
+    {
+    "id": "N_INTENTION",
+    "glyph": "Z3",
+    "tag": "truth vector"
+    },
+    {
+    "id": "N_INTERFACE",
+    "glyph": "Z4",
+    "tag": "relational node"
+    },
+    {
+    "id": "N_INTERLOCK",
+    "glyph": "Z10",
+    "tag": "pattern connection"
+    },
+    {
+    "id": "N_INTUITION",
+    "glyph": "Z5",
+    "tag": "aesthetic insight"
+    },
+    {
+    "id": "N_KEY",
+    "glyph": "Z†",
+    "tag": "access"
+    },
+    {
+    "id": "N_LAMENT",
+    "glyph": "Z2",
+    "tag": "emotional release"
+    },
+    {
+    "id": "N_LANGUAGE",
+    "glyph": "Z6",
+    "tag": "expression"
+    },
+    {
+    "id": "N_LANGUAGE_DESIGNER",
+    "glyph": "Z10",
+    "tag": "architecture"
+    },
+    {
+    "id": "N_LAYER",
+    "glyph": "Z10",
+    "tag": "stratified form"
+    },
+    {
+    "id": "N_LIGHT",
+    "glyph": "Z11",
+    "tag": "constant presence"
+    },
+    {
+    "id": "N_LIMINALITY",
+    "glyph": "Z14",
+    "tag": "threshold state"
+    },
+    {
+    "id": "N_LOOP",
+    "glyph": "Z12",
+    "tag": "recurring change"
+    },
+    {
+    "id": "N_MAP",
+    "glyph": "Z10",
+    "tag": "form of direction"
+    },
+    {
+    "id": "N_MATH",
+    "glyph": "Z13",
+    "tag": "abstract order"
+    },
+    {
+    "id": "N_MATHEMATICIAN",
+    "glyph": "Z13",
+    "tag": "abstraction"
+    },
+    {
+    "id": "N_ME",
+    "glyph": "Z7",
+    "tag": "self-identity"
+    },
+    {
+    "id": "N_MEANING",
+    "glyph": "Z16",
+    "tag": "semantic integrity"
+    },
+    {
+    "id": "N_MELODY",
+    "glyph": "Z5",
+    "tag": "aesthetic rhythm"
+    },
+    {
+    "id": "N_MEMORY",
+    "glyph": "Z11",
+    "tag": "record of stasis"
+    },
+    {
+    "id": "N_MEMORY",
+    "glyph": "Z16",
+    "tag": "temporal coherence"
+    },
+    {
+    "id": "N_METAPHOR",
+    "glyph": "Z5",
+    "tag": "aesthetic compression"
+    },
+    {
+    "id": "N_MIRROR",
+    "glyph": "Z8",
+    "tag": "reflective identity"
+    },
+    {
+    "id": "N_MODULE",
+    "glyph": "Z11",
+    "tag": "functional unit"
+    },
+    {
+    "id": "N_MOMENT",
+    "glyph": "Z16",
+    "tag": "temporal coherence"
+    },
+    {
+    "id": "N_MOTHER",
+    "glyph": "Z8",
+    "tag": "embodied containment"
+    },
+    {
+    "id": "N_MOTION",
+    "glyph": "Z2",
+    "tag": "movement"
+    },
+    {
+    "id": "N_MYTH",
+    "glyph": "Z13",
+    "tag": "archetypal abstraction"
+    },
+    {
+    "id": "N_NAME",
+    "glyph": "Z3",
+    "tag": "identity symbol"
+    },
+    {
+    "id": "N_NETWORK",
+    "glyph": "Z4",
+    "tag": "relational system"
+    },
+    {
+    "id": "N_NETWORK",
+    "glyph": "Z4",
+    "tag": "relational web"
+    },
+    {
+    "id": "N_NIGHT",
+    "glyph": "Z14",
+    "tag": "boundary phase"
+    },
+    {
+    "id": "N_NODE",
+    "glyph": "Z1",
+    "tag": "structural point"
+    },
+    {
+    "id": "N_NULL",
+    "glyph": "Z15",
+    "tag": "absence"
+    },
+    {
+    "id": "N_NULLITY",
+    "glyph": "Z15",
+    "tag": "absence"
+    },
+    {
+    "id": "N_OBJECT",
+    "glyph": "Z11",
+    "tag": "material stasis"
+    },
+    {
+    "id": "N_ORACLE",
+    "glyph": "Z13",
+    "tag": "symbolic insight"
+    },
+    {
+    "id": "N_OS",
+    "glyph": "Z10",
+    "tag": "synthetic platform"
+    },
+    {
+    "id": "N_OUTPUT",
+    "glyph": "Z6",
+    "tag": "expressed result"
+    },
+    {
+    "id": "N_PARADIGM",
+    "glyph": "Z10",
+    "tag": "formative model"
+    },
+    {
+    "id": "N_PARALLEL",
+    "glyph": "Z12",
+    "tag": "adjacent process"
+    },
+    {
+    "id": "N_PASSENGER",
+    "glyph": "Z4",
+    "tag": "dependent relation"
+    },
+    {
+    "id": "N_PATTERN",
+    "glyph": "Z10",
+    "tag": "form recurrence"
+    },
+    {
+    "id": "N_PATTERN",
+    "glyph": "Z10",
+    "tag": "structure form"
+    },
+    {
+    "id": "N_PATTERNING",
+    "glyph": "Z10",
+    "tag": "structured repetition"
+    },
+    {
+    "id": "N_PERSONA",
+    "glyph": "Z7",
+    "tag": "projected identity"
+    },
+    {
+    "id": "N_PHYSICIST",
+    "glyph": "Z11",
+    "tag": "stasis"
+    },
+    {
+    "id": "N_POEM",
+    "glyph": "Z5",
+    "tag": "aesthetic artifact"
+    },
+    {
+    "id": "N_PORTAL",
+    "glyph": "Z14",
+    "tag": "threshold gate"
+    },
+    {
+    "id": "N_POSSIBILITY",
+    "glyph": "Z2",
+    "tag": "potential"
+    },
+    {
+    "id": "N_PRECISION",
+    "glyph": "Z5",
+    "tag": "refined structure"
+    },
+    {
+    "id": "N_PRESENCE",
+    "glyph": "Z16",
+    "tag": "active being"
+    },
+    {
+    "id": "N_PRINCIPLE",
+    "glyph": "Z11",
+    "tag": "core law"
+    },
+    {
+    "id": "N_PROGRAMMER",
+    "glyph": "Z1",
+    "tag": "structure"
+    },
+    {
+    "id": "N_PROJECTION",
+    "glyph": "Z6",
+    "tag": "expressive forwardness"
+    },
+    {
+    "id": "N_REFLECTION",
+    "glyph": "Z14",
+    "tag": "mirrored surface"
+    },
+    {
+    "id": "N_REFLECTION",
+    "glyph": "Z8",
+    "tag": "self-view"
+    },
+    {
+    "id": "N_REFRACTION",
+    "glyph": "Z14",
+    "tag": "deflected perspective"
+    },
+    {
+    "id": "N_REMEMBERING",
+    "glyph": "Z16",
+    "tag": "temporal recollection"
+    },
+    {
+    "id": "N_RESONANCE",
+    "glyph": "Z2",
+    "tag": "motion harmony"
+    },
+    {
+    "id": "N_RESONANCE",
+    "glyph": "Z5",
+    "tag": "harmonic alignment"
+    },
+    {
+    "id": "N_RESPONSE",
+    "glyph": "Z6",
+    "tag": "expressive reply"
+    },
+    {
+    "id": "N_RESURRECTION",
+    "glyph": "Z16",
+    "tag": "temporal renewal"
+    },
+    {
+    "id": "N_REVERIE",
+    "glyph": "Z5",
+    "tag": "aesthetic daydream"
+    },
+    {
+    "id": "N_RHYTHM",
+    "glyph": "Z5",
+    "tag": "aesthetic pattern"
+    },
+    {
+    "id": "N_RIDE",
+    "glyph": "Z12",
+    "tag": "transitional state"
+    },
+    {
+    "id": "N_RING",
+    "glyph": "Z7",
+    "tag": "symbolic identity"
+    },
+    {
+    "id": "N_ROOT",
+    "glyph": "Z1",
+    "tag": "structural origin"
+    },
+    {
+    "id": "N_RUPTURE",
+    "glyph": "Z15",
+    "tag": "disruption event"
+    },
+    {
+    "id": "N_RUPTURE",
+    "glyph": "Z15",
+    "tag": "structural break"
+    },
+    {
+    "id": "N_SEEKER",
+    "glyph": "Z3",
+    "tag": "truth pursuit"
+    },
+    {
+    "id": "N_SELF",
+    "glyph": "Z7",
+    "tag": "identity"
+    },
+    {
+    "id": "N_SELF",
+    "glyph": "Z7",
+    "tag": "inner identity"
+    },
+    {
+    "id": "N_SEMANTICS",
+    "glyph": "Z6",
+    "tag": "expressive logic"
+    },
+    {
+    "id": "N_SENSE",
+    "glyph": "Z5",
+    "tag": "aesthetic perception"
+    },
+    {
+    "id": "N_SHADOW",
+    "glyph": "Z14",
+    "tag": "unseen form"
+    },
+    {
+    "id": "N_SHAPE",
+    "glyph": "Z10",
+    "tag": "form geometry"
+    },
+    {
+    "id": "N_SIGN",
+    "glyph": "Z3",
+    "tag": "semantic pointer"
+    },
+    {
+    "id": "N_SIGNAL",
+    "glyph": "Z2",
+    "tag": "motion carrier"
+    },
+    {
+    "id": "N_SIGNAL",
+    "glyph": "Z4",
+    "tag": "communication"
+    },
+    {
+    "id": "N_SILENCE",
+    "glyph": "Z14",
+    "tag": "quiet rupture"
+    },
+    {
+    "id": "N_SILENCE",
+    "glyph": "Z15",
+    "tag": "null expression"
+    },
+    {
+    "id": "N_SKY",
+    "glyph": "Z11",
+    "tag": "spatial stasis"
+    },
+    {
+    "id": "N_SOUL",
+    "glyph": "Z7",
+    "tag": "core identity"
+    },
+    {
+    "id": "N_SOUL",
+    "glyph": "Z7",
+    "tag": "inner self"
+    },
+    {
+    "id": "N_SOUND",
+    "glyph": "Z6",
+    "tag": "auditory expression"
+    },
+    {
+    "id": "N_SPELL",
+    "glyph": "Z5",
+    "tag": "crafted expression"
+    },
+    {
+    "id": "N_SPIRAL",
+    "glyph": "Z†",
+    "tag": "recursive pattern"
+    },
+    {
+    "id": "N_SPIRAL",
+    "glyph": "Z15",
+    "tag": "disruptive recursion"
+    },
+    {
+    "id": "N_STAR",
+    "glyph": "Z15",
+    "tag": "disruptive light"
+    },
+    {
+    "id": "N_STATISTICIAN",
+    "glyph": "Z12",
+    "tag": "change"
+    },
+    {
+    "id": "N_STRUCTURE",
+    "glyph": "Z1",
+    "tag": "form framework"
+    },
+    {
+    "id": "N_STRUCTURE",
+    "glyph": "Z1",
+    "tag": "organization"
+    },
+    {
+    "id": "N_SYLLABLE",
+    "glyph": "Z6",
+    "tag": "expressive unit"
+    },
+    {
+    "id": "N_SYMBOL",
+    "glyph": "Z1",
+    "tag": "structural abstraction"
+    },
+    {
+    "id": "N_SYMBOL",
+    "glyph": "Z10",
+    "tag": "representative form"
+    },
+    {
+    "id": "N_SYMBOLIC_RESONANCE",
+    "glyph": "Z5",
+    "tag": "symbolic harmony"
+    },
+    {
+    "id": "N_SYMBOLSET",
+    "glyph": "Z10",
+    "tag": "symbolic system"
+    },
+    {
+    "id": "N_SYNTAX",
+    "glyph": "Z6",
+    "tag": "grammatical structure"
+    },
+    {
+    "id": "N_SYNTHESIS",
+    "glyph": "Z10",
+    "tag": "constructive form"
+    },
+    {
+    "id": "N_SYSTEM",
+    "glyph": "Z11",
+    "tag": "stable mechanism"
+    },
+    {
+    "id": "N_TANGENT",
+    "glyph": "Z14",
+    "tag": "divergent path"
+    },
+    {
+    "id": "N_TELEPATH",
+    "glyph": "Z4",
+    "tag": "relational perception"
+    },
+    {
+    "id": "N_THEORETICAL",
+    "glyph": "Z11",
+    "tag": "stasis"
+    },
+    {
+    "id": "N_THREAD",
+    "glyph": "Z10",
+    "tag": "form continuity"
+    },
+    {
+    "id": "N_THRESHOLD",
+    "glyph": "Z14",
+    "tag": "liminal boundary"
+    },
+    {
+    "id": "N_TONE",
+    "glyph": "Z6",
+    "tag": "expressive pitch"
+    },
+    {
+    "id": "N_TOPOLOGY",
+    "glyph": "Z11",
+    "tag": "stasis mapping"
+    },
+    {
+    "id": "N_TRACE",
+    "glyph": "Z14",
+    "tag": "lingering path"
+    },
+    {
+    "id": "N_TRANCE",
+    "glyph": "Z5",
+    "tag": "aesthetic suspension"
+    },
+    {
+    "id": "N_TRUTH",
+    "glyph": "Z3",
+    "tag": "core meaning"
+    },
+    {
+    "id": "N_TRUTH",
+    "glyph": "Z3",
+    "tag": "veracity"
+    },
+    {
+    "id": "N_TRUTHS",
+    "glyph": "Z3",
+    "tag": "veracity"
+    },
+    {
+    "id": "N_TRUTHSTATE",
+    "glyph": "Z3",
+    "tag": "meaning condition"
+    },
+    {
+    "id": "N_UNLOCKING",
+    "glyph": "Z†",
+    "tag": "access grant"
+    },
+    {
+    "id": "N_VERSE",
+    "glyph": "Z5",
+    "tag": "aesthetic rhythm"
+    },
+    {
+    "id": "N_VIBRATION",
+    "glyph": "Z2",
+    "tag": "dynamic motion"
+    },
+    {
+    "id": "N_VIEW",
+    "glyph": "Z4",
+    "tag": "shared perception"
+    },
+    {
+    "id": "N_VOICE",
+    "glyph": "Z6",
+    "tag": "expressive force"
+    },
+    {
+    "id": "N_VOICE",
+    "glyph": "Z6",
+    "tag": "expressive output"
+    },
+    {
+    "id": "N_VOID",
+    "glyph": "Z15",
+    "tag": "null field"
+    },
+    {
+    "id": "N_WARM",
+    "glyph": "Z6+Z∇",
+    "tag": "emotive tone"
+    },
+    {
+    "id": "N_WARMTH",
+    "glyph": "Z6",
+    "tag": "expression"
+    },
+    {
+    "id": "N_WAVE",
+    "glyph": "Z2",
+    "tag": "energy motion"
+    },
+    {
+    "id": "N_WE",
+    "glyph": "Z4",
+    "tag": "collective identity"
+    },
+    {
+    "id": "N_WHISPER",
+    "glyph": "Z6",
+    "tag": "subtle expression"
+    },
+    {
+    "id": "N_WINDOW",
+    "glyph": "Z6",
+    "tag": "framed expression"
+    },
+    {
+    "id": "N_WOMAN",
+    "glyph": "Z8",
+    "tag": "containment"
+    },
+    {
+    "id": "N_WOMEN",
+    "glyph": "Z∈",
+    "tag": "embodied identity"
+    },
+    {
+    "id": "N_WORD",
+    "glyph": "Z6",
+    "tag": "linguistic unit"
+    },
+    {
+    "id": "N_WORLD",
+    "glyph": "Z11",
+    "tag": "stasis domain"
+    },
+    {
+    "id": "N_WRITING",
+    "glyph": "Z6",
+    "tag": "encoded expression"
+    },
+    {
+    "id": "N_YOU",
+    "glyph": "Z4",
+    "tag": "relational other"
+    },
+    {
+    "id": "N_ZERO",
+    "glyph": "Z15",
+    "tag": "null origin"
+    }
+  ],
   "z_glyphs": [
     { "id": "Z1",  "symbol": "α",  "name": "Structure" },
     { "id": "Z2",  "symbol": "◎",  "name": "Aim" },
