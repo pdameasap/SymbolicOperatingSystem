@@ -1,6 +1,7 @@
-# Makefile for compiling ROCQ-based SHF Coq modules
+# Makefile for ROCQ-based SHF Coq modules with HTML docs
 
 COQC=coqc
+COQDOC=coqdoc
 COQFLAGS=-Q . rocq
 
 FILES=\
@@ -11,5 +12,10 @@ FILES=\
 
 all: $(FILES:.v=.vo)
 
+docs: $(FILES:.v=.html)
+
+%.html: %.v
+	$(COQDOC) --html $<
+
 clean:
-	rm -f *.vo *.glob
+	rm -f *.vo *.glob *.html *.aux
