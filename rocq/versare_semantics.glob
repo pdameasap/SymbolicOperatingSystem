@@ -1,5 +1,0 @@
-DIGEST c1bf86e633a166a47cd33f4eb84dd448
-Frocq.versare_semantics
-R42:53 Coq.Init.Nat <> <> lib
-R71:84 Coq.Lists.List <> <> lib
-R94:106 Coq.Lists.List ListNotations <> mod

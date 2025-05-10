@@ -1,5 +1,5 @@
 COQC=coqc
-COQFLAGS=-Q . rocq
+COQFLAGS=-Q . shf
 
 FILES=\
   versare_syntax.v \
