@@ -2,3 +2,4 @@
 versare_syntax.v
 versare_semantics.v
 versare_properties.v
+versare_tensor.v
