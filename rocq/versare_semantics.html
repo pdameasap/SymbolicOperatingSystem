@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>versare_semantics</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library versare_semantics</h1>
+
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Coq.Init.Nat</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">Coq.Lists.List</span>.<br/>
+<span class="id" title="keyword">Import</span> <span class="id" title="var">ListNotations</span>.<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">shf.versare_syntax</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Inductive</span> <span class="id" title="var">SymbolicConstant</span> :=<br/>
+&nbsp;&nbsp;| <span class="id" title="var">Collapse</span>   <br/>
+&nbsp;&nbsp;| <span class="id" title="var">Expansion</span>  <br/>
+&nbsp;&nbsp;| <span class="id" title="var">Curvature</span>  <br/>
+&nbsp;&nbsp;| <span class="id" title="var">Entropy</span>    <br/>
+&nbsp;&nbsp;| <span class="id" title="var">Coherence</span>. 
+<br/>
+<span class="id" title="keyword">Record</span> <span class="id" title="var">zvector</span> : <span class="id" title="keyword">Type</span> := {<br/>
+&nbsp;&nbsp;<span class="id" title="var">z1v</span>  : <span class="id" title="var">nat</span>; <span class="id" title="var">z2v</span>  : <span class="id" title="var">nat</span>; <span class="id" title="var">z3v</span>  : <span class="id" title="var">nat</span>; <span class="id" title="var">z4v</span>  : <span class="id" title="var">nat</span>; <span class="id" title="var">z5v</span>  : <span class="id" title="var">nat</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z6v</span>  : <span class="id" title="var">nat</span>; <span class="id" title="var">z7v</span>  : <span class="id" title="var">nat</span>; <span class="id" title="var">z8v</span>  : <span class="id" title="var">nat</span>; <span class="id" title="var">z9v</span>  : <span class="id" title="var">nat</span>; <span class="id" title="var">z10v</span> : <span class="id" title="var">nat</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z11v</span> : <span class="id" title="var">nat</span>; <span class="id" title="var">z12v</span> : <span class="id" title="var">nat</span>; <span class="id" title="var">z13v</span> : <span class="id" title="var">nat</span>; <span class="id" title="var">z14v</span> : <span class="id" title="var">nat</span>; <span class="id" title="var">z15v</span> : <span class="id" title="var">nat</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z16v</span> : <span class="id" title="var">nat</span>; <span class="id" title="var">z17v</span> : <span class="id" title="var">nat</span>; <span class="id" title="var">z18v</span> : <span class="id" title="var">nat</span><br/>
+}.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">default_zvector</span> : <span class="id" title="var">zvector</span> := {|<br/>
+&nbsp;&nbsp;<span class="id" title="var">z1v</span>  := 0;  <span class="id" title="var">z2v</span>  := 0;  <span class="id" title="var">z3v</span>  := 0;  <span class="id" title="var">z4v</span>  := 0;  <span class="id" title="var">z5v</span>  := 0;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z6v</span>  := 0;  <span class="id" title="var">z7v</span>  := 0;  <span class="id" title="var">z8v</span>  := 0;  <span class="id" title="var">z9v</span>  := 0;  <span class="id" title="var">z10v</span> := 0;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z11v</span> := 0;  <span class="id" title="var">z12v</span> := 0;  <span class="id" title="var">z13v</span> := 0;  <span class="id" title="var">z14v</span> := 0;  <span class="id" title="var">z15v</span> := 0;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z16v</span> := 0;  <span class="id" title="var">z17v</span> := 0;  <span class="id" title="var">z18v</span> := 0<br/>
+|}.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">zvector_plus</span> (<span class="id" title="var">v1</span> <span class="id" title="var">v2</span> : <span class="id" title="var">zvector</span>) : <span class="id" title="var">zvector</span> := {|<br/>
+&nbsp;&nbsp;<span class="id" title="var">z1v</span>  := <span class="id" title="var">z1v</span>  <span class="id" title="var">v1</span> + <span class="id" title="var">z1v</span>  <span class="id" title="var">v2</span>;  <span class="id" title="var">z2v</span>  := <span class="id" title="var">z2v</span>  <span class="id" title="var">v1</span> + <span class="id" title="var">z2v</span>  <span class="id" title="var">v2</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z3v</span>  := <span class="id" title="var">z3v</span>  <span class="id" title="var">v1</span> + <span class="id" title="var">z3v</span>  <span class="id" title="var">v2</span>;  <span class="id" title="var">z4v</span>  := <span class="id" title="var">z4v</span>  <span class="id" title="var">v1</span> + <span class="id" title="var">z4v</span>  <span class="id" title="var">v2</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z5v</span>  := <span class="id" title="var">z5v</span>  <span class="id" title="var">v1</span> + <span class="id" title="var">z5v</span>  <span class="id" title="var">v2</span>;  <span class="id" title="var">z6v</span>  := <span class="id" title="var">z6v</span>  <span class="id" title="var">v1</span> + <span class="id" title="var">z6v</span>  <span class="id" title="var">v2</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z7v</span>  := <span class="id" title="var">z7v</span>  <span class="id" title="var">v1</span> + <span class="id" title="var">z7v</span>  <span class="id" title="var">v2</span>;  <span class="id" title="var">z8v</span>  := <span class="id" title="var">z8v</span>  <span class="id" title="var">v1</span> + <span class="id" title="var">z8v</span>  <span class="id" title="var">v2</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z9v</span>  := <span class="id" title="var">z9v</span>  <span class="id" title="var">v1</span> + <span class="id" title="var">z9v</span>  <span class="id" title="var">v2</span>;  <span class="id" title="var">z10v</span> := <span class="id" title="var">z10v</span> <span class="id" title="var">v1</span> + <span class="id" title="var">z10v</span> <span class="id" title="var">v2</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z11v</span> := <span class="id" title="var">z11v</span> <span class="id" title="var">v1</span> + <span class="id" title="var">z11v</span> <span class="id" title="var">v2</span>;  <span class="id" title="var">z12v</span> := <span class="id" title="var">z12v</span> <span class="id" title="var">v1</span> + <span class="id" title="var">z12v</span> <span class="id" title="var">v2</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z13v</span> := <span class="id" title="var">z13v</span> <span class="id" title="var">v1</span> + <span class="id" title="var">z13v</span> <span class="id" title="var">v2</span>;  <span class="id" title="var">z14v</span> := <span class="id" title="var">z14v</span> <span class="id" title="var">v1</span> + <span class="id" title="var">z14v</span> <span class="id" title="var">v2</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z15v</span> := <span class="id" title="var">z15v</span> <span class="id" title="var">v1</span> + <span class="id" title="var">z15v</span> <span class="id" title="var">v2</span>;  <span class="id" title="var">z16v</span> := <span class="id" title="var">z16v</span> <span class="id" title="var">v1</span> + <span class="id" title="var">z16v</span> <span class="id" title="var">v2</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">z17v</span> := <span class="id" title="var">z17v</span> <span class="id" title="var">v1</span> + <span class="id" title="var">z17v</span> <span class="id" title="var">v2</span>;  <span class="id" title="var">z18v</span> := <span class="id" title="var">z18v</span> <span class="id" title="var">v1</span> + <span class="id" title="var">z18v</span> <span class="id" title="var">v2</span><br/>
+|}.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">clause_sem</span> (<span class="id" title="var">subj</span> : <span class="id" title="var">noun</span>) (<span class="id" title="var">preds</span> : <span class="id" title="var">list</span> <span class="id" title="var">Zglyph</span>) : <span class="id" title="var">zvector</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="var">default_zvector</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">modulate</span> (<span class="id" title="var">emo</span> : <span class="id" title="var">emoji</span>) (<span class="id" title="var">v</span> : <span class="id" title="var">zvector</span>) : <span class="id" title="var">zvector</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="var">v</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Fixpoint</span> <span class="id" title="var">interp</span> (<span class="id" title="var">e</span> : <span class="id" title="var">expr</span>) : <span class="id" title="var">zvector</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="var">e</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">EClause</span> <span class="id" title="var">subj</span> <span class="id" title="var">preds</span> <span class="id" title="var">None</span>     =&gt; <span class="id" title="var">clause_sem</span> <span class="id" title="var">subj</span> <span class="id" title="var">preds</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">EClause</span> <span class="id" title="var">subj</span> <span class="id" title="var">preds</span> (<span class="id" title="var">Some</span> <span class="id" title="var">m</span>) =&gt; <span class="id" title="var">modulate</span> <span class="id" title="var">m</span> (<span class="id" title="var">clause_sem</span> <span class="id" title="var">subj</span> <span class="id" title="var">preds</span>)<br/>
+&nbsp;&nbsp;| <span class="id" title="var">EDefine</span> <span class="id" title="var">_</span>    <span class="id" title="var">body</span>           =&gt; <span class="id" title="var">interp</span> <span class="id" title="var">body</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">EInvoke</span> <span class="id" title="var">_</span>                  =&gt; <span class="id" title="var">default_zvector</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">EIf</span> <span class="id" title="var">_</span>       <span class="id" title="var">then_br</span>        =&gt; <span class="id" title="var">interp</span> <span class="id" title="var">then_br</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">EEval</span> <span class="id" title="var">_</span>     <span class="id" title="var">_</span>              =&gt; <span class="id" title="var">default_zvector</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">ECall</span> <span class="id" title="var">_</span>     <span class="id" title="var">_</span>              =&gt; <span class="id" title="var">default_zvector</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

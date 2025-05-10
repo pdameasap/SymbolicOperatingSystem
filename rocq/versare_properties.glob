@@ -1,0 +1,41 @@
+DIGEST cf696bf23a7394dc1c854c568517fd18
+Fshf.versare_properties
+R43:54 Coq.Init.Nat <> <> lib
+R72:85 Coq.Lists.List <> <> lib
+R95:107 Coq.Lists.List ListNotations <> mod
+R125:142 shf.versare_syntax <> <> lib
+R160:180 shf.versare_semantics <> <> lib
+prf 256:275 <> interp_deterministic
+binder 286:286 <> e:1
+binder 288:289 <> v1:2
+binder 291:292 <> v2:3
+R310:315 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R305:307 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R297:302 shf.versare_semantics <> interp def
+R304:304 shf.versare_properties <> e:1 var
+R308:309 shf.versare_properties <> v1:2 var
+R329:334 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R324:326 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R316:321 shf.versare_semantics <> interp def
+R323:323 shf.versare_properties <> e:1 var
+R327:328 shf.versare_properties <> v2:3 var
+R337:339 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R335:336 shf.versare_properties <> v1:2 var
+R340:341 shf.versare_properties <> v2:3 var
+prf 443:457 <> modulate_linear
+binder 468:468 <> m:4
+binder 470:471 <> v1:5
+binder 473:474 <> v2:6
+R510:514 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R479:486 shf.versare_semantics <> modulate def
+R488:488 shf.versare_properties <> m:4 var
+R491:502 shf.versare_semantics <> zvector_plus def
+R504:505 shf.versare_properties <> v1:5 var
+R507:508 shf.versare_properties <> v2:6 var
+R515:526 shf.versare_semantics <> zvector_plus def
+R529:536 shf.versare_semantics <> modulate def
+R538:538 shf.versare_properties <> m:4 var
+R540:541 shf.versare_properties <> v1:5 var
+R545:552 shf.versare_semantics <> modulate def
+R554:554 shf.versare_properties <> m:4 var
+R556:557 shf.versare_properties <> v2:6 var

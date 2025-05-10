@@ -1,10 +1,7 @@
 (* versare_tensor.v -- Symbolic Tensor Calculus for SHF Field Theory *)
 
-(* From rocq *)
 Require Import shf.versare_syntax.
 Require Import shf.versare_semantics.
-
-(* Module VersareTensor. *)
 
 (* === Scope Axes === *)
 Inductive Scope := X | Y | Z.
@@ -38,15 +35,25 @@ Parameter metric_tensor : Scope -> Scope -> Scalar.
 Parameter alpha : SymbolicConstant. (* Z13 *)
 Parameter beta : SymbolicConstant.  (* Z14 *)
 
+Parameter dot_FE : FormVector -> EntropyVector -> Scalar.
+Parameter dot_EC : EntropyVector -> CoherenceVector -> Scalar.
+Parameter dot_CG : CoherenceVector -> Scalar -> Scalar.
+
+Parameter add_scalar : Scalar -> Scalar -> Scalar.
+
 (* === Stress-Energy Tensor T^{FEC}_{mu nu} === *)
 Definition T_FEC (mu nu : Scope) : Scalar :=
-  dot_product (PhiF mu) (PhiE nu) +
-  dot_product (PhiE mu) (PhiC nu) +
-  dot_product (PhiC mu) (grad_R nu).
+  add_scalar
+    (dot_FE (PhiF mu) (PhiE nu))
+    (add_scalar
+       (dot_EC (PhiE mu) (PhiC nu))
+       (dot_CG (PhiC mu) (grad_R nu))).
+
+Parameter sub_scalar : Scalar -> Scalar -> Scalar.
 
 (* === Lagrangian of the Symbolic Harmonic Field === *)
 Definition SHF_Lagrangian : Scalar :=
-  scalar_mult alpha (norm_squared curvature) -
-  scalar_mult beta (T_FEC X X + T_FEC Y Y + T_FEC Z Z).
-
-(* End VersareTensor. *)
+  sub_scalar
+    (scalar_mult alpha (norm_squared curvature))
+    (scalar_mult beta (add_scalar (T_FEC X X)
+                                   (add_scalar (T_FEC Y Y) (T_FEC Z Z)))).

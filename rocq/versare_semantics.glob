@@ -1,0 +1,261 @@
+DIGEST 3c8cb62c56e9e216be3f3f798124c0d5
+Fshf.versare_semantics
+R42:53 Coq.Init.Nat <> <> lib
+R71:84 Coq.Lists.List <> <> lib
+R94:106 Coq.Lists.List ListNotations <> mod
+R124:141 shf.versare_syntax <> <> lib
+ind 155:170 <> SymbolicConstant
+constr 179:186 <> Collapse
+constr 219:227 <> Expansion
+constr 263:271 <> Curvature
+constr 313:319 <> Entropy
+constr 360:368 <> Coherence
+scheme 155:170 <> SymbolicConstant_rect
+scheme 155:170 <> SymbolicConstant_ind
+scheme 155:170 <> SymbolicConstant_rec
+scheme 155:170 <> SymbolicConstant_sind
+rec 471:477 <> zvector
+proj 493:495 <> z1v
+proj 505:507 <> z2v
+proj 517:519 <> z3v
+proj 529:531 <> z4v
+proj 541:543 <> z5v
+proj 555:557 <> z6v
+proj 567:569 <> z7v
+proj 579:581 <> z8v
+proj 591:593 <> z9v
+proj 603:606 <> z10v
+proj 617:620 <> z11v
+proj 629:632 <> z12v
+proj 641:644 <> z13v
+proj 653:656 <> z14v
+proj 665:668 <> z15v
+proj 679:682 <> z16v
+proj 691:694 <> z17v
+proj 703:706 <> z18v
+R500:502 Coq.Init.Datatypes <> nat ind
+R512:514 Coq.Init.Datatypes <> nat ind
+R524:526 Coq.Init.Datatypes <> nat ind
+R536:538 Coq.Init.Datatypes <> nat ind
+R548:550 Coq.Init.Datatypes <> nat ind
+R562:564 Coq.Init.Datatypes <> nat ind
+R574:576 Coq.Init.Datatypes <> nat ind
+R586:588 Coq.Init.Datatypes <> nat ind
+R598:600 Coq.Init.Datatypes <> nat ind
+R610:612 Coq.Init.Datatypes <> nat ind
+R624:626 Coq.Init.Datatypes <> nat ind
+R636:638 Coq.Init.Datatypes <> nat ind
+R648:650 Coq.Init.Datatypes <> nat ind
+R660:662 Coq.Init.Datatypes <> nat ind
+R672:674 Coq.Init.Datatypes <> nat ind
+R686:688 Coq.Init.Datatypes <> nat ind
+R698:700 Coq.Init.Datatypes <> nat ind
+R710:712 Coq.Init.Datatypes <> nat ind
+def 757:771 <> default_zvector
+R775:781 shf.versare_semantics <> zvector rec
+R791:793 shf.versare_semantics <> z1v proj
+R791:793 shf.versare_semantics <> z1v proj
+R791:793 shf.versare_semantics <> z1v proj
+R803:805 shf.versare_semantics <> z2v proj
+R803:805 shf.versare_semantics <> z2v proj
+R815:817 shf.versare_semantics <> z3v proj
+R815:817 shf.versare_semantics <> z3v proj
+R827:829 shf.versare_semantics <> z4v proj
+R827:829 shf.versare_semantics <> z4v proj
+R839:841 shf.versare_semantics <> z5v proj
+R839:841 shf.versare_semantics <> z5v proj
+R852:854 shf.versare_semantics <> z6v proj
+R852:854 shf.versare_semantics <> z6v proj
+R864:866 shf.versare_semantics <> z7v proj
+R864:866 shf.versare_semantics <> z7v proj
+R876:878 shf.versare_semantics <> z8v proj
+R876:878 shf.versare_semantics <> z8v proj
+R888:890 shf.versare_semantics <> z9v proj
+R888:890 shf.versare_semantics <> z9v proj
+R900:903 shf.versare_semantics <> z10v proj
+R900:903 shf.versare_semantics <> z10v proj
+R913:916 shf.versare_semantics <> z11v proj
+R913:916 shf.versare_semantics <> z11v proj
+R925:928 shf.versare_semantics <> z12v proj
+R925:928 shf.versare_semantics <> z12v proj
+R937:940 shf.versare_semantics <> z13v proj
+R937:940 shf.versare_semantics <> z13v proj
+R949:952 shf.versare_semantics <> z14v proj
+R949:952 shf.versare_semantics <> z14v proj
+R961:964 shf.versare_semantics <> z15v proj
+R961:964 shf.versare_semantics <> z15v proj
+R974:977 shf.versare_semantics <> z16v proj
+R974:977 shf.versare_semantics <> z16v proj
+R986:989 shf.versare_semantics <> z17v proj
+R986:989 shf.versare_semantics <> z17v proj
+R998:1001 shf.versare_semantics <> z18v proj
+R998:1001 shf.versare_semantics <> z18v proj
+def 1057:1068 <> zvector_plus
+R1079:1085 shf.versare_semantics <> zvector rec
+binder 1071:1072 <> v1:22
+binder 1074:1075 <> v2:23
+R1090:1096 shf.versare_semantics <> zvector rec
+R1106:1108 shf.versare_semantics <> z1v proj
+R1106:1108 shf.versare_semantics <> z1v proj
+R1106:1108 shf.versare_semantics <> z1v proj
+R1134:1136 shf.versare_semantics <> z2v proj
+R1134:1136 shf.versare_semantics <> z2v proj
+R1163:1165 shf.versare_semantics <> z3v proj
+R1163:1165 shf.versare_semantics <> z3v proj
+R1191:1193 shf.versare_semantics <> z4v proj
+R1191:1193 shf.versare_semantics <> z4v proj
+R1220:1222 shf.versare_semantics <> z5v proj
+R1220:1222 shf.versare_semantics <> z5v proj
+R1248:1250 shf.versare_semantics <> z6v proj
+R1248:1250 shf.versare_semantics <> z6v proj
+R1277:1279 shf.versare_semantics <> z7v proj
+R1277:1279 shf.versare_semantics <> z7v proj
+R1305:1307 shf.versare_semantics <> z8v proj
+R1305:1307 shf.versare_semantics <> z8v proj
+R1334:1336 shf.versare_semantics <> z9v proj
+R1334:1336 shf.versare_semantics <> z9v proj
+R1362:1365 shf.versare_semantics <> z10v proj
+R1362:1365 shf.versare_semantics <> z10v proj
+R1391:1394 shf.versare_semantics <> z11v proj
+R1391:1394 shf.versare_semantics <> z11v proj
+R1419:1422 shf.versare_semantics <> z12v proj
+R1419:1422 shf.versare_semantics <> z12v proj
+R1448:1451 shf.versare_semantics <> z13v proj
+R1448:1451 shf.versare_semantics <> z13v proj
+R1476:1479 shf.versare_semantics <> z14v proj
+R1476:1479 shf.versare_semantics <> z14v proj
+R1505:1508 shf.versare_semantics <> z15v proj
+R1505:1508 shf.versare_semantics <> z15v proj
+R1533:1536 shf.versare_semantics <> z16v proj
+R1533:1536 shf.versare_semantics <> z16v proj
+R1562:1565 shf.versare_semantics <> z17v proj
+R1562:1565 shf.versare_semantics <> z17v proj
+R1590:1593 shf.versare_semantics <> z18v proj
+R1590:1593 shf.versare_semantics <> z18v proj
+R1121:1123 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1114:1116 shf.versare_semantics <> z1v proj
+R1119:1120 shf.versare_semantics <> v1:22 var
+R1124:1126 shf.versare_semantics <> z1v proj
+R1129:1130 shf.versare_semantics <> v2:23 var
+R1149:1151 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1142:1144 shf.versare_semantics <> z2v proj
+R1147:1148 shf.versare_semantics <> v1:22 var
+R1152:1154 shf.versare_semantics <> z2v proj
+R1157:1158 shf.versare_semantics <> v2:23 var
+R1178:1180 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1171:1173 shf.versare_semantics <> z3v proj
+R1176:1177 shf.versare_semantics <> v1:22 var
+R1181:1183 shf.versare_semantics <> z3v proj
+R1186:1187 shf.versare_semantics <> v2:23 var
+R1206:1208 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1199:1201 shf.versare_semantics <> z4v proj
+R1204:1205 shf.versare_semantics <> v1:22 var
+R1209:1211 shf.versare_semantics <> z4v proj
+R1214:1215 shf.versare_semantics <> v2:23 var
+R1235:1237 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1228:1230 shf.versare_semantics <> z5v proj
+R1233:1234 shf.versare_semantics <> v1:22 var
+R1238:1240 shf.versare_semantics <> z5v proj
+R1243:1244 shf.versare_semantics <> v2:23 var
+R1263:1265 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1256:1258 shf.versare_semantics <> z6v proj
+R1261:1262 shf.versare_semantics <> v1:22 var
+R1266:1268 shf.versare_semantics <> z6v proj
+R1271:1272 shf.versare_semantics <> v2:23 var
+R1292:1294 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1285:1287 shf.versare_semantics <> z7v proj
+R1290:1291 shf.versare_semantics <> v1:22 var
+R1295:1297 shf.versare_semantics <> z7v proj
+R1300:1301 shf.versare_semantics <> v2:23 var
+R1320:1322 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1313:1315 shf.versare_semantics <> z8v proj
+R1318:1319 shf.versare_semantics <> v1:22 var
+R1323:1325 shf.versare_semantics <> z8v proj
+R1328:1329 shf.versare_semantics <> v2:23 var
+R1349:1351 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1342:1344 shf.versare_semantics <> z9v proj
+R1347:1348 shf.versare_semantics <> v1:22 var
+R1352:1354 shf.versare_semantics <> z9v proj
+R1357:1358 shf.versare_semantics <> v2:23 var
+R1377:1379 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1370:1373 shf.versare_semantics <> z10v proj
+R1375:1376 shf.versare_semantics <> v1:22 var
+R1380:1383 shf.versare_semantics <> z10v proj
+R1385:1386 shf.versare_semantics <> v2:23 var
+R1406:1408 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1399:1402 shf.versare_semantics <> z11v proj
+R1404:1405 shf.versare_semantics <> v1:22 var
+R1409:1412 shf.versare_semantics <> z11v proj
+R1414:1415 shf.versare_semantics <> v2:23 var
+R1434:1436 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1427:1430 shf.versare_semantics <> z12v proj
+R1432:1433 shf.versare_semantics <> v1:22 var
+R1437:1440 shf.versare_semantics <> z12v proj
+R1442:1443 shf.versare_semantics <> v2:23 var
+R1463:1465 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1456:1459 shf.versare_semantics <> z13v proj
+R1461:1462 shf.versare_semantics <> v1:22 var
+R1466:1469 shf.versare_semantics <> z13v proj
+R1471:1472 shf.versare_semantics <> v2:23 var
+R1491:1493 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1484:1487 shf.versare_semantics <> z14v proj
+R1489:1490 shf.versare_semantics <> v1:22 var
+R1494:1497 shf.versare_semantics <> z14v proj
+R1499:1500 shf.versare_semantics <> v2:23 var
+R1520:1522 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1513:1516 shf.versare_semantics <> z15v proj
+R1518:1519 shf.versare_semantics <> v1:22 var
+R1523:1526 shf.versare_semantics <> z15v proj
+R1528:1529 shf.versare_semantics <> v2:23 var
+R1548:1550 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1541:1544 shf.versare_semantics <> z16v proj
+R1546:1547 shf.versare_semantics <> v1:22 var
+R1551:1554 shf.versare_semantics <> z16v proj
+R1556:1557 shf.versare_semantics <> v2:23 var
+R1577:1579 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1570:1573 shf.versare_semantics <> z17v proj
+R1575:1576 shf.versare_semantics <> v1:22 var
+R1580:1583 shf.versare_semantics <> z17v proj
+R1585:1586 shf.versare_semantics <> v2:23 var
+R1605:1607 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R1598:1601 shf.versare_semantics <> z18v proj
+R1603:1604 shf.versare_semantics <> v1:22 var
+R1608:1611 shf.versare_semantics <> z18v proj
+R1613:1614 shf.versare_semantics <> v2:23 var
+def 1679:1688 <> clause_sem
+R1698:1701 shf.versare_syntax <> noun ind
+binder 1691:1694 <> subj:24
+R1713:1716 Coq.Init.Datatypes <> list ind
+R1718:1723 shf.versare_syntax <> Zglyph ind
+binder 1705:1709 <> preds:25
+R1728:1734 shf.versare_semantics <> zvector rec
+R1741:1755 shf.versare_semantics <> default_zvector def
+def 1770:1777 <> modulate
+R1786:1790 shf.versare_syntax <> emoji ind
+binder 1780:1782 <> emo:26
+R1798:1804 shf.versare_semantics <> zvector rec
+binder 1794:1794 <> v:27
+R1809:1815 shf.versare_semantics <> zvector rec
+R1822:1822 shf.versare_semantics <> v:27 var
+def 1857:1862 <> interp
+R1869:1872 shf.versare_syntax <> expr ind
+binder 1865:1865 <> e:28
+R1877:1883 shf.versare_semantics <> zvector rec
+R1896:1896 shf.versare_semantics <> e:28 var
+R1907:1913 shf.versare_syntax <> EClause constr
+R1926:1929 Coq.Init.Datatypes <> None constr
+R1938:1947 shf.versare_semantics <> clause_sem def
+R1964:1970 shf.versare_syntax <> EClause constr
+R1984:1987 Coq.Init.Datatypes <> Some constr
+R1995:2002 shf.versare_semantics <> modulate def
+R2007:2016 shf.versare_semantics <> clause_sem def
+R2034:2040 shf.versare_syntax <> EDefine constr
+R2065:2070 shf.versare_semantics <> interp:29 def
+R2081:2087 shf.versare_syntax <> EInvoke constr
+R2111:2125 shf.versare_semantics <> default_zvector def
+R2131:2133 shf.versare_syntax <> EIf constr
+R2161:2166 shf.versare_semantics <> interp:29 def
+R2180:2184 shf.versare_syntax <> EEval constr
+R2210:2224 shf.versare_semantics <> default_zvector def
+R2230:2234 shf.versare_syntax <> ECall constr
+R2260:2274 shf.versare_semantics <> default_zvector def

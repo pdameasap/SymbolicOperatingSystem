@@ -1,0 +1,140 @@
+DIGEST 7d3c92cfa67f5f45c4c7363d46227af7
+Fshf.versare_tensor
+R88:105 shf.versare_syntax <> <> lib
+R123:143 shf.versare_semantics <> <> lib
+ind 182:186 <> Scope
+constr 191:191 <> X
+constr 195:195 <> Y
+constr 199:199 <> Z
+scheme 182:186 <> Scope_rect
+scheme 182:186 <> Scope_ind
+scheme 182:186 <> Scope_rec
+scheme 182:186 <> Scope_sind
+ax 244:253 <> FormVector
+ax 273:285 <> EntropyVector
+ax 305:319 <> CoherenceVector
+ax 340:343 <> PhiF
+R352:355 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R347:351 shf.versare_tensor <> Scope ind
+R356:365 shf.versare_tensor <> FormVector defax
+ax 378:381 <> PhiE
+R390:393 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R385:389 shf.versare_tensor <> Scope ind
+R394:406 shf.versare_tensor <> EntropyVector defax
+ax 419:422 <> PhiC
+R431:434 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R426:430 shf.versare_tensor <> Scope ind
+R435:449 shf.versare_tensor <> CoherenceVector defax
+ax 507:512 <> Scalar
+ax 532:537 <> Tensor
+ax 558:568 <> dot_product
+binder 580:580 <> A:19
+R585:588 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R584:584 shf.versare_tensor <> A:19 var
+R590:593 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R589:589 shf.versare_tensor <> A:19 var
+R594:599 shf.versare_tensor <> Scalar defax
+ax 612:621 <> add_tensor
+R631:634 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R625:630 shf.versare_tensor <> Scalar defax
+R641:644 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R635:640 shf.versare_tensor <> Scalar defax
+R645:650 shf.versare_tensor <> Tensor defax
+ax 663:673 <> scalar_mult
+R693:696 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R677:692 shf.versare_semantics <> SymbolicConstant ind
+R703:706 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R697:702 shf.versare_tensor <> Scalar defax
+R707:712 shf.versare_tensor <> Scalar defax
+ax 774:782 <> curvature
+R786:791 shf.versare_tensor <> Scalar defax
+ax 804:809 <> grad_R
+R818:821 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R813:817 shf.versare_tensor <> Scope ind
+R822:827 shf.versare_tensor <> Scalar defax
+ax 840:851 <> norm_squared
+R861:864 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R855:860 shf.versare_tensor <> Scalar defax
+R865:870 shf.versare_tensor <> Scalar defax
+ax 923:935 <> metric_tensor
+R944:947 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R939:943 shf.versare_tensor <> Scope ind
+R953:956 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R948:952 shf.versare_tensor <> Scope ind
+R957:962 shf.versare_tensor <> Scalar defax
+ax 1011:1015 <> alpha
+R1019:1034 shf.versare_semantics <> SymbolicConstant ind
+ax 1057:1060 <> beta
+R1064:1079 shf.versare_semantics <> SymbolicConstant ind
+ax 1104:1109 <> dot_FE
+R1123:1126 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1113:1122 shf.versare_tensor <> FormVector defax
+R1140:1143 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1127:1139 shf.versare_tensor <> EntropyVector defax
+R1144:1149 shf.versare_tensor <> Scalar defax
+ax 1162:1167 <> dot_EC
+R1184:1187 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1171:1183 shf.versare_tensor <> EntropyVector defax
+R1203:1206 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1188:1202 shf.versare_tensor <> CoherenceVector defax
+R1207:1212 shf.versare_tensor <> Scalar defax
+ax 1225:1230 <> dot_CG
+R1249:1252 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1234:1248 shf.versare_tensor <> CoherenceVector defax
+R1259:1262 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1253:1258 shf.versare_tensor <> Scalar defax
+R1263:1268 shf.versare_tensor <> Scalar defax
+ax 1282:1291 <> add_scalar
+R1301:1304 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1295:1300 shf.versare_tensor <> Scalar defax
+R1311:1314 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1305:1310 shf.versare_tensor <> Scalar defax
+R1315:1320 shf.versare_tensor <> Scalar defax
+def 1386:1390 <> T_FEC
+R1401:1405 shf.versare_tensor <> Scope ind
+binder 1393:1394 <> mu:46
+binder 1396:1397 <> nu:47
+R1410:1415 shf.versare_tensor <> Scalar defax
+R1422:1431 shf.versare_tensor <> add_scalar defax
+R1438:1443 shf.versare_tensor <> dot_FE defax
+R1446:1449 shf.versare_tensor <> PhiF defax
+R1451:1452 shf.versare_tensor <> mu:46 var
+R1456:1459 shf.versare_tensor <> PhiE defax
+R1461:1462 shf.versare_tensor <> nu:47 var
+R1471:1480 shf.versare_tensor <> add_scalar defax
+R1490:1495 shf.versare_tensor <> dot_EC defax
+R1498:1501 shf.versare_tensor <> PhiE defax
+R1503:1504 shf.versare_tensor <> mu:46 var
+R1508:1511 shf.versare_tensor <> PhiC defax
+R1513:1514 shf.versare_tensor <> nu:47 var
+R1526:1531 shf.versare_tensor <> dot_CG defax
+R1534:1537 shf.versare_tensor <> PhiC defax
+R1539:1540 shf.versare_tensor <> mu:46 var
+R1544:1549 shf.versare_tensor <> grad_R defax
+R1551:1552 shf.versare_tensor <> nu:47 var
+ax 1569:1578 <> sub_scalar
+R1588:1591 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1582:1587 shf.versare_tensor <> Scalar defax
+R1598:1601 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1592:1597 shf.versare_tensor <> Scalar defax
+R1602:1607 shf.versare_tensor <> Scalar defax
+def 1678:1691 <> SHF_Lagrangian
+R1695:1700 shf.versare_tensor <> Scalar defax
+R1707:1716 shf.versare_tensor <> sub_scalar defax
+R1723:1733 shf.versare_tensor <> scalar_mult defax
+R1735:1739 shf.versare_tensor <> alpha defax
+R1742:1753 shf.versare_tensor <> norm_squared defax
+R1755:1763 shf.versare_tensor <> curvature defax
+R1772:1782 shf.versare_tensor <> scalar_mult defax
+R1784:1787 shf.versare_tensor <> beta defax
+R1790:1799 shf.versare_tensor <> add_scalar defax
+R1802:1806 shf.versare_tensor <> T_FEC def
+R1808:1808 shf.versare_tensor <> X constr
+R1810:1810 shf.versare_tensor <> X constr
+R1849:1858 shf.versare_tensor <> add_scalar defax
+R1861:1865 shf.versare_tensor <> T_FEC def
+R1867:1867 shf.versare_tensor <> Y constr
+R1869:1869 shf.versare_tensor <> Y constr
+R1873:1877 shf.versare_tensor <> T_FEC def
+R1879:1879 shf.versare_tensor <> Z constr
+R1881:1881 shf.versare_tensor <> Z constr

@@ -5,6 +5,13 @@ Require Import Coq.Lists.List.
 Import ListNotations.
 Require Import shf.versare_syntax.
 
+Inductive SymbolicConstant :=
+  | Collapse   (* Z13 — Black/Void *)
+  | Expansion  (* Z14 — White/Infinity *)
+  | Curvature  (* Recursive curvature scalar R *)
+  | Entropy    (* Symbolic entropy gradient *)
+  | Coherence. (* Symbolic coherence attractor *)
+
 (* --- A simple numeric domain for Z-axis weights --- *)
 Record zvector : Type := {
   z1v  : nat; z2v  : nat; z3v  : nat; z4v  : nat; z5v  : nat;
