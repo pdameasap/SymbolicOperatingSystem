@@ -1,4 +1,4 @@
-# pdf_pipeline_modular/pipeline.py
+# modules/pdf/pipeline.py
 
 import os
 import time

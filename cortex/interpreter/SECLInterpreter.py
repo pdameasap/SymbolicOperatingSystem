@@ -1,3 +1,6 @@
+
+# File: cortex/interpreter/SECLInterpreter.py
+
 from cortex.interpreter.SymbolicExpressionResolver import SymbolicExpressionResolver
 
 class SECLInterpreter:

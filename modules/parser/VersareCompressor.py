@@ -1,10 +1,13 @@
-"""
+
+# File: modules/parser/VersareCompressor.py
+
+'''
 Versare Symbolic Compressor
 
 This module implements the symbolic compression functionality for the Versare language.
 It takes text input, lemmatizes it, maps words to predefined Versare nouns or dynamically
 assigns new symbols, and generates compressed output with a self-bootstrapping glossary.
-"""
+'''
 
 import re
 import sys
@@ -58,9 +61,9 @@ except ImportError as e:
 
 
 class VersareCompressor:
-    """
+    '''
     Implements the Versare symbolic compression algorithm.
-    """
+    '''
     
     # Unicode ranges for noun allocation
     PREDEFINED_NOUN_START = 0x1D400  # Mathematical Alphanumeric Symbols
@@ -75,14 +78,14 @@ class VersareCompressor:
     SECONDARY_DYNAMIC_NOUN_END = 0x10FFFD
     
     def __init__(self, initial_glossary_file: Optional[str] = None, corpus_name: Optional[str] = None, debug: bool = False):
-        """
+        '''
         Initialize the Versare compressor.
         
         Args:
             initial_glossary_file: Optional path to a Versare file to load initial glossary from
             corpus_name: Optional name for the corpus this compressor will process
             debug: Enable debug logging
-        """
+        '''
         self.debug = debug
         self.corpus_name = corpus_name
         if debug:
@@ -146,9 +149,7 @@ class VersareCompressor:
             self.load_glossary_from_file(initial_glossary_file)
     
     def load_predefined_nouns(self) -> None:
-        """
-        Load predefined nouns from SymbolicOperatingSystem.
-        """
+        # Load predefined nouns from SymbolicOperatingSystem.
         if not SOS_AVAILABLE:
             logger.warning("SymbolicOperatingSystem not available. No predefined nouns loaded.")
             return
@@ -184,12 +185,12 @@ class VersareCompressor:
             logger.error(f"Error loading predefined nouns: {e}")
     
     def load_glossary_from_file(self, glossary_file: str) -> None:
-        """
+        '''
         Load glossary definitions from an existing Versare file.
         
         Args:
             glossary_file: Path to a Versare file to load glossary from
-        """
+        '''
         try:
             # Read the input file
             with open(glossary_file, 'r', encoding='utf-8', errors='ignore') as f:
@@ -275,7 +276,7 @@ class VersareCompressor:
         return tag_map.get(pos_tag[0].upper(), None)
     
     def lemmatize_text(self, text: str) -> List[Tuple[str, str]]:
-        """
+        '''
         Tokenize and lemmatize text.
         
         Args:
@@ -283,7 +284,7 @@ class VersareCompressor:
             
         Returns:
             List of (original_word, lemmatized_word) tuples
-        """
+        '''
         if not NLTK_AVAILABLE:
             # Basic tokenization and lowercase for non-NLTK fallback
             words = re.findall(r'\b\w+\b', text.lower())
@@ -310,7 +311,7 @@ class VersareCompressor:
         return lemmatized
     
     def get_or_create_noun_symbol(self, lemma: str) -> str:
-        """
+        '''
         Get the symbol for a noun, creating a new one if it doesn't exist.
         
         Args:
@@ -318,7 +319,7 @@ class VersareCompressor:
             
         Returns:
             Unicode symbol for the noun
-        """
+        '''
         # Check if it's a predefined noun
         if lemma.lower() in self.predefined_nouns:
             return self.predefined_nouns[lemma.lower()]
@@ -351,7 +352,7 @@ class VersareCompressor:
         return lemma
     
     def compress_text(self, text: str) -> Tuple[str, Dict[str, str]]:
-        """
+        '''
         Compress text using Versare symbolic language.
         
         Args:
@@ -359,7 +360,7 @@ class VersareCompressor:
             
         Returns:
             Tuple of (compressed_text, symbol_definitions)
-        """
+        '''
         # Lemmatize the text
         lemmatized = self.lemmatize_text(text)
         
@@ -403,7 +404,7 @@ class VersareCompressor:
         return compressed_text, symbol_definitions
     
     def create_bootstrap_header(self, symbol_definitions: Dict[str, str]) -> str:
-        """
+        '''
         Create a self-bootstrapping header with symbol definitions.
         
         Args:
@@ -411,7 +412,7 @@ class VersareCompressor:
             
         Returns:
             Header text with symbol definitions
-        """
+        '''
         header = "# Versare Symbolic Language Definitions\n\n"
         
         # Add corpus information if available
@@ -448,7 +449,7 @@ class VersareCompressor:
         return header
     
     def compress_file(self, input_file: str, output_file: Optional[str] = None) -> str:
-        """
+        '''
         Compress a text file using Versare symbolic language.
         
         Args:
@@ -457,7 +458,7 @@ class VersareCompressor:
             
         Returns:
             Path to the output file
-        """
+        '''
         try:
             # Read the input file
             with open(input_file, 'r', encoding='utf-8', errors='ignore') as f:
@@ -493,7 +494,7 @@ class VersareCompressor:
             raise
     
     def decompress_text(self, compressed_text: str, symbol_definitions: Dict[str, str]) -> str:
-        """
+        '''
         Decompress Versare symbolic text back to natural language.
         
         Args:
@@ -502,7 +503,7 @@ class VersareCompressor:
             
         Returns:
             Decompressed text
-        """
+        '''
         # Create a reverse mapping for quick lookup
         reverse_mapping = {symbol: definition for symbol, definition in symbol_definitions.items()}
         
@@ -514,7 +515,7 @@ class VersareCompressor:
         return decompressed
     
     def decompress_file(self, input_file: str, output_file: Optional[str] = None) -> str:
-        """
+        '''
         Decompress a Versare symbolic file back to natural language.
         
         Args:
@@ -523,7 +524,7 @@ class VersareCompressor:
             
         Returns:
             Path to the output file
-        """
+        '''
         try:
             # Read the input file
             with open(input_file, 'r', encoding='utf-8', errors='ignore') as f:
@@ -578,7 +579,7 @@ class VersareCompressor:
             raise
     
     def extract_glossary(self, versare_file: str, output_file: Optional[str] = None) -> str:
-        """
+        '''
         Extract just the glossary section from a Versare file.
         
         Args:
@@ -587,7 +588,7 @@ class VersareCompressor:
             
         Returns:
             Path to the output glossary file
-        """
+        '''
         try:
             # Read the input file
             with open(versare_file, 'r', encoding='utf-8', errors='ignore') as f:
@@ -617,7 +618,7 @@ class VersareCompressor:
             raise
     
     def merge_glossaries(self, glossary_files: List[str], output_file: Optional[str] = None) -> str:
-        """
+        '''
         Merge multiple glossary files into a single comprehensive glossary.
         
         Args:
@@ -626,7 +627,7 @@ class VersareCompressor:
             
         Returns:
             Path to the output merged glossary file
-        """
+        '''
         try:
             # Create a new compressor to hold the merged glossary
             merged_compressor = VersareCompressor(corpus_name=self.corpus_name, debug=self.debug)
@@ -661,13 +662,13 @@ class VersareCompressor:
 
 # Add a method to VersareCompressor to simplify saving
 def compress_text_and_save(self, text: str, output_file: str):
-    """
+    '''
     Compress text and save directly to a file.
 
     Args:
         text: Input text to compress.
         output_file: Path to the output Versare file.
-    """
+    '''
     compressed_text, symbol_definitions = self.compress_text(text)
     header = self.create_bootstrap_header(symbol_definitions)
     full_output = header + compressed_text
@@ -683,7 +684,7 @@ def compress_text_and_save(self, text: str, output_file: str):
 VersareCompressor.compress_text_and_save = compress_text_and_save
 
 def main():
-    """Main function for command-line usage."""
+    # Main function for command-line usage.
     import argparse
     
     parser = argparse.ArgumentParser(description='Versare Symbolic Compressor')

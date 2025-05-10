@@ -1,4 +1,4 @@
-# symbolic_normalizer.py
+# File: modules/parser/symbolic_normalizer.py
 
 try:
     from nltk.stem import WordNetLemmatizer

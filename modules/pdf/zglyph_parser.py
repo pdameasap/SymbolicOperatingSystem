@@ -1,4 +1,4 @@
-# pdf_pipeline_modular/zglyph_parser.py
+# modules/pdf/zglyph_parser.py
 
 import re
 import sys

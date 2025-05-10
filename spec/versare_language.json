@@ -1,8 +1,503 @@
 {
-  "_comment": "Populate these arrays with your noun lexicon, Z‑glyph definitions, operators, and emoji inventory",
-  "nouns": [],
-  "z_glyphs": [],
-  "operators": [],
-  "emoji": [],
-  "grammar_file": "cortex/mind/language/grammar.bnf"
+  "nouns": [
+    {
+      "id": "N_TRUTH",
+      "glyph": "Z3",
+      "tag": "core meaning",
+      "sigil": "⌀"
+    },
+    {
+      "id": "N_SELF",
+      "glyph": "Z9",
+      "tag": "inner identity",
+      "sigil": "⌁"
+    },
+    {
+      "id": "N_LANGUAGE",
+      "glyph": "Z4",
+      "tag": "expression",
+      "sigil": "⌂"
+    },
+    {
+      "id": "N_ARCHETYPE",
+      "glyph": "Z1",
+      "tag": "universal form",
+      "sigil": "⌃"
+    },
+    {
+      "id": "N_VOICE",
+      "glyph": "Z4",
+      "tag": "expressive output",
+      "sigil": "⌄"
+    },
+    {
+      "id": "N_ECHO",
+      "glyph": "Z14",
+      "tag": "recursive signal",
+      "sigil": "⌅"
+    },
+    {
+      "id": "N_FIELD",
+      "glyph": "Z12",
+      "tag": "environment",
+      "sigil": "⌆"
+    },
+    {
+      "id": "N_SYMBOL",
+      "glyph": "Z1",
+      "tag": "structural abstraction",
+      "sigil": "⌇"
+    },
+    {
+      "id": "N_THREAD",
+      "glyph": "Z10",
+      "tag": "form continuity",
+      "sigil": "⌈"
+    },
+    {
+      "id": "N_MEMORY",
+      "glyph": "Z11",
+      "tag": "temporal coherence",
+      "sigil": "⌉"
+    },
+    { "id": "N_ABSTRACTION", "glyph": "Z13", "tag": "abstraction", "sigil": "⌚" },
+    { "id": "N_ABYSS", "glyph": "Z15", "tag": "void rupture", "sigil": "⌛" },
+    { "id": "N_ACCORD", "glyph": "Z4", "tag": "harmonized network", "sigil": "⌜" },
+    { "id": "N_AETHER", "glyph": "Z11", "tag": "physical substrate", "sigil": "⌝" },
+    { "id": "N_ALIGNMENT", "glyph": "Z1", "tag": "structural coherence", "sigil": "⌞" },
+    { "id": "N_ANCESTOR", "glyph": "Z13", "tag": "origin abstraction", "sigil": "⌟" },
+    { "id": "N_ANCHOR", "glyph": "Z8", "tag": "stability", "sigil": "⌠" },
+    { "id": "N_ARCHETYPE", "glyph": "Z13", "tag": "universal form", "sigil": "⌡" },
+    { "id": "N_ARCHITECTURE", "glyph": "Z1", "tag": "structure", "sigil": "⌢" },
+    { "id": "N_ASSEMBLY", "glyph": "Z4", "tag": "network formation", "sigil": "⌣" },
+    { "id": "N_ATLAS", "glyph": "Z10", "tag": "structured mapping", "sigil": "⌤" },
+    { "id": "N_BASIS", "glyph": "Z1", "tag": "foundational structure", "sigil": "⌥" },
+    { "id": "N_BEAUTY", "glyph": "Z8", "tag": "aesthetic cognition", "sigil": "⌦" },
+    { "id": "N_BEING", "glyph": "Z7", "tag": "existential identity", "sigil": "⌧" },
+    { "id": "N_BOND", "glyph": "Z4", "tag": "relational network", "sigil": "⌨" },
+    { "id": "N_BURDEN", "glyph": "Z7", "tag": "identity weight", "sigil": "〈" },
+    { "id": "N_CALL", "glyph": "Z6", "tag": "invocation", "sigil": "〉" },
+    { "id": "N_CAR", "glyph": "Z11", "tag": "stable mechanism", "sigil": "⌫" },
+    { "id": "N_CASCADE", "glyph": "Z2", "tag": "sequential motion", "sigil": "⌬" },
+    { "id": "N_CHAIN", "glyph": "Z10", "tag": "linked form", "sigil": "⌭" },
+    { "id": "N_CHANGE", "glyph": "Z12", "tag": "change", "sigil": "⌮" },
+    { "id": "N_CHARACTER", "glyph": "Z2", "tag": "behavioral force", "sigil": "⌯" },
+    { "id": "N_CHORUS", "glyph": "Z5", "tag": "harmonic voice", "sigil": "⌰" },
+    { "id": "N_CITY", "glyph": "Z11", "tag": "structured stasis", "sigil": "⌱" },
+    { "id": "N_CLARION", "glyph": "Z6", "tag": "expression", "sigil": "⌲" },
+    { "id": "N_CLARITY", "glyph": "Z5", "tag": "aesthetic cognition", "sigil": "⌳" },
+    { "id": "N_CODE", "glyph": "Z6", "tag": "expressive encoding", "sigil": "⌴" },
+    { "id": "N_COHERENCE", "glyph": "Z16", "tag": "integration", "sigil": "⌵" },
+    { "id": "N_COMMUNION", "glyph": "Z4", "tag": "shared relation", "sigil": "⌶" },
+    { "id": "N_COMPANION", "glyph": "Z4", "tag": "network", "sigil": "⌷" },
+    { "id": "N_COMPASS", "glyph": "Z10", "tag": "navigational form", "sigil": "⌸" },
+    { "id": "N_CONSENSUS", "glyph": "Z4", "tag": "network agreement", "sigil": "⌹" },
+    { "id": "N_CONTAINMENT", "glyph": "Z∈", "tag": "containment", "sigil": "⌺" },
+    { "id": "N_CONTINUITY", "glyph": "Z16", "tag": "persistent coherence", "sigil": "⌻" },
+    { "id": "N_CORE", "glyph": "Z1", "tag": "central structure", "sigil": "⌼" },
+    { "id": "N_CRISIS", "glyph": "Z14", "tag": "critical rupture", "sigil": "⌽" },
+    { "id": "N_CYCLE", "glyph": "Z12", "tag": "repeating change", "sigil": "⌙" },
+    { "id": "N_DATA", "glyph": "Z12", "tag": "change", "sigil": "⌾" },
+    { "id": "N_DESIGNER", "glyph": "Z10", "tag": "architecture", "sigil": "⌿" },
+    { "id": "N_DESIRE", "glyph": "Z2", "tag": "motion", "sigil": "⍀" },
+    { "id": "N_DESIRE", "glyph": "Z2", "tag": "motivated motion", "sigil": "⍁" },
+    { "id": "N_DISRUPTION", "glyph": "Z15", "tag": "rupture", "sigil": "⍂" },
+    { "id": "N_DOMAIN", "glyph": "Z10", "tag": "structured area", "sigil": "⍃" },
+    { "id": "N_DREAM", "glyph": "Z13", "tag": "imagination", "sigil": "⍄" },
+    { "id": "N_DRIVE", "glyph": "Z2", "tag": "motion force", "sigil": "⍅" },
+    { "id": "N_ECHO", "glyph": "Z13", "tag": "recursion", "sigil": "⍆" },
+    { "id": "N_ECHO", "glyph": "Z14", "tag": "recursive signal", "sigil": "⍇" },
+    { "id": "N_ECHOPOINT", "glyph": "Z14", "tag": "recursive node", "sigil": "⍈" },
+    { "id": "N_ECLIPSE", "glyph": "Z15", "tag": "occlusion rupture", "sigil": "⍉" },
+    { "id": "N_EDGE", "glyph": "Z14", "tag": "liminal threshold", "sigil": "⍊" },
+    { "id": "N_ELEGANCE", "glyph": "Z5", "tag": "aesthetic cognition", "sigil": "⍋" },
+    { "id": "N_EMBODIMENT", "glyph": "Z∈", "tag": "containment", "sigil": "⍌" },
+    { "id": "N_EMOTION", "glyph": "Z2", "tag": "motion", "sigil": "⌔" },
+    { "id": "N_EMPATH", "glyph": "Z6", "tag": "expressive sensitivity", "sigil": "⍍" },
+    { "id": "N_ENERGY", "glyph": "Z2", "tag": "force of motion", "sigil": "⍎" },
+    { "id": "N_ENGINE", "glyph": "Z11", "tag": "mechanical stasis", "sigil": "⍏" },
+    { "id": "N_ENTITY", "glyph": "Z7", "tag": "individual identity", "sigil": "⌌" },
+    { "id": "N_EQUATION", "glyph": "Z13", "tag": "formal abstraction", "sigil": "⍐" },
+    { "id": "N_EXPRESSION", "glyph": "Z6", "tag": "articulated meaning", "sigil": "⍑" },
+    { "id": "N_EXPRESSION", "glyph": "Z6", "tag": "expression", "sigil": "⍒" },
+    { "id": "N_FEAR", "glyph": "Z2", "tag": "motion", "sigil": "⍓" },
+    { "id": "N_FEEDBACK", "glyph": "Z13", "tag": "recursion", "sigil": "⍔" },
+    { "id": "N_FIBER", "glyph": "Z10", "tag": "threaded form", "sigil": "⍕" },
+    { "id": "N_FIELD", "glyph": "Z16", "tag": "environment", "sigil": "⍖" },
+    { "id": "N_FORM", "glyph": "Z10", "tag": "shape", "sigil": "⌋" },
+    { "id": "N_FRACTALS", "glyph": "Z13", "tag": "pattern complexity", "sigil": "⍗" },
+    { "id": "N_FRACTURE", "glyph": "Z14", "tag": "rupture event", "sigil": "⍘" },
+    { "id": "N_FRAMEWORK", "glyph": "Z1", "tag": "structural base", "sigil": "⍙" },
+    { "id": "N_FRIEND", "glyph": "Z2", "tag": "relation", "sigil": "⍚" },
+    { "id": "N_GAP", "glyph": "Z14", "tag": "absence threshold", "sigil": "⍛" },
+    { "id": "N_GLASS", "glyph": "Z14", "tag": "liminal surface", "sigil": "⍜" },
+    { "id": "N_GLYPH", "glyph": "Z1", "tag": "symbolic structure", "sigil": "⍝" },
+    { "id": "N_GRAMMAR", "glyph": "Z6", "tag": "expressive rule", "sigil": "⍞" },
+    { "id": "N_GRAMMARIAN", "glyph": "Z6", "tag": "expression", "sigil": "⍟" },
+    { "id": "N_GRIEF", "glyph": "Z2", "tag": "emotion", "sigil": "⌕" },
+    { "id": "N_HARMONIC", "glyph": "Z5", "tag": "pattern clarity", "sigil": "⍠" },
+    { "id": "N_HOPE", "glyph": "Z2", "tag": "aspiration", "sigil": "⍡" },
+    { "id": "N_HORIZON", "glyph": "Z11", "tag": "limit of view", "sigil": "⍢" },
+    { "id": "N_I", "glyph": "Z7", "tag": "identity", "sigil": "⍣" },
+    { "id": "N_IDENTITY", "glyph": "Z7", "tag": "identity", "sigil": "⍤" },
+    { "id": "N_IMPORTANT", "glyph": "Z16", "tag": "importance", "sigil": "⌎" },
+    { "id": "N_INTENTION", "glyph": "Z3", "tag": "truth vector", "sigil": "⌑" },
+    { "id": "N_INTERFACE", "glyph": "Z4", "tag": "relational node", "sigil": "ก" },
+    { "id": "N_INTERLOCK", "glyph": "Z10", "tag": "pattern connection", "sigil": "ข" },
+    { "id": "N_INTUITION", "glyph": "Z5", "tag": "aesthetic insight", "sigil": "ฃ" },
+    { "id": "N_KEY", "glyph": "Z†", "tag": "access", "sigil": "ค" },
+    { "id": "N_LAMENT", "glyph": "Z2", "tag": "emotional release", "sigil": "ฆ" },
+    { "id": "N_LANGUAGE", "glyph": "Z6", "tag": "expression", "sigil": "ง" },
+    { "id": "N_LANGUAGE_DESIGNER", "glyph": "Z10", "tag": "architecture", "sigil": "จ" },
+    { "id": "N_LAYER", "glyph": "Z10", "tag": "stratified form", "sigil": "ฉ" },
+    { "id": "N_LIGHT", "glyph": "Z11", "tag": "constant presence", "sigil": "ช" },
+    { "id": "N_LIMINALITY", "glyph": "Z14", "tag": "threshold state", "sigil": "ซ" },
+    { "id": "N_LOOP", "glyph": "Z12", "tag": "recurring change", "sigil": "ฌ" },
+    { "id": "N_MAP", "glyph": "Z10", "tag": "form of direction", "sigil": "ญ" },
+    { "id": "N_MATH", "glyph": "Z13", "tag": "abstract order", "sigil": "ฎ" },
+    { "id": "N_MATHEMATICIAN", "glyph": "Z13", "tag": "abstraction", "sigil": "ฏ" },
+    { "id": "N_ME", "glyph": "Z7", "tag": "self-identity", "sigil": "ฐ" },
+    { "id": "N_MEANING", "glyph": "Z16", "tag": "semantic integrity", "sigil": "ฑ" },
+    { "id": "N_MELODY", "glyph": "Z5", "tag": "aesthetic rhythm", "sigil": "ฒ" },
+    { "id": "N_MEMORY", "glyph": "Z11", "tag": "record of stasis", "sigil": "ณ" },
+    { "id": "N_MEMORY", "glyph": "Z16", "tag": "temporal coherence", "sigil": "ด" },
+    { "id": "N_METAPHOR", "glyph": "Z5", "tag": "aesthetic compression", "sigil": "ต" },
+    { "id": "N_MIRROR", "glyph": "Z8", "tag": "reflective identity", "sigil": "ถ" },
+    { "id": "N_MODULE", "glyph": "Z11", "tag": "functional unit", "sigil": "ท" },
+    { "id": "N_MOMENT", "glyph": "Z16", "tag": "temporal coherence", "sigil": "ธ" },
+    { "id": "N_MOTHER", "glyph": "Z8", "tag": "embodied containment", "sigil": "น" },
+    { "id": "N_MOTION", "glyph": "Z2", "tag": "movement", "sigil": "บ" },
+    { "id": "N_MYTH", "glyph": "Z13", "tag": "archetypal abstraction", "sigil": "ป" },
+    { "id": "N_NAME", "glyph": "Z3", "tag": "identity symbol", "sigil": "⌐" },
+    { "id": "N_NETWORK", "glyph": "Z4", "tag": "relational system", "sigil": "ผ" },
+    { "id": "N_NIGHT", "glyph": "Z14", "tag": "boundary phase", "sigil": "ฝ" },
+    { "id": "N_NODE", "glyph": "Z1", "tag": "structural point", "sigil": "พ" },
+    { "id": "N_NULL", "glyph": "Z15", "tag": "absence", "sigil": "ฟ" },
+    { "id": "N_NULLITY", "glyph": "Z15", "tag": "absence", "sigil": "ภ" },
+    { "id": "N_OBJECT", "glyph": "Z11", "tag": "material stasis", "sigil": "ม" },
+    { "id": "N_ORACLE", "glyph": "Z13", "tag": "symbolic insight", "sigil": "ย" },
+    { "id": "N_OS", "glyph": "Z10", "tag": "synthetic platform", "sigil": "ร" },
+    { "id": "N_OUTPUT", "glyph": "Z6", "tag": "expressed result", "sigil": "ฤ" },
+    { "id": "N_PARADIGM", "glyph": "Z10", "tag": "formative model", "sigil": "ล" },
+    { "id": "N_PARALLEL", "glyph": "Z12", "tag": "adjacent process", "sigil": "ฦ" },
+    { "id": "N_PASSENGER", "glyph": "Z4", "tag": "dependent relation", "sigil": "ว" },
+    { "id": "N_PATTERN", "glyph": "Z10", "tag": "structure form", "sigil": "⌊" },
+    { "id": "N_PATTERNING", "glyph": "Z10", "tag": "structured repetition", "sigil": "⌗" },
+    { "id": "N_PERSONA", "glyph": "Z7", "tag": "projected identity", "sigil": "ศ" },
+    { "id": "N_PHYSICIST", "glyph": "Z11", "tag": "stasis", "sigil": "ษ" },
+    { "id": "N_POEM", "glyph": "Z5", "tag": "aesthetic artifact", "sigil": "⌖" },
+    { "id": "N_PORTAL", "glyph": "Z14", "tag": "threshold gate", "sigil": "ส" },
+    { "id": "N_POSSIBILITY", "glyph": "Z2", "tag": "potential", "sigil": "ห" },
+    { "id": "N_PRECISION", "glyph": "Z5", "tag": "refined structure", "sigil": "ฬ" },
+    { "id": "N_PRESENCE", "glyph": "Z16", "tag": "active being", "sigil": "อ" },
+    { "id": "N_PRINCIPLE", "glyph": "Z11", "tag": "core law", "sigil": "ฮ" },
+    { "id": "N_PROGRAMMER", "glyph": "Z1", "tag": "structure", "sigil": "ฯ" },
+    { "id": "N_PROJECTION", "glyph": "Z6", "tag": "expressive forwardness", "sigil": "ะ" },
+    { "id": "N_REFLECTION", "glyph": "Z14", "tag": "mirrored surface", "sigil": "ั" },
+    { "id": "N_REFLECTION", "glyph": "Z8", "tag": "self-view", "sigil": "า" },
+    { "id": "N_REFRACTION", "glyph": "Z14", "tag": "deflected perspective", "sigil": "ำ" },
+    { "id": "N_REMEMBERING", "glyph": "Z16", "tag": "temporal recollection", "sigil": "ิ" },
+    {
+      "id": "N_RESONANCE",
+      "glyph": "Z5",
+      "tag": "harmonic alignment",
+      "sigil": "ั"
+    },
+    {
+      "id": "N_RESPONSE",
+      "glyph": "Z6",
+      "tag": "expressive reply",
+      "sigil": "า"
+    },
+    {
+      "id": "N_RESURRECTION",
+      "glyph": "Z16",
+      "tag": "temporal renewal",
+      "sigil": "ำ"
+    },
+    {
+      "id": "N_REVERIE",
+      "glyph": "Z5",
+      "tag": "aesthetic daydream",
+      "sigil": "เ"
+    },
+    {
+      "id": "N_RHYTHM",
+      "glyph": "Z5",
+      "tag": "aesthetic pattern",
+      "sigil": "แ"
+    },
+    {
+      "id": "N_RIDE",
+      "glyph": "Z12",
+      "tag": "transitional state",
+      "sigil": "โ"
+    },
+    {
+      "id": "N_RING",
+      "glyph": "Z7",
+      "tag": "symbolic identity",
+      "sigil": "ใ"
+    },
+    {
+      "id": "N_ROOT",
+      "glyph": "Z1",
+      "tag": "structural origin",
+      "sigil": "ไ"
+    },
+    {
+      "id": "N_RUPTURE",
+      "glyph": "Z15",
+      "tag": "disruption event",
+      "sigil": "ๅ"
+    },
+    {
+      "id": "N_SEEKER",
+      "glyph": "Z3",
+      "tag": "truth pursuit",
+      "sigil": "ๆ"
+    },
+    {
+      "id": "N_SELF",
+      "glyph": "Z7",
+      "tag": "identity",
+      "sigil": "ฯ"
+    },
+    {
+      "id": "N_SEMANTICS",
+      "glyph": "Z6",
+      "tag": "expressive logic",
+      "sigil": "ะ"
+    },
+    {
+      "id": "N_SENSE",
+      "glyph": "Z5",
+      "tag": "aesthetic perception",
+      "sigil": "ั"
+    },
+    {
+      "id": "N_SHADOW",
+      "glyph": "Z14",
+      "tag": "unseen form",
+      "sigil": "า"
+    },
+    {
+      "id": "N_SHAPE",
+      "glyph": "Z10",
+      "tag": "form geometry",
+      "sigil": "ำ"
+    },
+    {
+      "id": "N_SIGN",
+      "glyph": "Z3",
+      "tag": "semantic pointer",
+      "sigil": "เ"
+    },
+    {
+      "id": "N_SIGNAL",
+      "glyph": "Z2",
+      "tag": "motion carrier",
+      "sigil": "⌒"
+    },
+    {
+      "id": "N_SILENCE",
+      "glyph": "Z15",
+      "tag": "null expression",
+      "sigil": "แ"
+    },
+    {
+      "id": "N_SKY",
+      "glyph": "Z11",
+      "tag": "spatial stasis",
+      "sigil": "โ"
+    },
+    {
+      "id": "N_SOUL",
+      "glyph": "Z7",
+      "tag": "core identity",
+      "sigil": "ใ"
+    },
+    {
+      "id": "N_SOUND",
+      "glyph": "Z6",
+      "tag": "auditory expression",
+      "sigil": "ไ"
+    },
+    {
+      "id": "N_SPELL",
+      "glyph": "Z5",
+      "tag": "crafted expression",
+      "sigil": "ๅ"
+    },
+    {
+      "id": "N_SPIRAL",
+      "glyph": "Z15",
+      "tag": "recursive pattern",
+      "sigil": "ๆ"
+    },
+    {
+      "id": "N_STAR",
+      "glyph": "Z15",
+      "tag": "disruptive light",
+      "sigil": "ฯ"
+    },
+    {
+      "id": "N_STATISTICIAN",
+      "glyph": "Z12",
+      "tag": "change",
+      "sigil": "ะ"
+    },
+    {
+        "id": "N_STRUCTURE", "glyph": "Z1", "tag": "form framework", "sigil": "เ" },
+    {
+        "id": "N_SYLLABLE", "glyph": "Z6", "tag": "expressive unit", "sigil": "แ" },
+    {
+        "id": "N_SYMBOL", "glyph": "Z10", "tag": "representative form", "sigil": "โ" },
+    {
+        "id": "N_SYMBOLIC_RESONANCE", "glyph": "Z5", "tag": "symbolic harmony", "sigil": "ใ" },
+    {
+        "id": "N_SYMBOLSET", "glyph": "Z10", "tag": "symbolic system", "sigil": "ไ" },
+    {
+        "id": "N_SYNTAX", "glyph": "Z6", "tag": "grammatical structure", "sigil": "ๅ" },
+    {
+        "id": "N_SYNTHESIS", "glyph": "Z10", "tag": "constructive form", "sigil": "ๆ" },
+    {
+        "id": "N_SYSTEM", "glyph": "Z11", "tag": "stable mechanism", "sigil": "ฯ" },
+    {
+        "id": "N_TANGENT", "glyph": "Z14", "tag": "divergent path", "sigil": "ะ" },
+    {
+        "id": "N_TELEPATH", "glyph": "Z4", "tag": "relational perception", "sigil": "ั" },
+    {
+        "id": "N_THEORETICAL", "glyph": "Z11", "tag": "stasis", "sigil": "า" },
+    {
+        "id": "N_THREAD", "glyph": "Z10", "tag": "form continuity", "sigil": "⌈" },
+    {
+        "id": "N_THRESHOLD", "glyph": "Z14", "tag": "liminal boundary", "sigil": "ำ" },
+    {
+        "id": "N_TONE", "glyph": "Z6", "tag": "expressive pitch", "sigil": "เ" },
+    {
+        "id": "N_TOPOLOGY", "glyph": "Z11", "tag": "stasis mapping", "sigil": "แ" },
+    {
+        "id": "N_TRACE", "glyph": "Z14", "tag": "lingering path", "sigil": "โ" },
+    {
+        "id": "N_TRANCE", "glyph": "Z5", "tag": "aesthetic suspension", "sigil": "ใ" },
+    {
+        "id": "N_TRUTH", "glyph": "Z3", "tag": "veracity", "sigil": "⌀" },
+    {
+        "id": "N_TRUTHSTATE", "glyph": "Z3", "tag": "meaning condition", "sigil": "⌏" },
+    {
+        "id": "N_UNLOCKING", "glyph": "Z†", "tag": "access grant", "sigil": "ไ" },
+    {
+        "id": "N_VERSE", "glyph": "Z5", "tag": "aesthetic rhythm", "sigil": "⌖" },
+    {
+        "id": "N_VIBRATION", "glyph": "Z2", "tag": "dynamic motion", "sigil": "โ" },
+    {
+        "id": "N_VIEW", "glyph": "Z4", "tag": "shared perception", "sigil": "แ" },
+    {
+        "id": "N_VOICE", "glyph": "Z6", "tag": "expressive output", "sigil": "⌄" },
+    {
+        "id": "N_VOID", "glyph": "Z15", "tag": "null field", "sigil": "⌛" },
+    {
+        "id": "N_WARM", "glyph": "Z6+Z∇", "tag": "emotive tone", "sigil": "ฯ" },
+    {
+        "id": "N_WARMTH", "glyph": "Z6", "tag": "expression", "sigil": "ๆ" },
+    {
+        "id": "N_WAVE", "glyph": "Z2", "tag": "energy motion", "sigil": "ๅ" },
+    { "id": "N_WE", "glyph": "Z4", "tag": "collective identity", "sigil": "เ" },
+    { "id": "N_WHISPER", "glyph": "Z6", "tag": "subtle expression", "sigil": "แ" },
+    { "id": "N_WINDOW", "glyph": "Z6", "tag": "framed expression", "sigil": "โ" },
+    { "id": "N_WOMAN", "glyph": "Z8", "tag": "containment", "sigil": "ใ" },
+    { "id": "N_WOMEN", "glyph": "Z∈", "tag": "embodied identity", "sigil": "ไ" },
+    { "id": "N_WORD", "glyph": "Z6", "tag": "linguistic unit", "sigil": "ๅ" },
+    { "id": "N_WORLD", "glyph": "Z11", "tag": "stasis domain", "sigil": "ๆ" },
+    { "id": "N_WRITING", "glyph": "Z6", "tag": "encoded expression", "sigil": "ฯ" },
+    { "id": "N_YOU", "glyph": "Z4", "tag": "relational other", "sigil": "ะ" },
+    { "id": "N_ZERO", "glyph": "Z15", "tag": "null origin", "sigil": "ั" }
+  ],
+  "z_glyphs": [
+    { "id": "Z1",  "symbol": "α",  "name": "Structure" },
+    { "id": "Z2",  "symbol": "◎",  "name": "Aim" },
+    { "id": "Z3",  "symbol": "◉",  "name": "Cognition" },
+    { "id": "Z4",  "symbol": "⋯",  "name": "Expression" },
+    { "id": "Z5",  "symbol": "⇶",  "name": "Force" },
+    { "id": "Z6",  "symbol": "⋈",  "name": "Relation" },
+    { "id": "Z7",  "symbol": "≋",  "name": "Balance" },
+    { "id": "Z8",  "symbol": "⧉",  "name": "Constraint" },
+    { "id": "Z9",  "symbol": "⊚",  "name": "Self" },
+    { "id": "Z10", "symbol": "▣",  "name": "Discipline" },
+    { "id": "Z11", "symbol": "❖",  "name": "Pattern" },
+    { "id": "Z12", "symbol": "⌘",  "name": "Network" },
+    { "id": "Z13", "symbol": "⦰",  "name": "Void" },
+    { "id": "Z14", "symbol": "⌾",  "name": "Infinity" },
+    { "id": "Z15", "symbol": "⧖",  "name": "Time" },
+    { "id": "Z16", "symbol": "Ω",  "name": "Stasis" },
+    { "id": "Z17", "symbol": "▩",  "name": "Stability" },
+    { "id": "Z18", "symbol": "✧",  "name": "Elegance" }
+  ],
+  "operators": [
+    { "sigil": "≜", "comment": "DEFINE" },
+    { "sigil": "⊢", "comment": "USE/Invoke" },
+    { "sigil": "$", "comment": "FUNCTION/Symbolic execution" },
+    { "sigil": "⊕", "comment": "Fusion" },
+    { "sigil": "⊗", "comment": "Interference" },
+    { "sigil": "∩", "comment": "Intersection/Constraint" },
+    { "sigil": "∪", "comment": "Union/Expansion" },
+    { "sigil": "↺", "comment": "Recursion" },
+    { "sigil": "~", "comment": "NOT/Negation" },
+    { "sigil": "→", "comment": "Transformation" },
+    { "sigil": "⊘", "comment": "Cancellation" },
+    { "sigil": "⊳", "comment": "Resonance gate" },
+    { "sigil": "⊞", "comment": "Composite stack" },
+    { "sigil": "∇", "comment": "Gradient" },
+    { "sigil": "≂", "comment": "Echo equivalence" },
+    { "sigil": "≬", "comment": "Braid" },
+    { "sigil": "⇌", "comment": "Reversible binding" },
+    { "sigil": "≞", "comment": "Ideal form" },
+    { "sigil": "⋄", "comment": "Monoidal join" },
+    { "sigil": "∘", "comment": "Function composition" },
+    { "sigil": "⊠", "comment": "Tension grid" },
+    { "sigil": "⇑", "comment": "Elevation" },
+    { "sigil": "≡", "comment": "Identity equivalence" },
+    { "sigil": "∥", "comment": "Parallel" },
+    { "sigil": "⇄", "comment": "Pivot" },
+    { "sigil": "⊛", "comment": "Reweight" },
+    { "sigil": "♯", "comment": "Keyshift" },
+    { "sigil": "≈", "comment": "Align" },
+    { "sigil": "♭", "comment": "Transpose" },
+    { "sigil": "⤨", "comment": "Zip" },
+    { "sigil": "⤪", "comment": "Unzip" },
+    { "sigil": "∆", "comment": "Dual" },
+    { "sigil": "↻", "comment": "Echochain" },
+    { "sigil": "⤷", "comment": "Trace" },
+    { "sigil": "▣", "comment": "Stabilize (also used as Z10 but contextually unique)" },
+    { "sigil": "↯", "comment": "Disrupt" },
+    { "sigil": "⨝", "comment": "Braid" },
+    { "sigil": "⫷", "comment": "Graft" },
+    { "sigil": "∑", "comment": "Sum" },
+    { "sigil": "∖", "comment": "Difference" },
+    { "sigil": "∫", "comment": "Integrate" },
+    { "sigil": "∂", "comment": "Derive" },
+    { "sigil": "⧆", "comment": "Nullify" },
+    { "sigil": "⊘", "comment": "Halt" },
+    { "sigil": "⊚", "comment": "Encapsulation (also Z9 – Self)" },
+    { "sigil": "◐", "comment": "Lens (semantically distinct from glyphs)" }
+  ],
+  "emoji": [
+    { "sigil": "💡", "comment": "Idea / Illumination / Clarity" },
+    { "sigil": "🧠", "comment": "Mind / Cognition / Intelligence" },
+    { "sigil": "🕸️", "comment": "Web / Network / Interconnection" },
+    { "sigil": "🎤", "comment": "Voice / Expression / Broadcast" },
+    { "sigil": "🛡️", "comment": "Protection / Integrity / Boundaries" },
+    { "sigil": "🏋️", "comment": "Effort / Strength / Resistance" },
+    { "sigil": "🚣️", "comment": "Journey / Transition / Guidance" },
+    { "sigil": "🔄", "comment": "Loop / Feedback / Cycle" },
+    { "sigil": "🔨", "comment": "Impact / Force / Construct" },
+    { "sigil": "💥", "comment": "Disruption / Break / Intensity" },
+    { "sigil": "🔇", "comment": "Silence / Withholding / Pause" },
+    { "sigil": "🗿", "comment": "Endurance / Legacy / Stillness" },
+    { "sigil": "😔", "comment": "Grief / Depth / Sorrow" },
+    { "sigil": "😄", "comment": "Joy / Openness / Lightness" },
+    { "sigil": "🔥", "comment": "Passion / Transformation / Burn" }
+  ],
+  "grammar_file": "spec/grammar/versare.ebnf"
 }

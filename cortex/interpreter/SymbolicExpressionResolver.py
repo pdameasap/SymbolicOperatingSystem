@@ -1,3 +1,6 @@
+
+# File: cortex/interpreter/SymbolicExpressionResolver.py
+
 from cortex.frameworks.EmojiFramework import EmojiFramework
 from cortex.frameworks.SymbolicMathFramework import SymbolicMathFramework
 from cortex.frameworks.engine.JsonFramework import JsonFramework  # fallback, if needed
