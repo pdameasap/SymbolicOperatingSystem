@@ -1,8 +1,10 @@
 (* versare_tensor.v -- Symbolic Tensor Calculus for SHF Field Theory *)
 
-From rocq Require Import shf.versare_syntax shf.versare_semantics.
+(* From rocq *)
+Require Import shf.versare_syntax.
+Require Import shf.versare_semantics.
 
-Module VersareTensor.
+(* Module VersareTensor. *)
 
 (* === Scope Axes === *)
 Inductive Scope := X | Y | Z.
@@ -47,4 +49,4 @@ Definition SHF_Lagrangian : Scalar :=
   scalar_mult alpha (norm_squared curvature) -
   scalar_mult beta (T_FEC X X + T_FEC Y Y + T_FEC Z Z).
 
-End VersareTensor.
+(* End VersareTensor. *)
