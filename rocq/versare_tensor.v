@@ -1,6 +1,6 @@
 (* versare_tensor.v -- Symbolic Tensor Calculus for SHF Field Theory *)
 
-From rocq Require Import versare_syntax versare_semantics.
+From rocq Require Import shf.versare_syntax shf.versare_semantics.
 
 Module VersareTensor.
 

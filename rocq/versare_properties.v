@@ -3,8 +3,8 @@
 Require Import Coq.Init.Nat.
 Require Import Coq.Lists.List.
 Import ListNotations.
-Require Import versare_syntax.
-Require Import versare_semantics.
+Require Import shf.versare_syntax.
+Require Import shf.versare_semantics.
 
 (* Determinism: interp can’t produce two different results *)
 Theorem interp_deterministic : forall e v1 v2,

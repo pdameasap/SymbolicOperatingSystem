@@ -3,7 +3,7 @@
 Require Import Coq.Init.Nat.
 Require Import Coq.Lists.List.
 Import ListNotations.
-Require Import versare_syntax.
+Require Import shf.versare_syntax.
 
 (* --- A simple numeric domain for Z-axis weights --- *)
 Record zvector : Type := {
