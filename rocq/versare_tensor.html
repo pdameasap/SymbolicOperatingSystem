@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>versare_tensor</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library versare_tensor</h1>
+
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">rocq</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="var">versare_syntax</span> <span class="id" title="var">versare_semantics</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <span class="id" title="var">VersareTensor</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Inductive</span> <span class="id" title="keyword">Scope</span> := <span class="id" title="var">X</span> | <span class="id" title="var">Y</span> | <span class="id" title="var">Z</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">FormVector</span> : <span class="id" title="keyword">Type</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">EntropyVector</span> : <span class="id" title="keyword">Type</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">CoherenceVector</span> : <span class="id" title="keyword">Type</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">PhiF</span> : <span class="id" title="keyword">Scope</span> -&gt; <span class="id" title="var">FormVector</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">PhiE</span> : <span class="id" title="keyword">Scope</span> -&gt; <span class="id" title="var">EntropyVector</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">PhiC</span> : <span class="id" title="keyword">Scope</span> -&gt; <span class="id" title="var">CoherenceVector</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">Scalar</span> : <span class="id" title="keyword">Type</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">Tensor</span> : <span class="id" title="keyword">Type</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">dot_product</span> : <span class="id" title="keyword">forall</span> {<span class="id" title="var">A</span>}, <span class="id" title="var">A</span> -&gt; <span class="id" title="var">A</span> -&gt; <span class="id" title="var">Scalar</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">add_tensor</span> : <span class="id" title="var">Scalar</span> -&gt; <span class="id" title="var">Scalar</span> -&gt; <span class="id" title="var">Tensor</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">scalar_mult</span> : <span class="id" title="var">SymbolicConstant</span> -&gt; <span class="id" title="var">Scalar</span> -&gt; <span class="id" title="var">Scalar</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">curvature</span> : <span class="id" title="var">Scalar</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">grad_R</span> : <span class="id" title="keyword">Scope</span> -&gt; <span class="id" title="var">Scalar</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">norm_squared</span> : <span class="id" title="var">Scalar</span> -&gt; <span class="id" title="var">Scalar</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">metric_tensor</span> : <span class="id" title="keyword">Scope</span> -&gt; <span class="id" title="keyword">Scope</span> -&gt; <span class="id" title="var">Scalar</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">alpha</span> : <span class="id" title="var">SymbolicConstant</span>. <span class="id" title="keyword">Parameter</span> <span class="id" title="keyword">beta</span> : <span class="id" title="var">SymbolicConstant</span>. 
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">T_FEC</span> (<span class="id" title="var">mu</span> <span class="id" title="var">nu</span> : <span class="id" title="keyword">Scope</span>) : <span class="id" title="var">Scalar</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="var">dot_product</span> (<span class="id" title="var">PhiF</span> <span class="id" title="var">mu</span>) (<span class="id" title="var">PhiE</span> <span class="id" title="var">nu</span>) +<br/>
+&nbsp;&nbsp;<span class="id" title="var">dot_product</span> (<span class="id" title="var">PhiE</span> <span class="id" title="var">mu</span>) (<span class="id" title="var">PhiC</span> <span class="id" title="var">nu</span>) +<br/>
+&nbsp;&nbsp;<span class="id" title="var">dot_product</span> (<span class="id" title="var">PhiC</span> <span class="id" title="var">mu</span>) (<span class="id" title="var">grad_R</span> <span class="id" title="var">nu</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">SHF_Lagrangian</span> : <span class="id" title="var">Scalar</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="var">scalar_mult</span> <span class="id" title="var">alpha</span> (<span class="id" title="var">norm_squared</span> <span class="id" title="var">curvature</span>) -<br/>
+&nbsp;&nbsp;<span class="id" title="var">scalar_mult</span> <span class="id" title="keyword">beta</span> (<span class="id" title="var">T_FEC</span> <span class="id" title="var">X</span> <span class="id" title="var">X</span> + <span class="id" title="var">T_FEC</span> <span class="id" title="var">Y</span> <span class="id" title="var">Y</span> + <span class="id" title="var">T_FEC</span> <span class="id" title="var">Z</span> <span class="id" title="var">Z</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <span class="id" title="var">VersareTensor</span>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
