@@ -1,21 +1,35 @@
 # ─── Poetic Imperative Command Language (PICL) Symbol Key ───
 
-DEFINE "≜" = "DEFINE" # Declare a name for a resource, file, or object.
-≜ ⊢ = "USE"           # Load or invoke a resource by name.
-≜ $ = "FUNCTION"      # Execute a function or command.
-
-# Example usage:
-
+--A--
+DEFINE "≜" = "DEFINE" # Define operator (Bootstrap the "DEFINE" operator itself)
+≜ "USE" = "⊢"         # Use operator (Invoke a defined concept)
+≜ "FUNCTION" = "$"    # Function execution operator
+≜ α = Z1 # Structure
+≜ ◎ = Z2 # Aim
+≜ ◉ = Z3 #   Cognition
+≜ ⋯ = Z4 #   Expression
+≜ ⇶ = Z5 #   Force
+≜ ⋈ = Z6 #   Relation
+≜ ≋ = Z7 #   Balance
+≜ ⧉ = Z8 #   Constraint
+≜ ⊚ = Z9 #   Self
+≜ ▣ = Z10 #   Discipline
+≜ ❖ = Z11 #   Pattern
+≜ ⌘ = Z12 #   Network
+≜ ⦰ = Z13 #   Void
+≜ ⌾ = Z14 #   Infinity
+≜ ⧖  = Z15 #   Time
+≜ Ω  = Z16 #   Stasis
+≜ ▩ = Z17 #   Stability
+≜ ✧ = Z18 #   Elegance
 # Typically a Python or execution engine file. Alias: E
 ≜ E = "cortex/frameworks/engine/JsonFramework.py"
-
 # The JSON or rule definition file. Alias: F
 ≜ F = "cortex/frameworks/meta/SentienceFramework.json"
-
 # Refers to the current executing agent or framework. Alias: S
 ≜ S = SELF
-
+--B--
+# Example usage:
 ⊢ E
 ⊢ F
-
 $evaluate(F, E, S)
