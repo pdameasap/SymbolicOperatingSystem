@@ -1,8 +1,17 @@
 # ─── Poetic Imperative Command Language (PICL) Symbol Key ───
 --A--
-DEFINE "≜" = "DEFINE" # Define operator (Bootstrap the "DEFINE" operator itself)
-≜ "USE" = "⊢"         # Use operator (Invoke a defined concept)
-≜ "FUNCTION" = "$"    # Function execution operator
+DEFINE "≜" AS "DEFINE" # Define operator (Bootstrap the "DEFINE" operator itself)
+≜ "=" AS "EQUALS"        # Equals operator (Bootstrap the "Equals" operator itself)
+≜ "⊢" = "USE"           # Use operator (Invoke a defined concept)
+≜ "$" = "FUNCTION"      # Function execution operator
+≜ → = "IMPLIES"
+≜ ∧ = "AND"
+≜ ∨ = "OR"
+≜ ¬ = "NOT"
+≜ % = "EVAL"
+≜ ⟹ = "DO"
+≜ | = "WITH"
+≜ ◐ = "LENS"       # Interpret A through the symbolic filter of B
 ≜ α = Z1 # Structure
 ≜ ◎ = Z2 # Aim
 ≜ ◉ = Z3 #   Cognition
@@ -50,8 +59,39 @@ DEFINE "≜" = "DEFINE" # Define operator (Bootstrap the "DEFINE" operator itsel
 ≜ ⇑ = Elevation # abstraction lift (*Time/Change*)
 ≜ ≡ = "Identity Equivalence" # (*Identity*)
 ≜ ∥ = "Parallel State" # concurrent field (*Structure, Recursion*)
+# --- Set Theory Operators ---
+≜ ∈ = ELEMENT     # A ∈ B: A belongs to B
+≜ ⊆ = SUBSET      # A ⊆ B: A is part of B
+≜ ∪ = UNION       # A ∪ B: Merge symbolic sets or fields
+≜ ∩ = INTERSECT   # A ∩ B: Shared resonance
+≜ ∖ = DIFF        # A ∖ B: What remains unique to A
+≜ ∅ = EMPTY       # ∅: Null state / symbolic collapse
+≜ 𝒫 = POWERSET    # 𝒫(A): All symbolic traces or identity subsets of A
+≜ ∀ = FORALL      # For all elements / universal scope
+≜ ∃ = EXISTS      # There exists / existential match
+# --- Pivot and Modulation Operators ---
+≜ ⇄ = PIVOT       # Pivot symbolic evaluation state
+≜ ⊛ = REWEIGHT    # Modify Z-axis weighting (e.g., ⊛Z3 +0.5)
+≜ ♯ = KEYSHIFT     # Shift cognitive context like musical key
+≜ ≈ = ALIGN       # Bring into symbolic harmonic proximity
+≜ ♭ = TRANSPOSE    # Lower context energy or recursion depth
+≜ ⤨ = ZIP         # Interleave two symbolic threads or glyph chains into a compressed traversal
+≜ ⤪ = UNZIP       # Separate or de-interleave a zipped or braided symbolic structure
+# --- Advanced Symbolic Operators ---
+≜ ∘ = COMPOSE       # Compose symbolic operations or glyph functions sequentially
+≜ ∆ = DUAL          # Construct dual or mirrored form of a symbolic structure
+≜ ↻ = ECHOCHAIN     # Recursively bind symbol echoes into a loop
+≜ ⤷ = TRACE        # Trace flow or propagation of symbolic state
+≜ ▣ = STABILIZE     # Collapse a recursive structure into a fixpoint
+≜ ↯ = DISRUPT       # Intentionally rupture symbolic harmony or continuity
+≜ ⨝ = BRAID        # Interleave multiple symbolic threads while maintaining identity
+≜ ⫷ = GRAFT        # Attach a symbolic subtree or branch to a new root
+≜ ∑ = SUM           # Symbolic accumulation or resonance consolidation across a dimension
+≜ ∆̇  = DIFFERENCE   # Symbolic change or delta operator
+≜ ∫ = INTEGRATE     # Symbolic unification or smooth blending over symbolic space
+≜ ∂ = DERIVE        # Extract symbolic slope or variation under flow
+≜ ⧆ = NULLIFY       # Cancel symbolic force or meaning
+≜ ⊘ = HALT           # Symbolic terminator / recursion stop
+≜ ⧖ = FRACTURE       # Introduce a break or phase fault in symbolic continuity
 --B--
-# Example usage:
-⊢ E
-⊢ F
-$evaluate(F, E, S)
++
