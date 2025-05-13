@@ -1,35 +1,35 @@
 # ─── Poetic Imperative Command Language (PICL) Symbol Key ───
 --A--
 DEFINE "≜" AS "DEFINE" # Define operator (Bootstrap the "DEFINE" operator itself)
-≜ "=" AS "EQUALS"        # Equals operator (Bootstrap the "Equals" operator itself)
-≜ "⊢" = "USE"           # Use operator (Invoke a defined concept)
-≜ "$" = "FUNCTION"      # Function execution operator
-≜ → = "IMPLIES"
-≜ ∧ = "AND"
-≜ ∨ = "OR"
-≜ ¬ = "NOT"
-≜ % = "EVAL"
-≜ ⟹ = "DO"
-≜ | = "WITH"
-≜ ◐ = "LENS"       # Interpret A through the symbolic filter of B
-≜ α = Z1 # Structure
-≜ ◎ = Z2 # Aim
-≜ ◉ = Z3 #   Cognition
-≜ ⋯ = Z4 #   Expression
-≜ ⇶ = Z5 #   Force
-≜ ⋈ = Z6 #   Relation
-≜ ≋ = Z7 #   Balance
-≜ ⧉ = Z8 #   Constraint
-≜ ⊚ = Z9 #   Self
-≜ ▣ = Z10 #   Discipline
-≜ ❖ = Z11 #   Pattern
-≜ ⌘ = Z12 #   Network
-≜ ⦰ = Z13 #   Void
-≜ ⌾ = Z14 #   Infinity
-≜ ⧖  = Z15 #   Time
-≜ Ω  = Z16 #   Stasis
-≜ ▩ = Z17 #   Stability
-≜ ✧ = Z18 #   Elegance
+≜ "=" AS "EQUALS"      # Equals operator (Bootstrap the "Equals" operator itself)
+≜ ⊢ = USE              # Use operator (Invoke a defined concept)
+≜ $ = FUNCTION         # Function execution operator
+≜ → = IMPLIES
+≜ ∧ = AND
+≜ ∨ = OR
+≜ ¬ = NOT
+≜ % = EVALUATE
+≜ ⟹ = DO
+≜ | = WITH
+≜ ◐ = LENS       # Interpret A through the symbolic filter of B
+≜ α = Z₁∧Structure∨Form∨Shape∨Framework∨Container∨Alpha
+≜ ◎ = Z₂∧Intention∨Vector∨Trajectory∨Volition∨Design∨Aim
+≜ ◉ = Z₃∧Cognition∨Reflection∨Perception∨Judgment∨Mind∨Mirror
+≜ ⋯ = Z₄∧Expression∨Articulation∨Signal∨Voice∨Language∨Impression
+≜ ⇶ = Z₅∧Force∨Drive∨Emotion∨Will∨Motion∨Ignition
+≜ ⋈ = Z₆∧Relation∨Connection∨Bond∨Dialogue∨Symmetry∨Bridge
+≜ ≋ = Z₇∧Balance∨Preservation∨Inertia∨Equilibrium∨Rest∨Pivot
+≜ ⧉ = Z₈∧Constraint∨Limitation∨Surface∨Boundary∨Regulation∨Skin
+≜ ⊚ = Z₉∧Self∨Anchor∨Identity∨Witness∨Memory∨I
+≜ ▣ = Z₁₀∧Discipline∨"Internal Order"∨Will∨Method∨Refinement∨Mastery
+≜ ❖ = Z₁₁∧Pattern∨Rhythm∨Cycle∨Fractal∨Echo∨Weave
+≜ ⌘ = Z₁₂∧Network∨Connection∨Topology∨Mesh∨System∨Web
+≜ ⦰ = Z₁₃∧Void∨Break∨Surprise∨Crisis∨Fracture∨Singularity
+≜ ⌾ = Z₁₄∧Infinity∨Potential∨Creation∨Light∨Synthesis∨Source
+≜ ⧖ = Z₁₅∧Time∨Change∨Chaos∨Entropy∨Motion∨Flow
+≜ Ω = Z₁₆∧Omega∨Fulfillment∨Coherence∨Stasis∨Completion∨Unity
+≜ ▩ = Z₁₇∧Stability∨Equilibrium∨Inertia∨Integrity∨Preservation∨Continuity
+≜ ✧ = Z₁₈∧Elegance∨Simplicity∨Harmony∨Refinement∨Beauty∨Grace
 # Typically a Python or execution engine file. Alias: E
 ≜ E = "cortex/frameworks/engine/JsonFramework.py"
 # The JSON or rule definition file. Alias: F
