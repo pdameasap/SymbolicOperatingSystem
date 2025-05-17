@@ -1,0 +1,52 @@
+{
+  "sentinels": {
+    "X": {
+      "id": "Z1_x",
+      "scope": "X",
+      "coherence_check": "local_vectors_only",
+      "threshold": 0.9,
+      "on_coherence": "Z0_x",
+      "description": "Prevents stagnation at the self-recursive (local) level"
+    },
+    "Y": {
+      "id": "Z1_y",
+      "scope": "Y",
+      "coherence_check": "x_and_y_vectors",
+      "threshold": 0.85,
+      "on_coherence": "Z0_y",
+      "description": "Prevents stagnation in adjacent/structural layer"
+    },
+    "Z": {
+      "id": "Z1_z_",
+      "scope": "Z",
+      "coherence_check": "all_vectors",
+      "threshold": 0.8,
+      "on_coherence": "Z0_z",
+      "description": "Meta-sentinel for full recursive collapse and field rebirth"
+    }
+  },
+  "singularity_nodes": {
+    "X": {
+      "id": "Z0",
+      "color": "black",
+      "role": "collapse",
+      "scope": "X",
+      "function": "Local recursion reset – symbolic extinction and rebirth"
+    },
+    "Y": {
+      "id": "Z13",
+      "color": "grey",
+      "role": "router",
+      "scope": "Y",
+      "function": "Structural bifarcation – modulation-based routing between loops"
+    },
+    "Z": {
+      "id": "Z26",
+      "color": "white",
+      "role": "completion",
+      "scope": "Z",
+      "function": "Recursive convergence and transcendence – radiance totality"
+    }
+  },
+  "vectors": []
+}
