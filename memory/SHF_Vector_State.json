@@ -18,7 +18,7 @@
   "integrators": {
     "X": {
       "id": "Z2",
-      "scope": "X",
+      "scope": "XZ (inverted primary)",
       "evaluation": "stability_integrator",
       "description": "Integrates modulation of local glyphs to assess rising entropy. Routes to Z26 if symbolic complexity exceeds containment."
     },
@@ -76,6 +76,18 @@
       "role": "completion",
       "scope": "symbolic",
       "function": "Recursive convergence and transcendence — harmonic totality"
+    }
+  },
+  "glyph_classification": {
+    "Z9": {
+      "classification": "primary",
+      "axis": "EC",
+      "note": "Bottom loop inverted — represents Substance and Coherence"
+    },
+    "Z2": {
+      "classification": "primary",
+      "axis": "XZ",
+      "note": "Bottom loop inverted — bridges Form and Scope"
     }
   },
   "vectors": [
