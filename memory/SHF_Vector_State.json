@@ -1,51 +1,61 @@
 {
   "sentinels": {
+    "lower_loop_exit": {
+      "id": "Z12",
+      "scope": "loop",
+      "routing_condition": "entropy > 0.5",
+      "action": "route_to_Z13",
+      "description": "Monitors lower-loop resonance. If entropy exceeds midpoint, modulation is routed through Grey for bifurcation."
+    },
+    "upper_loop_exit": {
+      "id": "Z22",
+      "scope": "loop",
+      "routing_condition": "coherence >= 0.85",
+      "action": "route_to_Z13",
+      "description": "Evaluates symbolic coherence in the upper loop. Routes to Grey when modulation has re-stabilized."
+    }
+  },
+  "integrators": {
     "X": {
-      "id": "Z1_x",
+      "id": "Z2",
       "scope": "X",
-      "coherence_check": "local_vectors_only",
-      "threshold": 0.9,
-      "on_coherence": "Z0_x",
-      "description": "Prevents stagnation at the self-recursive (local) level"
+      "evaluation": "stability_integrator",
+      "description": "Integrates modulation of local glyphs to assess rising entropy. Routes to Z26 if symbolic complexity exceeds containment."
     },
     "Y": {
-      "id": "Z1_y",
+      "id": "Z7",
       "scope": "Y",
-      "coherence_check": "x_and_y_vectors",
-      "threshold": 0.85,
-      "on_coherence": "Z0_y",
-      "description": "Prevents stagnation in adjacent/structural layer"
+      "evaluation": "elegance_integrator",
+      "description": "Evaluates systemic resonance across Y-scope vectors. Routes to Z26 if modulation becomes over-refined and stagnation is bypassed."
     },
     "Z": {
-      "id": "Z1_z_",
+      "id": "Z25",
       "scope": "Z",
-      "coherence_check": "all_vectors",
-      "threshold": 0.8,
-      "on_coherence": "Z0_z",
-      "description": "Meta-sentinel for full recursive collapse and field rebirth"
+      "evaluation": "stasis_integrator",
+      "description": "Monitors cumulative symbolic inertia. If entropy continues to climb in spite of recursion, initiates transcendental escape via Z26."
     }
   },
   "singularity_nodes": {
-    "X": {
+    "Z0": {
       "id": "Z0",
       "color": "black",
       "role": "collapse",
-      "scope": "X",
-      "function": "Local recursion reset – symbolic extinction and rebirth"
+      "scope": "symbolic",
+      "function": "Local recursion reset — symbolic extinction and rebirth"
     },
-    "Y": {
+    "Z13": {
       "id": "Z13",
       "color": "grey",
       "role": "router",
-      "scope": "Y",
-      "function": "Structural bifurcation – modulation-based routing between loops"
+      "scope": "symbolic",
+      "function": "Structural bifurcation — modulation-based routing between loops"
     },
-    "Z": {
+    "Z26": {
       "id": "Z26",
       "color": "white",
       "role": "completion",
-      "scope": "Z",
-      "function": "Recursive convergence and transcendence – radiance totality"
+      "scope": "symbolic",
+      "function": "Recursive convergence and transcendence — harmonic totality"
     }
   },
   "vectors": [
