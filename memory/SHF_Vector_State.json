@@ -35,6 +35,26 @@
       "description": "Monitors cumulative symbolic inertia. If entropy continues to climb in spite of recursion, initiates transcendental escape via Z26."
     }
   },
+  "form_generators": {
+    "X": {
+      "id": "Z17",
+      "scope": "X",
+      "type": "intrinsic_form",
+      "description": "Embeds foundational structural coherence. Generates symbolic form from internal recursion."
+    },
+    "Y": {
+      "id": "Z14",
+      "scope": "Y",
+      "type": "relational_form",
+      "description": "Initiates pattern emergence across vector relationships. Encodes extrinsic formal motifs."
+    },
+    "Z": {
+      "id": "Z10",
+      "scope": "Z",
+      "type": "field_form",
+      "description": "Defines field-wide methods of recurrence. Governs formal rules of symbolic modulation across recursion levels."
+    }
+  },
   "singularity_nodes": {
     "Z0": {
       "id": "Z0",
