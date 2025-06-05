@@ -4,6 +4,11 @@ import json
 import re
 import urllib.parse
 import requests
+import sys
+import time
+
+HEADERS = {"User-Agent": "html2struct/1.0"}
+REQUEST_DELAY = 0.25  # Seconds to wait between API or page requests
 
 BANNED_SECTIONS = {
     "(top)",
@@ -70,14 +75,15 @@ def should_include_page(categories):
 def fetch_page_html(title):
     slug = urllib.parse.quote(title.replace(" ", "_"))
     url = f"https://en.wikipedia.org/wiki/{slug}"
-    headers = {"User-Agent": "html2struct/1.0"}
-    resp = requests.get(url, headers=headers)
+    resp = requests.get(url, headers=HEADERS, timeout=10)
+    if REQUEST_DELAY:
+        time.sleep(REQUEST_DELAY)
     if resp.status_code == 200:
         return resp.text
     return None
 
 
-def process_html_text(html_text, spider_links=False):
+def process_html_text(html_text, spider_links=False, verbose=False):
     soup = BeautifulSoup(html_text, "lxml")
 
     title_tag = soup.find("title")
@@ -92,13 +98,17 @@ def process_html_text(html_text, spider_links=False):
 
     if spider_links:
         links = extract_links(soup)
-        cat_map = batch_get_categories(links)
+        cat_map = batch_get_categories(links, verbose=verbose)
         related = {}
-        for link_title, categories in cat_map.items():
+        total = len(links)
+        for idx, link_title in enumerate(links, start=1):
+            if verbose:
+                print(f"[{idx}/{total}] {link_title}", file=sys.stderr, flush=True)
+            categories = cat_map.get(link_title, [])
             if should_include_page(categories):
                 html = fetch_page_html(link_title)
                 if html:
-                    related[link_title] = process_html_text(html, spider_links=False)
+                    related[link_title] = process_html_text(html, spider_links=False, verbose=verbose)
         if related:
             result["related"] = related
 
@@ -115,28 +125,50 @@ def extract_links(soup):
         ])
     }))
 
-def batch_get_categories(titles):
+def _batch_titles(titles, size=50):
+    """Yield successive chunks from ``titles`` with ``size`` elements."""
+    for i in range(0, len(titles), size):
+        yield titles[i:i + size]
+
+
+def batch_get_categories(titles, verbose=False):
     """Fetch categories for a list of wiki titles using the API."""
     if not titles:
         return {}
+
     url = "https://en.wikipedia.org/w/api.php"
-    title_str = "|".join(titles)
-    params = {
-        "action": "query",
-        "format": "json",
-        "prop": "categories",
-        "titles": title_str,
-        "cllimit": "max",
-        "redirects": "1",
-    }
-    response = requests.get(url, params=params).json()
-    pages = response.get("query", {}).get("pages", {})
-    return {
-        page.get("title", "UNKNOWN"): [
-            cat["title"] for cat in page.get("categories", [])
-        ]
-        for page in pages.values()
-    }
+    results = {}
+    batch_size = 50
+    total_batches = (len(titles) + batch_size - 1) // batch_size
+
+    for batch_num, batch in enumerate(_batch_titles(titles, size=batch_size), start=1):
+        if verbose:
+            print(f"[categories {batch_num}/{total_batches}]", file=sys.stderr, flush=True)
+        params = {
+            "action": "query",
+            "format": "json",
+            "prop": "categories",
+            "titles": "|".join(batch),
+            "cllimit": "max",
+            "redirects": "1",
+        }
+        try:
+            resp = requests.get(url, params=params, headers=HEADERS, timeout=10)
+            resp.raise_for_status()
+            data = resp.json()
+        except (requests.RequestException, json.JSONDecodeError):
+            continue
+        finally:
+            if REQUEST_DELAY:
+                time.sleep(REQUEST_DELAY)
+
+        pages = data.get("query", {}).get("pages", {})
+        for page in pages.values():
+            title = page.get("title", "UNKNOWN")
+            categories = [cat["title"] for cat in page.get("categories", [])]
+            results[title] = categories
+
+    return results
 
 def normalize_spacing(text):
     import re
@@ -441,7 +473,7 @@ def filter_toc(toc):
         entry["text"].split(maxsplit=1)[-1]
     ) not in BANNED_SECTIONS]
 
-def process_html_file(filepath, spider_links=False):
+def process_html_file(filepath, spider_links=False, verbose=False):
     """Parse an HTML file into structured JSON.
 
     Parameters
@@ -457,7 +489,7 @@ def process_html_file(filepath, spider_links=False):
     with open(filepath, "r", encoding="utf-8") as f:
         html_text = f.read()
 
-    return process_html_text(html_text, spider_links=spider_links)
+    return process_html_text(html_text, spider_links=spider_links, verbose=verbose)
 
 if __name__ == "__main__":
     import argparse
@@ -466,10 +498,13 @@ if __name__ == "__main__":
     parser.add_argument("html_file", help="Path to the HTML file")
     parser.add_argument("--spider-links", action="store_true",
                         help="Fetch and process linked pages as well")
+    parser.add_argument("--show-progress", action="store_true",
+                        help="Print progress messages to stderr")
     args = parser.parse_args()
 
     result = process_html_file(
         args.html_file,
         spider_links=args.spider_links,
+        verbose=args.show_progress,
     )
     print(json.dumps(result, indent=2, ensure_ascii=False))
