@@ -5,8 +5,10 @@ import re
 import urllib.parse
 import requests
 import sys
+import time
 
 HEADERS = {"User-Agent": "html2struct/1.0"}
+REQUEST_DELAY = 0.25  # Seconds to wait between API or page requests
 
 BANNED_SECTIONS = {
     "(top)",
@@ -73,7 +75,9 @@ def should_include_page(categories):
 def fetch_page_html(title):
     slug = urllib.parse.quote(title.replace(" ", "_"))
     url = f"https://en.wikipedia.org/wiki/{slug}"
-    resp = requests.get(url, headers=HEADERS)
+    resp = requests.get(url, headers=HEADERS, timeout=10)
+    if REQUEST_DELAY:
+        time.sleep(REQUEST_DELAY)
     if resp.status_code == 200:
         return resp.text
     return None
@@ -94,12 +98,13 @@ def process_html_text(html_text, spider_links=False, verbose=False):
 
     if spider_links:
         links = extract_links(soup)
-        cat_map = batch_get_categories(links)
+        cat_map = batch_get_categories(links, verbose=verbose)
         related = {}
-        total = len(cat_map)
-        for idx, (link_title, categories) in enumerate(cat_map.items(), start=1):
+        total = len(links)
+        for idx, link_title in enumerate(links, start=1):
             if verbose:
                 print(f"[{idx}/{total}] {link_title}", file=sys.stderr, flush=True)
+            categories = cat_map.get(link_title, [])
             if should_include_page(categories):
                 html = fetch_page_html(link_title)
                 if html:
@@ -125,15 +130,20 @@ def _batch_titles(titles, size=50):
     for i in range(0, len(titles), size):
         yield titles[i:i + size]
 
-def batch_get_categories(titles):
+
+def batch_get_categories(titles, verbose=False):
     # Fetch categories for a list of wiki titles using the API.
     if not titles:
         return {}
 
     url = "https://en.wikipedia.org/w/api.php"
     results = {}
+    batch_size = 50
+    total_batches = (len(titles) + batch_size - 1) // batch_size
 
-    for batch in _batch_titles(titles, size=50):
+    for batch_num, batch in enumerate(_batch_titles(titles, size=batch_size), start=1):
+        if verbose:
+            print(f"[categories {batch_num}/{total_batches}]", file=sys.stderr, flush=True)
         params = {
             "action": "query",
             "format": "json",
@@ -149,6 +159,9 @@ def batch_get_categories(titles):
             data = resp.json()
         except (requests.RequestException, json.JSONDecodeError):
             continue
+        finally:
+            if REQUEST_DELAY:
+                time.sleep(REQUEST_DELAY)
 
         pages = data.get("query", {}).get("pages", {})
         for page in pages.values():
@@ -463,7 +476,6 @@ def filter_toc(toc):
 
 def process_html_file(filepath, spider_links=False, verbose=False):
     '''Parse an HTML file into structured JSON.
-
     Parameters
     ----------
     filepath : str
