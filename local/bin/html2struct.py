@@ -5,6 +5,8 @@ import re
 import urllib.parse
 import requests
 
+HEADERS = {"User-Agent": "html2struct/1.0"}
+
 BANNED_SECTIONS = {
     "(top)",
     "bibliography",
@@ -115,28 +117,43 @@ def extract_links(soup):
         ])
     }))
 
+def _batch_titles(titles, size=50):
+    """Yield successive chunks from ``titles`` with ``size`` elements."""
+    for i in range(0, len(titles), size):
+        yield titles[i:i + size]
+
+
 def batch_get_categories(titles):
     """Fetch categories for a list of wiki titles using the API."""
     if not titles:
         return {}
+
     url = "https://en.wikipedia.org/w/api.php"
-    title_str = "|".join(titles)
-    params = {
-        "action": "query",
-        "format": "json",
-        "prop": "categories",
-        "titles": title_str,
-        "cllimit": "max",
-        "redirects": "1",
-    }
-    response = requests.get(url, params=params).json()
-    pages = response.get("query", {}).get("pages", {})
-    return {
-        page.get("title", "UNKNOWN"): [
-            cat["title"] for cat in page.get("categories", [])
-        ]
-        for page in pages.values()
-    }
+    results = {}
+
+    for batch in _batch_titles(titles, size=50):
+        params = {
+            "action": "query",
+            "format": "json",
+            "prop": "categories",
+            "titles": "|".join(batch),
+            "cllimit": "max",
+            "redirects": "1",
+        }
+        try:
+            resp = requests.get(url, params=params, headers=HEADERS, timeout=10)
+            resp.raise_for_status()
+            data = resp.json()
+        except (requests.RequestException, json.JSONDecodeError):
+            continue
+
+        pages = data.get("query", {}).get("pages", {})
+        for page in pages.values():
+            title = page.get("title", "UNKNOWN")
+            categories = [cat["title"] for cat in page.get("categories", [])]
+            results[title] = categories
+
+    return results
 
 def normalize_spacing(text):
     import re
