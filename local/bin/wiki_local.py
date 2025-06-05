@@ -42,7 +42,13 @@ def extract_page_text(dump_path, offset, length, title):
         f.seek(offset)
         chunk = f.read(length)
     xml_data = bz2.decompress(chunk)
-    for event, elem in ET.iterparse(io.BytesIO(xml_data), events=("end",)):
+    # The extracted chunk from the multistream dump is not a complete XML
+    # document on its own.  It usually contains several consecutive ``<page>``
+    # elements without a single root element which causes ``xml.etree`` to
+    # raise ``ParseError`` ("junk after document element").  To allow parsing
+    # these fragments we wrap the decompressed data in a dummy root element.
+    wrapped = b"<root>" + xml_data + b"</root>"
+    for event, elem in ET.iterparse(io.BytesIO(wrapped), events=("end",)):
         if elem.tag == "page":
             t = elem.find("title")
             if t is not None and t.text == title:
