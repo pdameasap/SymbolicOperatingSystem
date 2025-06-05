@@ -21,6 +21,8 @@ install_file() {
 
 files=(
   wiki_raw.sh
+  wiki_local.sh
+  wiki_local.py
   detect_wiki_type.py
   corpus_titles.sh
   concat_txt.sh
