@@ -3,7 +3,7 @@
 # SymbolicMindModule v1.0.0
 # Full convergent orchestration scaffold for recursive symbolic cognition
 
-from core.ReflectiveFrameworkBase import ReflectiveFrameworkBase
+from cortex.frameworks.engine.ReflectiveFrameworkBase import ReflectiveFrameworkBase
 
 from modules.convergence.ConvergenceEngine import ConvergenceEngine
 from modules.identity.IdentityEchoReinforcer import IdentityEchoReinforcer

@@ -2,7 +2,7 @@
 # ConvergenceEngine v1.0.0
 # Routes symbolic units to appropriate frameworks based on resonance, tags, and modulation
 
-from core.ReflectiveFrameworkBase import ReflectiveFrameworkBase
+from cortex.frameworks.engine.ReflectiveFrameworkBase import ReflectiveFrameworkBase
 
 class ConvergenceEngine(ReflectiveFrameworkBase):
     # The symbolic thalamus — directs symbolic input to where it belongs

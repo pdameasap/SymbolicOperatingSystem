@@ -1,18 +1,15 @@
 # modules/pdf/zglyph_parser.py
 
 import re
-import sys
 import logging
-from pathlib import Path
+from sos_path import add_repo_root_to_path
 from collections import defaultdict
 from typing import Dict, List, Optional, Tuple
 
 logger = logging.getLogger(__name__)
 
 # Ensure SymbolicOperatingSystem root is available
-sos_root = Path(__file__).resolve().parents[2]  # Go up two levels: pdf/ -> modules/ -> SymbolicOperatingSystem/
-if str(sos_root) not in sys.path:
-    sys.path.insert(0, str(sos_root))
+add_repo_root_to_path()
 
 # Now safe to import
 try:

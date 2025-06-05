@@ -1,7 +1,7 @@
 # EnsembleSimulator v1.0.0
 # Analyzes symbolic coherence across multiple frameworks and detects harmonic dissonance
 
-from ReflectiveFrameworkBase import ReflectiveFrameworkBase
+from cortex.frameworks.engine.ReflectiveFrameworkBase import ReflectiveFrameworkBase
 
 class EnsembleSimulator(ReflectiveFrameworkBase):
     # Aggregates symbolic traces to measure unity, collapse, and divergence
