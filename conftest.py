@@ -1,6 +1,7 @@
 # conftest.py
-import sys
-import os
+"""Pytest configuration for SymbolicOperatingSystem."""
 
-# Ensure the repo root is on sys.path so top-level packages (frameworks/) resolve.
-sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+from sos_path import add_repo_root_to_path
+
+# Ensure tests use the repository root for imports
+add_repo_root_to_path()

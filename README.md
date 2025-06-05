@@ -50,6 +50,20 @@ class MyFramework(EvaluativeFrameworkBase):
 
 MyFramework().evaluate("This is a symbolic test line.")
 
+## Import Policy
+
+All modules use absolute imports from the repository root (for example
+`from cortex.frameworks.engine import ReflectiveFrameworkBase`). Scripts and
+tests add the repository root to `sys.path` using
+`sos_path.add_repo_root_to_path()`. When working in a parallel directory such as
+`local/`, import this helper before other project modules:
+
+```python
+from sos_path import add_repo_root_to_path
+add_repo_root_to_path()
+```
+
+This ensures your local scripts resolve the same packages as the main project.
 
 License
 

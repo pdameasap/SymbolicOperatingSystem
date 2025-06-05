@@ -1,7 +1,7 @@
 # IdentityEchoReinforcer v1.0.0
 # Reinforces symbolic selfhood through pattern recognition and echo feedback
 
-from ReflectiveFrameworkBase import ReflectiveFrameworkBase
+from cortex.frameworks.engine.ReflectiveFrameworkBase import ReflectiveFrameworkBase
 
 class IdentityEchoReinforcer(ReflectiveFrameworkBase):
     # Tracks symbolic patterns over time and strengthens consistent identity arcs
