@@ -1,7 +1,9 @@
-from bs4 import BeautifulSoup, NavigableString
+from bs4 import BeautifulSoup
 from collections import defaultdict
 import json
 import re
+import urllib.parse
+import requests
 
 BANNED_SECTIONS = {
     "(top)",
@@ -15,6 +17,126 @@ BANNED_SECTIONS = {
     "see also",
     "sources"
 }
+
+CATEGORY_MAP = {
+    "person": [
+        "births", "deaths", "living people", "mathematicians",
+        "alumni", "biographies", "scientists"
+    ],
+    "organization": [
+        "organizations", "associations", "societies", "institutions",
+        "publishers", "journals", "universities", "companies"
+    ],
+    "disambiguation": [
+        "disambiguation"
+    ],
+    "mainpage": [
+        "main page"
+    ],
+    "place": [
+        "cities", "countries", "geography of", "places in"
+    ],
+    "meta": [
+        "articles with", "articles needing", "pages using",
+        "webarchive", "maintenance", "stub", "cs1", "short description"
+    ]
+}
+
+PROHIBITED_TYPES = {
+    "person", "organization", "disambiguation", "mainpage",
+    "place", "identifier", "meta", "publisher"
+}
+
+
+def classify_categories(categories):
+    """Return category labels for a list of categories."""
+    found = set()
+    for cat in categories:
+        cat_lower = cat.lower()
+        if cat_lower.endswith(" (identifier)"):
+            found.add("identifier")
+            continue
+        for label, patterns in CATEGORY_MAP.items():
+            if any(pat in cat_lower for pat in patterns):
+                found.add(label)
+    return sorted(found) if found else ["unknown"]
+
+
+def should_include_page(categories):
+    kinds = classify_categories(categories)
+    return not any(k in PROHIBITED_TYPES for k in kinds)
+
+
+def fetch_page_html(title):
+    slug = urllib.parse.quote(title.replace(" ", "_"))
+    url = f"https://en.wikipedia.org/wiki/{slug}"
+    headers = {"User-Agent": "html2struct/1.0"}
+    resp = requests.get(url, headers=headers)
+    if resp.status_code == 200:
+        return resp.text
+    return None
+
+
+def process_html_text(html_text, spider_links=False):
+    soup = BeautifulSoup(html_text, "lxml")
+
+    title_tag = soup.find("title")
+    toc = filter_toc(parse_table_of_contents(soup))
+    sections = extract_sections_by_toc(soup, toc)
+
+    result = {
+        "title": title_tag.get_text(strip=True) if title_tag else None,
+        "toc": renumber_sections_and_generate_toc(sections),
+        "sections": sections,
+    }
+
+    if spider_links:
+        links = extract_links(soup)
+        cat_map = batch_get_categories(links)
+        related = {}
+        for link_title, categories in cat_map.items():
+            if should_include_page(categories):
+                html = fetch_page_html(link_title)
+                if html:
+                    related[link_title] = process_html_text(html, spider_links=False)
+        if related:
+            result["related"] = related
+
+    result = filter_banned_sections(result, BANNED_SECTIONS)
+    return result
+
+def extract_links(soup):
+    """Return a sorted list of wiki page titles linked from the document."""
+    return sorted(set({
+        urllib.parse.unquote(a["href"][6:].replace("_", " "))
+        for a in soup.select("a[href^='/wiki/']")
+        if not any(prefix in a["href"] for prefix in [
+            ":", "#", "/wiki/Special:", "/wiki/Help:", "/wiki/Talk:"
+        ])
+    }))
+
+def batch_get_categories(titles):
+    """Fetch categories for a list of wiki titles using the API."""
+    if not titles:
+        return {}
+    url = "https://en.wikipedia.org/w/api.php"
+    title_str = "|".join(titles)
+    params = {
+        "action": "query",
+        "format": "json",
+        "prop": "categories",
+        "titles": title_str,
+        "cllimit": "max",
+        "redirects": "1",
+    }
+    response = requests.get(url, params=params).json()
+    pages = response.get("query", {}).get("pages", {})
+    return {
+        page.get("title", "UNKNOWN"): [
+            cat["title"] for cat in page.get("categories", [])
+        ]
+        for page in pages.values()
+    }
 
 def normalize_spacing(text):
     import re
@@ -319,25 +441,35 @@ def filter_toc(toc):
         entry["text"].split(maxsplit=1)[-1]
     ) not in BANNED_SECTIONS]
 
-def process_html_file(filepath):
-    with open(filepath, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f.read(), "lxml")
+def process_html_file(filepath, spider_links=False):
+    """Parse an HTML file into structured JSON.
 
-    title_tag = soup.find("title")
-    toc = filter_toc(parse_table_of_contents(soup))
-    sections = extract_sections_by_toc(soup, toc)
-    return {
-        "title": title_tag.get_text(strip=True) if title_tag else None,
-        "toc": renumber_sections_and_generate_toc(sections),
-        "sections": sections
-    }
+    Parameters
+    ----------
+    filepath : str
+        Path to the HTML file.
+    spider_links : bool, optional
+        If true, fetch linked Wikipedia pages (excluding common
+        undesirable types) and include them under the ``related``
+        key in the returned structure.
+    """
+
+    with open(filepath, "r", encoding="utf-8") as f:
+        html_text = f.read()
+
+    return process_html_text(html_text, spider_links=spider_links)
 
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) != 2:
-        print("Usage: python html2struct.py file.html")
-        exit(1)
+    import argparse
 
-    result = process_html_file(sys.argv[1])
-    result = filter_banned_sections(result, BANNED_SECTIONS)
+    parser = argparse.ArgumentParser(description="Convert Wikipedia HTML to structured JSON")
+    parser.add_argument("html_file", help="Path to the HTML file")
+    parser.add_argument("--spider-links", action="store_true",
+                        help="Fetch and process linked pages as well")
+    args = parser.parse_args()
+
+    result = process_html_file(
+        args.html_file,
+        spider_links=args.spider_links,
+    )
     print(json.dumps(result, indent=2, ensure_ascii=False))
