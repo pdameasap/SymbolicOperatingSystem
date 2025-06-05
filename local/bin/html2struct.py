@@ -8,6 +8,8 @@ import sys
 
 HEADERS = {"User-Agent": "html2struct/1.0"}
 
+HEADERS = {"User-Agent": "html2struct/1.0"}
+
 BANNED_SECTIONS = {
     "(top)",
     "bibliography",
@@ -144,6 +146,7 @@ def batch_get_categories(titles):
             "cllimit": "max",
             "redirects": "1",
         }
+
         try:
             resp = requests.get(url, params=params, headers=HEADERS, timeout=10)
             resp.raise_for_status()
