@@ -9,6 +9,15 @@ import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
 
+def cygpath_to_windows(path):
+    # Convert a Cygwin /cygdrive/c/... path to C:\\...
+    if path.startswith("/cygdrive/"):
+        drive_letter = path[10]
+        rest = path[11:]
+        win_rest = rest.replace('/', '\\')
+        return f"{drive_letter.upper()}:\\{win_rest}"
+    return path
+
 def parse_args():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("title", help="Page title")
@@ -60,10 +69,18 @@ def extract_page_text(dump_path, offset, length, title):
 
 
 def page_to_html(wikitext):
-    with tempfile.NamedTemporaryFile("w", delete=False) as src:
+    # Use system temp dir that works across Windows + Cygwin
+    with tempfile.NamedTemporaryFile("w", delete=False, dir="/cygdrive/c/Users/pdame/AppData/Local/Temp") as src:
         src.write(wikitext or "")
-    html_path = src.name + ".html"
-    subprocess.run(["pandoc", "-f", "mediawiki", "-t", "html", src.name, "-o", html_path], check=True)
+        temp_path = src.name  # Save the file path while it's still open
+
+    html_path = temp_path + ".html"
+
+    # Convert to Windows-native path format
+    win_temp_path = cygpath_to_windows(temp_path)
+    win_html_path = cygpath_to_windows(html_path)
+
+    subprocess.run(["pandoc", "-f", "mediawiki", "-t", "html", win_temp_path, "-o", win_html_path], check=True)
     with open(html_path, "r") as f:
         html = f.read()
     os.remove(src.name)
