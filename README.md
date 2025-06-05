@@ -65,6 +65,24 @@ add_repo_root_to_path()
 
 This ensures your local scripts resolve the same packages as the main project.
 
+## Installing helper scripts
+
+Utility scripts in `local/bin/` can be installed to your system `PATH` using
+`install.sh`.
+
+```bash
+bash local/bin/install.sh
+```
+
+Set `DEST` to override the target directory:
+
+```bash
+DEST=/custom/bin bash local/bin/install.sh
+```
+
+You can place this command in a Git hook (e.g. `.git/hooks/post-merge`) to keep
+`/usr/local/bin/wiki_raw.sh` synchronized after each pull.
+
 License
 
 This project is governed by the Symbolic Research License (SRL) v1.0 — Personal Research Use Only.
