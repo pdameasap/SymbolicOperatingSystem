@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract HTML for a Wikipedia page from a local multistream dump."""
+# Extract HTML for a Wikipedia page from a local multistream dump.
 import argparse
 import bz2
 import os
@@ -12,7 +12,7 @@ import xml.etree.ElementTree as ET
 def parse_args():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("title", help="Page title")
-    p.add_argument("--dumpdir", default=os.environ.get("WIKI_DUMP_DIR", "/mnt/d/wikidump"), help="Directory containing dump and index")
+    p.add_argument("--dumpdir", default=os.environ.get("WIKI_DUMP_DIR", "/cygdrive/d/wiki"), help="Directory containing dump and index")
     p.add_argument("--outfile", help="Output HTML file", required=False)
     return p.parse_args()
 
