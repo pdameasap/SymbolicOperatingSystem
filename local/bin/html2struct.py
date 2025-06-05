@@ -54,7 +54,7 @@ PROHIBITED_TYPES = {
 
 
 def classify_categories(categories):
-    """Return category labels for a list of categories."""
+    # Return category labels for a list of categories.
     found = set()
     for cat in categories:
         cat_lower = cat.lower()
@@ -116,7 +116,7 @@ def process_html_text(html_text, spider_links=False, verbose=False):
     return result
 
 def extract_links(soup):
-    """Return a sorted list of wiki page titles linked from the document."""
+    # Return a sorted list of wiki page titles linked from the document.
     return sorted(set({
         urllib.parse.unquote(a["href"][6:].replace("_", " "))
         for a in soup.select("a[href^='/wiki/']")
@@ -126,13 +126,13 @@ def extract_links(soup):
     }))
 
 def _batch_titles(titles, size=50):
-    """Yield successive chunks from ``titles`` with ``size`` elements."""
+    # Yield successive chunks from ``titles`` with ``size`` elements.
     for i in range(0, len(titles), size):
         yield titles[i:i + size]
 
 
 def batch_get_categories(titles, verbose=False):
-    """Fetch categories for a list of wiki titles using the API."""
+    # Fetch categories for a list of wiki titles using the API.
     if not titles:
         return {}
 
@@ -152,6 +152,7 @@ def batch_get_categories(titles, verbose=False):
             "cllimit": "max",
             "redirects": "1",
         }
+
         try:
             resp = requests.get(url, params=params, headers=HEADERS, timeout=10)
             resp.raise_for_status()
@@ -474,8 +475,7 @@ def filter_toc(toc):
     ) not in BANNED_SECTIONS]
 
 def process_html_file(filepath, spider_links=False, verbose=False):
-    """Parse an HTML file into structured JSON.
-
+    '''Parse an HTML file into structured JSON.
     Parameters
     ----------
     filepath : str
@@ -484,7 +484,7 @@ def process_html_file(filepath, spider_links=False, verbose=False):
         If true, fetch linked Wikipedia pages (excluding common
         undesirable types) and include them under the ``related``
         key in the returned structure.
-    """
+    '''
 
     with open(filepath, "r", encoding="utf-8") as f:
         html_text = f.read()
