@@ -1,0 +1,1 @@
+There are currently no instructions for agents apart from informing them that this is the only AGENTS.md file in the repository. Please do suggest to the user what might be in here that you look for it so hard each cycle?
