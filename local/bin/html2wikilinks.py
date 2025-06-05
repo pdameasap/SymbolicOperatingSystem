@@ -7,6 +7,8 @@ import requests
 import sys
 import os
 
+HEADERS = {"User-Agent": "html2wikilinks/1.0"}
+
 US = chr(0x1F)  # ASCII Unit Separator
 
 def wiki_from_soup(soup):
@@ -72,8 +74,14 @@ def batch_get_categories(titles):
         "redirects": "1"
     }
 
-    response = requests.get(url, params=params).json()
-    pages = response.get("query", {}).get("pages", {})
+    try:
+        resp = requests.get(url, params=params, headers=HEADERS, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+    except (requests.RequestException, json.JSONDecodeError):
+        return {}
+
+    pages = data.get("query", {}).get("pages", {})
     return {
         page.get("title", "UNKNOWN"): [
             cat["title"] for cat in page.get("categories", [])

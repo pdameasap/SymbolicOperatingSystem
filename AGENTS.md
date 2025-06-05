@@ -1,1 +1,2 @@
-There are currently no instructions for agents apart from informing them that this is the only AGENTS.md file in the repository. Please do suggest to the user what might be in here that you look for it so hard each cycle?
+This repository uses https://github.com/pdameasap/SymbolicOperatingSystem.git as its remote.
+There are currently no other instructions for agents. This is the only AGENTS.md file in the repository.
