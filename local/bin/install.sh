@@ -40,4 +40,8 @@ echo "Installed encode_structured.py to /usr/local/bin"
 
 cp encode.py /usr/local/bin/encode.py
 chmod +x /usr/local/bin/encode.py
-echo "Installed encode.py to /usr/local/bin" 
+echo "Installed encode.py to /usr/local/bin"
+
+cp analyze_signal.py /usr/local/bin/analyze_signal.py
+chmod +x /usr/local/bin/analyze_signal.py
+echo "Installed analyze_signal.py to /usr/local/bin"
