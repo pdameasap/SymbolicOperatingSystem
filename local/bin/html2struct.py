@@ -5,6 +5,8 @@ import re
 import urllib.parse
 import requests
 
+HEADERS = {"User-Agent": "html2struct/1.0"}
+
 BANNED_SECTIONS = {
     "(top)",
     "bibliography",
@@ -138,8 +140,15 @@ def batch_get_categories(titles):
             "cllimit": "max",
             "redirects": "1",
         }
-        response = requests.get(url, params=params).json()
-        pages = response.get("query", {}).get("pages", {})
+
+        try:
+            resp = requests.get(url, params=params, headers=HEADERS, timeout=10)
+            resp.raise_for_status()
+            data = resp.json()
+        except (requests.RequestException, json.JSONDecodeError):
+            continue
+
+        pages = data.get("query", {}).get("pages", {})
         for page in pages.values():
             title = page.get("title", "UNKNOWN")
             categories = [cat["title"] for cat in page.get("categories", [])]
