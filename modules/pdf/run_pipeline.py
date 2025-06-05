@@ -4,6 +4,7 @@
 
 import logging
 import argparse
+import sys
 from sos_path import add_repo_root_to_path
 
 # Ensure repository imports resolve when run as a script
