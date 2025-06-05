@@ -1,7 +1,7 @@
 # SymbolicRSF v1.0.0
 # Reticular Symbolic Filter — filters and prioritizes symbolic input
 
-from ReflectiveFrameworkBase import ReflectiveFrameworkBase
+from cortex.frameworks.engine.ReflectiveFrameworkBase import ReflectiveFrameworkBase
 
 class SymbolicRSF(ReflectiveFrameworkBase):
     # Filters symbolic units for salience, distraction suppression, and echo priority

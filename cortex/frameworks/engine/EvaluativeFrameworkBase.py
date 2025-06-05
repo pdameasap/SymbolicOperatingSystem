@@ -1,7 +1,7 @@
 
 # File: cortex/frameworks/engine/EvaluativeFrameworkBase.py
 
-from ReflectiveFrameworkBase import ReflectiveFrameworkBase
+from .ReflectiveFrameworkBase import ReflectiveFrameworkBase
 
 class EvaluativeFrameworkBase(ReflectiveFrameworkBase):
     '''

@@ -5,7 +5,7 @@ compression.py
 
 Utility for compressing free-form text into PICL expressions by
 assigning high-frequency term aliases using Greek glyphs and marking the
-start/end of the definitions block with labeled markers (====A/====B).
+start/end of the definitions block with labeled markers (--A--/--B--).
 """
 import re
 from collections import Counter
@@ -56,10 +56,10 @@ def compress_text_to_picl(text: str, top_n: int = 15, min_token_length: int = 3)
     term_to_glyph = {term: available_glyphs[i] for i, term in enumerate(most_common)}
 
     # Build definitions block
-    definitions = ["====A"]
+    definitions = ["--A--"]
     for term, glyph in term_to_glyph.items():
         definitions.append(f"≜ {glyph} = {term}")
-    definitions.append("====B")
+    definitions.append("--B--")
 
     # Replacement
     pattern = re.compile(r"\b(\w{%d,})\b" % min_token_length, re.IGNORECASE)

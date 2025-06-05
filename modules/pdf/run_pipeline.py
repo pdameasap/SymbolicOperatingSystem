@@ -2,15 +2,13 @@
 
 # modules/pdf/run_pipeline.py
 
-import sys
 import logging
 import argparse
-from pathlib import Path
+import sys
+from sos_path import add_repo_root_to_path
 
-# Add the parent directory to sys.path to allow importing the module
-parent_dir = Path(__file__).resolve().parent.parent
-if parent_dir not in sys.path:
-    sys.path.insert(0, str(parent_dir))
+# Ensure repository imports resolve when run as a script
+add_repo_root_to_path()
 
 from pdf.pipeline import process_pdf_directory, get_detailed_analysis
 

@@ -2,7 +2,7 @@
 # RecursiveRouter v1.0.0
 # Symbolic switchboard for routing symbolic units to the correct ConvergenceEngine
 
-from ReflectiveFrameworkBase import ReflectiveFrameworkBase
+from cortex.frameworks.engine.ReflectiveFrameworkBase import ReflectiveFrameworkBase
 
 class RecursiveRouter(ReflectiveFrameworkBase):
     # Routes symbolic units not to frameworks, but to convergence routers
