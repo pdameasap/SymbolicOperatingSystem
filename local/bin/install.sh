@@ -1,47 +1,38 @@
-# install.sh
 #!/usr/bin/env bash
 set -euo pipefail
 
-cp wiki_raw.sh /usr/local/bin/wiki_raw.sh
-chmod +x /usr/local/bin/wiki_raw.sh
-echo "Installed wiki_raw.sh to /usr/local/bin"
+# Directory containing this script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-cp detect_wiki_type.py /usr/local/bin/detect_wiki_type.py
-chmod +x /usr/local/bin/detect_wiki_type.py
-echo "Installed detect_wiki_type.py to /usr/local/bin"
+# Destination directory. Override with DEST=/custom/path
+DEST=${DEST:-/usr/local/bin}
 
-cp corpus_titles.sh /usr/local/bin/corpus_titles.sh
-chmod +x /usr/local/bin/corpus_titles.sh
-echo "Installed corpus_titles.sh to /usr/local/bin"
+install_file() {
+  local src="$1"
+  local dest="$DEST/$(basename "$src")"
+  if [[ "${SCRIPT_DIR}/$src" == "$dest" ]]; then
+    echo "Skipping $src – already up to date at $dest"
+  else
+    cp "${SCRIPT_DIR}/$src" "$dest"
+    chmod +x "$dest"
+    echo "Installed $src to $DEST"
+  fi
+}
 
-cp concat_txt.sh /usr/local/bin/concat_txt.sh
-chmod +x /usr/local/bin/concat_txt.sh
-echo "Installed concat_txt.sh to /usr/local/bin"
+files=(
+  wiki_raw.sh
+  detect_wiki_type.py
+  corpus_titles.sh
+  concat_txt.sh
+  categorize_link_file.py
+  wiki_corpus.sh
+  html2wikilinks.py
+  html2struct.py
+  encode_structured.py
+  encode.py
+  analyze_signal.py
+)
 
-cp categorize_link_file.py /usr/local/bin/categorize_link_file.py
-chmod +x /usr/local/bin/categorize_link_file.py
-echo "Installed categorize_link_file.py to /usr/local/bin"
-
-cp wiki_corpus.sh /usr/local/bin/wiki_corpus.sh
-chmod +x /usr/local/bin/wiki_corpus.sh
-echo "Installed wiki_corpus.sh to /usr/local/bin"
-
-cp html2wikilinks.py /usr/local/bin/html2wikilinks.py
-chmod +x /usr/local/bin/html2wikilinks.py
-echo "Installed html2wikilinks.py to /usr/local/bin"
-
-cp html2struct.py /usr/local/bin/html2struct.py
-chmod +x /usr/local/bin/html2struct.py
-echo "Installed html2struct.py to /usr/local/bin"
-
-cp encode_structured.py /usr/local/bin/encode_structured.py
-chmod +x /usr/local/bin/encode_structured.py
-echo "Installed encode_structured.py to /usr/local/bin"
-
-cp encode.py /usr/local/bin/encode.py
-chmod +x /usr/local/bin/encode.py
-echo "Installed encode.py to /usr/local/bin"
-
-cp analyze_signal.py /usr/local/bin/analyze_signal.py
-chmod +x /usr/local/bin/analyze_signal.py
-echo "Installed analyze_signal.py to /usr/local/bin"
+for f in "${files[@]}"; do
+  install_file "$f"
+done
