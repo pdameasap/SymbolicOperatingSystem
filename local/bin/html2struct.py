@@ -140,6 +140,7 @@ def batch_get_categories(titles):
             "cllimit": "max",
             "redirects": "1",
         }
+
         try:
             resp = requests.get(url, params=params, headers=HEADERS, timeout=10)
             resp.raise_for_status()
