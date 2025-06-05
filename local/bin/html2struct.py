@@ -476,6 +476,7 @@ def filter_toc(toc):
 
 def process_html_file(filepath, spider_links=False, verbose=False):
     '''Parse an HTML file into structured JSON.
+
     Parameters
     ----------
     filepath : str
