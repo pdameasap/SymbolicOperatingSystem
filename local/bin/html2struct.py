@@ -68,7 +68,7 @@ def classify_categories(categories):
 
 
 def should_include_page(categories, title=None):
-    """Return True if a linked page should be spidered."""
+    # Return True if a linked page should be spidered.
     kinds = classify_categories(categories)
     if title:
         t = title.lower()
