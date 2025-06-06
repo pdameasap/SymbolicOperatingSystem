@@ -68,12 +68,25 @@ def classify_categories(categories):
 
 
 def should_include_page(categories, title=None):
+    # Return True if a linked page should be spidered.
     kinds = classify_categories(categories)
     if title:
         t = title.lower()
         if t == "main page" or t.endswith(" (identifier)"):
             return False
     return not any(k in PROHIBITED_TYPES for k in kinds)
+
+
+def extract_categories_from_html(html_text):
+    """Return a list of category titles from a page's HTML."""
+    soup = BeautifulSoup(html_text, "html.parser")
+    cat_div = soup.find("div", id="mw-normal-catlinks")
+    if not cat_div:
+        return []
+    links = [a.get_text(strip=True) for a in cat_div.find_all("a")]
+    if links and links[0].lower() == "categories":
+        links = links[1:]
+    return links
 
 
 def fetch_page_html(title):
@@ -109,10 +122,15 @@ def process_html_text(html_text, spider_links=False, verbose=False):
             if verbose:
                 print(f"[{idx}/{total}] {link_title}", file=sys.stderr, flush=True)
             categories = cat_map.get(link_title, [])
-            if should_include_page(categories, title=link_title):
-                html = fetch_page_html(link_title)
-                if html:
-                    related[link_title] = process_html_text(html, spider_links=False, verbose=verbose)
+            if not should_include_page(categories, title=link_title):
+                continue
+            html = fetch_page_html(link_title)
+            if not html:
+                continue
+            page_cats = extract_categories_from_html(html)
+            if not should_include_page(page_cats, title=link_title):
+                continue
+            related[link_title] = process_html_text(html, spider_links=False, verbose=verbose)
         if related:
             result["related"] = related
 
